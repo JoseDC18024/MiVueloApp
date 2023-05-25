@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BoletosActualizarActivity">
+
+        <TableRow>
+            <TextView android:text="Numero De Boleto" />
+
+            <EditText
+                android:id="@+id/editnumeroBoleto"
+                android:layout_width="203dp"
+                android:inputType="text"
+                android:maxLength="10" />
+        </TableRow>
+
+        <TableRow>
+            <TextView android:text="Clase De Boleto" />
+            <EditText
+                android:id="@+id/editClaseBoleto"
+                android:inputType="text"
+                android:maxLength="30" />
+        </TableRow>
+        <TableRow>
+            <TextView android:text="Precio De Boleto" />
+            <EditText
+                android:id="@+id/editPrecioBoleto"
+                android:inputType="text"
+                android:maxLength="30" />
+        </TableRow>
+        <TableRow>
+            <TextView android:text="Ubicacion Asiento" />
+            <EditText
+                android:id="@+id/editUbicacionAsiento"
+                android:inputType="text"
+                android:maxLength="1" />
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/botonActualizarBoleto"
+                android:onClick="actualizarboleto"
+                android:text="Actualizar Boleto" />
+
+        </TableRow>
+
+        <TableRow>
+            <Button
+                android:id="@+id/botonLimpiar"
+                android:onClick="LimpiarTexto"
+                android:text="limpiar" />
+
+        </TableRow>
+    </TableLayout>

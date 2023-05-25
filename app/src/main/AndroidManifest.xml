@@ -10,6 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MiVueloApp">
         <activity
+            android:name=".BoletosEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BoletosActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BoletosConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BoletosInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BoletosMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuJoseDuran"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

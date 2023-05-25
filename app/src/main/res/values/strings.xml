@@ -1,45 +1,17 @@
 <resources>
     <string name="app_name"> MiVueloApp - PDM115 - CICLO I-23 </string>
-    <string name="title_activity_usuario_menu">UsuarioMenuActivity</string>
-    <string name="title_activity_pasajero_menu">PasajeroMenuActivity</string>
-    <string name="title_activity_reclamo_menu">ReclamoMenuActivity</string>
-    <string name="title_activity_usuario_insertar">UsuarioInsertarActivity</string>
-    <string name="title_activity_usuario_eliminar">UsuarioEliminarActivity</string>
-    <string name="title_activity_usuario_actualizar">UsuarioActualizarActivity</string>
-    <string name="title_activity_usuario_consultar">UsuarioConsultarActivity</string>
-    <string name="title_activity_pasajero_insertar">PasajeroInsertarActivity</string>
-    <string name="title_activity_pasajero_eliminar">PasajeroEliminarActivity</string>
-    <string name="title_activity_pasajero_actualizar">PasajeroActualizarActivity</string>
-    <string name="title_activity_pasajero_consultar">PasajeroConsultarActivity</string>
-    <string name="title_activity_reclamo_insertar">ReclamoInsertarActivity</string>
-    <string name="title_activity_reclamo_eliminar">ReclamoEliminarActivity</string>
-    <string name="title_activity_reclamo_actualizar">ReclamoActualizarActivity</string>
-    <string name="title_activity_reclamo_consultar">ReclamoConsultarActivity</string>
-    <string name="usuario_menu">Función a Ejecutar usuario</string>
-    <string name="pasajero_menu">Función a Ejecutar pasajero</string>
-    <string name="reclamo_menu">Función a Ejecutar reclamo</string>
-    <string name="insertar_registro">Insertar Registro</string>
-    <string name="eliminar_registro">Eliminar Registro</string>
-    <string name="consultar_registro">Consultar Registro</string>
-    <string name="actualizar_registro">Actualizar Registro</string>
-    <string name="id_Usuario">IdUsuario</string>
-    <string name="nombre">Nombre</string>
-    <string name="apellido">Apellido</string>
-    <string name="sexo">Sexo</string>
-    <string name="correo">Correo Electronico</string>
-    <string name="insertar">Insertar</string>
-    <string name="eliminar">Eliminar</string>
-    <string name="actualizar">Actualizar</string>
-    <string name="consultar">Consultar</string>
-    <string name="id_pasajero">idPasajero</string>
-    <string name="nombre_pasajero">Nombre Pasajero</string>
-    <string name="fecha_nacimiento">Fecha de nacimiento</string>
-    <string name="genero_pasajero">genero pasajero</string>
+
+    -----Jose Duran - Menu Boleto-------
+    <string name="editnumeroBoleto">Numero De Boleto</string>
+    <string name="editClaseBoleto">Clase De Boleto</string>
+    <string name="editPrecioBoleto">Precio De Boleto</string>
+    <string name="editUbicacionAsiento">Ubicacion De Asiento</string>
+    <string name="insertarboleto">Insertar Boleto</string>
     <string name="limpiar">Limpiar</string>
-    <string name="id_reclamo">IdReclamo</string>
-    <string name="fecha_reclamo">fecha reclamo</string>
-    <string name="descripcion_reclamo">descripcion reclamo</string>
-    <string name="estado">estado</string>
-    <string name="Campo">campo</string>
-    <string name="opciones">Opciones:</string>
+    <string name="consultarboleto">Consultar Boleto</string>
+    <string name="actualizarboleto">Actualizar Boleto</string>
+    <string name="elminarboleto">Elminar Boleto</string>
+
+    -----Jose Duran - Menu Consultar Boleto-------
+
 </resources>

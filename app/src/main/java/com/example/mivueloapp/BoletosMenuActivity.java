@@ -9,16 +9,15 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class MainActivity extends ListActivity {
-    String[] menu={"Menu Jose Duran","Menu Jose Lucero","Menu Bladimir Soriano","Menu Bryan Grande","Menu Kevin Villalta"};
-    String[] activities={"MenuJoseDuran"};
+public class BoletosMenuActivity extends ListActivity {
+    String[] menu = {"Insertar Boleto", "Consultar Boleto", "Actualizar Boleto", "Eliminar Boleto"};
+    String[] activities = {"BoletosInsertarActivity","BoletosConsultarActivity","BoletosActualizarActivity","BoletosEliminarActivity"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setListAdapter(new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, menu));
-
     }
 
     @Override

@@ -9,23 +9,22 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class MainActivity extends ListActivity {
-    String[] menu={"Menu Jose Duran","Menu Jose Lucero","Menu Bladimir Soriano","Menu Bryan Grande","Menu Kevin Villalta"};
-    String[] activities={"MenuJoseDuran"};
+public class MenuJoseDuran extends ListActivity {
+    String[] menu = {"Boletos", "Estado Vuelo", "Cancelacion"};
+    String[] activities = {"BoletosMenuActivity"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setListAdapter(new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, menu));
-
     }
 
     @Override
     protected void onListItemClick(ListView l, View v, int position, long id){
         super.onListItemClick(l, v, position, id);
 
-        if(position!=4) {
+        if(position!=3) {
 
             String nombreValue = activities[position];
 

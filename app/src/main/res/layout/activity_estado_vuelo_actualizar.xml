@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BoletosActualizarActivity">
+
+    <TableRow>
+        <TextView android:text="Numero De Vuelo" />
+
+        <EditText
+            android:id="@+id/editnumeroVuelo"
+            android:layout_width="203dp"
+            android:inputType="text"
+            android:maxLength="10" />
+    </TableRow>
+
+    <TableRow>
+        <TextView android:text="Estado Del Vuelo" />
+        <EditText
+            android:id="@+id/editEstadoVuelo"
+            android:inputType="text"
+            android:maxLength="30" />
+    </TableRow>
+
+    <TableRow>
+        <TextView android:text="Descripcion Del Estado" />
+        <EditText
+            android:id="@+id/editDescripcionEstado"
+            android:inputType="text"
+            android:maxLength="30" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="Tiempo De Retraso" />
+        <EditText
+            android:id="@+id/editTiempoRetraso"
+            android:inputType="text"
+            android:maxLength="1" />
+    </TableRow>
+    <TableRow>
+        <Button
+            android:id="@+id/botonActualizarEstado"
+            android:onClick="actualizarEstado"
+            android:text="Actualizar Estado" />
+
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:id="@+id/botonLimpiar"
+            android:onClick="LimpiarTexto"
+            android:text="limpiar" />
+
+    </TableRow>
+</TableLayout>

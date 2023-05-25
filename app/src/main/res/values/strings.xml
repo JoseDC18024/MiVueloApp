@@ -12,6 +12,23 @@
     <string name="actualizarboleto">Actualizar Boleto</string>
     <string name="elminarboleto">Elminar Boleto</string>
 
-    -----Jose Duran - Menu Consultar Boleto-------
+    -----Jose Duran - Menu Estado Vuelo -------
+    <string name="editnumeroVuelo">Numero Del Vuelo</string>
+    <string name="editEstadoVuelo">Estado Del Vuelo</string>
+    <string name="editDescripcionEstado">Descripcion Del Estado</string>
+    <string name="editTiempoRetraso">Tiempo De Retraso</string>
+    <string name="insertarEstado">Insertar Estado</string>
+    <string name="consultarEstado">Consultar Estado</string>
+    <string name="actualizarEstado">Actualizar Estado</string>
+    <string name="elminarEstado">Elminar Estado</string>
 
+    -----Jose Duran - Menu Cancelacion -------
+    <string name="editNumeroCancelacion">Numero De Cancelacion</string>
+    <string name="editMotivoC">Motivo De Cancelacion</string>
+    <string name="editFechaDesde">Fecha Desde</string>
+    <string name="editFechaHasta">Fecha Hasta</string>
+    <string name="insertarCancelacion">Insertar Cancelacion</string>
+    <string name="consultarCancelacion">Consultar Cancelacion</string>
+    <string name="actualizarCancelacion">Actualizar Cancelacion</string>
+    <string name="elminarCancelacion">Elminar Cancelacion</string>
 </resources>

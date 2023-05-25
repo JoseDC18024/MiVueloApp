@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dip"
+    android:stretchColumns="1" >
+
+    <TableRow>
+        <TextView android:text="Numero De Vuelo" />
+        <EditText
+            android:id="@+id/editnumeroVuelo"
+            android:inputType="text"
+            android:maxLength="7" />
+    </TableRow>
+
+    <TableRow>
+        <TextView android:text="Estado De Vuelo" />
+        <EditText
+            android:id="@+id/editEstadoVuelo"
+            android:inputType="text"
+            android:maxLength="7" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="Descripcion Del Estado" />
+        <EditText
+            android:id="@+id/editDescripcionEstado"
+            android:inputType="text"
+            android:maxLength="30" />
+    </TableRow>
+    <TableRow>
+        <TextView android:text="Tiempo De Retraso" />
+        <EditText
+            android:id="@+id/editTiempoRetraso"
+            android:inputType="text"
+            android:maxLength="30" />
+    </TableRow>
+
+    <TableRow>
+        <Button
+            android:onClick="insertarEstado"
+            android:text="insertar Estado" />
+    </TableRow>
+    <TableRow>
+        <Button
+            android:onClick="limpiarTexto"
+            android:text="limpiar" />
+    </TableRow>
+</TableLayout>

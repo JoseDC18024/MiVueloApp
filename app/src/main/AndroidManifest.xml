@@ -10,6 +10,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MiVueloApp">
         <activity
+            android:name=".CancelacionEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CancelacionActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CancelacionMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CancelacionConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CancelacionInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EstadoVueloEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EstadoVueloActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EstadoVueloConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EstadoVueloInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EstadoVueloMenuActivity"
+            android:exported="false" />
+        <activity
             android:name=".BoletosEliminarActivity"
             android:exported="false" />
         <activity

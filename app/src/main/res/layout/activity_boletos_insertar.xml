@@ -5,44 +5,36 @@
     android:paddingTop="10dip"
     android:stretchColumns="1" >
 
-    <TableRow>
-        <TextView android:text="Numero De Boleto" />
-        <EditText
-            android:id="@+id/editnumeroBoleto"
-            android:inputType="text"
-            android:maxLength="7" />
-    </TableRow>
+    <EditText
+        android:id="@+id/editTextIdBoleto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID del Boleto" />
 
-    <TableRow>
-        <TextView android:text="Clase De Boleto" />
-        <EditText
-            android:id="@+id/editClaseBoleto"
-            android:inputType="text"
-            android:maxLength="7" />
-    </TableRow>
-    <TableRow>
-        <TextView android:text="Precio De Boleto" />
-        <EditText
-            android:id="@+id/editPrecioBoleto"
-            android:inputType="text"
-            android:maxLength="30" />
-    </TableRow>
-    <TableRow>
-        <TextView android:text="Ubicacion Asiento" />
-        <EditText
-            android:id="@+id/editUbicacionAsiento"
-            android:inputType="text"
-            android:maxLength="30" />
-    </TableRow>
+    <EditText
+        android:id="@+id/editTextClaseBoleto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Clase del Boleto" />
 
-    <TableRow>
-        <Button
-            android:onClick="insertarboleto"
-            android:text="insertar boleto" />
-    </TableRow>
-    <TableRow>
-        <Button
-            android:onClick="limpiarTexto"
-            android:text="limpiar" />
-    </TableRow>
+    <EditText
+        android:id="@+id/editTextPrecioBoleto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Precio del Boleto" />
+
+    <EditText
+        android:id="@+id/editTextUbicacionAsiento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ubicación del Asiento" />
+
+    <Button
+        android:id="@+id/btnInsertar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insertar"
+        android:onClick="insertarBoleto" />
+
+
 </TableLayout>

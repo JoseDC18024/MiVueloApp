@@ -6,50 +6,51 @@
     android:layout_height="match_parent"
     tools:context=".BoletosActualizarActivity">
 
-        <TableRow>
-            <TextView android:text="Numero De Boleto" />
+    <EditText
+        android:id="@+id/editTextBuscarIdBoleto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID del Boleto a buscar" />
 
-            <EditText
-                android:id="@+id/editnumeroBoleto"
-                android:layout_width="203dp"
-                android:inputType="text"
-                android:maxLength="10" />
-        </TableRow>
+    <Button
+        android:id="@+id/btnBuscar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buscar"
+        android:onClick="buscarBoleto" />
 
-        <TableRow>
-            <TextView android:text="Clase De Boleto" />
-            <EditText
-                android:id="@+id/editClaseBoleto"
-                android:inputType="text"
-                android:maxLength="30" />
-        </TableRow>
-        <TableRow>
-            <TextView android:text="Precio De Boleto" />
-            <EditText
-                android:id="@+id/editPrecioBoleto"
-                android:inputType="text"
-                android:maxLength="30" />
-        </TableRow>
-        <TableRow>
-            <TextView android:text="Ubicacion Asiento" />
-            <EditText
-                android:id="@+id/editUbicacionAsiento"
-                android:inputType="text"
-                android:maxLength="1" />
-        </TableRow>
-        <TableRow>
-            <Button
-                android:id="@+id/botonActualizarBoleto"
-                android:onClick="actualizarboleto"
-                android:text="Actualizar Boleto" />
+    <EditText
+        android:id="@+id/editTextIdBoleto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID del Boleto"
+        android:enabled="false" />
 
-        </TableRow>
+    <EditText
+        android:id="@+id/editTextClaseBoleto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Clase del Boleto" />
 
-        <TableRow>
-            <Button
-                android:id="@+id/botonLimpiar"
-                android:onClick="LimpiarTexto"
-                android:text="limpiar" />
+    <EditText
+        android:id="@+id/editTextPrecioBoleto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Precio del Boleto" />
 
-        </TableRow>
-    </TableLayout>
+    <EditText
+        android:id="@+id/editTextUbicacionAsiento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ubicación del Asiento" />
+
+    <Button
+        android:id="@+id/btnActualizar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Actualizar"
+        android:onClick="actualizarBoleto"
+        android:enabled="false" />
+
+
+</TableLayout>

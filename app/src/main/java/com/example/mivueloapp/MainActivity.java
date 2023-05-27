@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ListActivity;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -13,12 +14,20 @@ public class MainActivity extends ListActivity {
     String[] menu={"Menu Jose Duran","Menu Jose Lucero","Menu Bladimir Soriano","Menu Bryan Grande","Menu Kevin Villalta"};
     String[] activities={"MenuJoseDuran"};
 
+    private DatabaseHelper databaseHelper;
+    private SQLiteDatabase database;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setListAdapter(new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, menu));
 
+        // Crear instancia del DatabaseHelper
+        databaseHelper = new DatabaseHelper(this);
+
+        // Obtener una referencia a la base de datos (esto creará la base de datos si no existe)
+        database = databaseHelper.getWritableDatabase();
     }
 
     @Override
@@ -37,8 +46,11 @@ public class MainActivity extends ListActivity {
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();
             }
+
         }else{
 
         }
     }
 }
+
+

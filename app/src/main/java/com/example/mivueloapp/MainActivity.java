@@ -11,7 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class MainActivity extends ListActivity {
-    String[] menu={"Menu Jose Duran","Menu Jose Lucero","Menu Bladimir Soriano","Menu Bryan Grande","Menu Kevin Villalta"};
+    String[] menu={"Menu Jose Duran","Menu Kevin Villalta","Menu Jose Lucero","Menu Bladimir Soriano","Menu Bryan Grande"};
     String[] activities={"MenuJoseDuran","MenuKevin"};
 
     private DatabaseHelper databaseHelper;

@@ -12,7 +12,54 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MiVueloApp">
-
+        <activity
+            android:name=".MenuKevin"
+            android:exported="false" />
+        <activity
+            android:name=".InformeMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CupoMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AvionMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Vm17017InformeEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Vm17017InformeInsetarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Vm17017InformeActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Vm17017InformeConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Vm17017CupoEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Vm17017CupoActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Vm17017CupoInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Vm17017CupoConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Vm17017AvionElminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Vm17017AvionConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Vm17017AvionActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Vm17017AvionInsertarActivity"
+            android:exported="false" />
         <activity
             android:name=".CancelacionEliminarActivity"
             android:exported="false" />

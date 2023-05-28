@@ -15,7 +15,7 @@ Instalación 🔧: Transferir la apk a el SmartPhone Android o Emulador movil, b
 Funcionamiento🔧: Luego de instalar la aplicacion, al abrirla nos aparecerá el login, donde se debe de ingresar al menu desplegable donde aparecerán las opciones disponibles para utilizar.
 
 
-Enlace de prototipo en figma: https://www.figma.com/file/wt4uM4s4nqR2Hpt47igfou/PROTOTIPO-APLICACI%C3%93N-MOVIL-CAR-SERVICE---PDM115?node-id=0%3A1
+Enlace de prototipo en figma: https://www.figma.com/file/qYLDiM14EevXHV2QWFLMwm/ProyectoVoletosAereos?type=design&node-id=0-1
 
 
 Construido con 🛠️: Android Studio - IDE de desarrollo, Java - Lenguaje de programación, SYBASE Power Designer - Herramienta de modelado empresarial colaborativa, SQLite - Gestor de base de datos.

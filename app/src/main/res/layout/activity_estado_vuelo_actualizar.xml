@@ -6,51 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".BoletosActualizarActivity">
 
-    <TableRow>
-        <TextView android:text="Numero De Vuelo" />
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context=".UpdateActivity">
 
         <EditText
-            android:id="@+id/editnumeroVuelo"
-            android:layout_width="203dp"
-            android:inputType="text"
-            android:maxLength="10" />
-    </TableRow>
+            android:id="@+id/editIdEstado"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID Estado" />
 
-    <TableRow>
-        <TextView android:text="Estado Del Vuelo" />
-        <EditText
-            android:id="@+id/editEstadoVuelo"
-            android:inputType="text"
-            android:maxLength="30" />
-    </TableRow>
-
-    <TableRow>
-        <TextView android:text="Descripcion Del Estado" />
         <EditText
             android:id="@+id/editDescripcionEstado"
-            android:inputType="text"
-            android:maxLength="30" />
-    </TableRow>
-    <TableRow>
-        <TextView android:text="Tiempo De Retraso" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Descripción Estado" />
+
         <EditText
             android:id="@+id/editTiempoRetraso"
-            android:inputType="text"
-            android:maxLength="1" />
-    </TableRow>
-    <TableRow>
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tiempo de Retraso" />
+
         <Button
-            android:id="@+id/botonActualizarEstado"
-            android:onClick="actualizarEstado"
-            android:text="Actualizar Estado" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Actualizar"
+            android:onClick="actualizarEstado" />
 
-    </TableRow>
+    </LinearLayout>
 
-    <TableRow>
-        <Button
-            android:id="@+id/botonLimpiar"
-            android:onClick="LimpiarTexto"
-            android:text="limpiar" />
 
-    </TableRow>
 </TableLayout>

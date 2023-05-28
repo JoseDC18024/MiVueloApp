@@ -1,22 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Numero De Cancelacion" />
     <EditText
-        android:id="@+id/editNumeroCancelacion"
-        android:layout_width="fill_parent"
+        android:id="@+id/idCancelacionEditText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="text"
-        android:maxLength="7"/>
+        android:hint="ID Cancelación" />
+
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/eliminarButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Eliminar Cancelacion"
-        android:onClick="eliminarCancelacion"/>
+        android:text="Eliminar" />
+
 </LinearLayout>

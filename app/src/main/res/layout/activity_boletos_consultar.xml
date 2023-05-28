@@ -3,83 +3,11 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Numero De Boleto"/>
-    <EditText
-        android:id="@+id/editnumeroBoleto"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:maxLength="7"/>
 
-    <LinearLayout
-        android:id="@+id/linearLayout1"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+    <ListView
+        android:id="@+id/listViewBoletos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-        <Button
-            android:id="@+id/botonConsultard"
-            android:layout_width="190dp"
-            android:layout_height="60dp"
-            android:onClick="consultarBoletod"
-            android:text="@string/consultarboleto" />
-
-        <Button
-            android:id="@+id/botonLimpiard"
-            android:layout_width="210dp"
-            android:layout_height="60dp"
-            android:baselineAligned="false"
-            android:onClick="limpiarTexto"
-            android:text="@string/limpiar" />
-    </LinearLayout>
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Clase Boleto" />
-
-    <EditText
-        android:id="@+id/editClaseBoleto"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:enabled ="false"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:cursorVisible="false"
-        android:longClickable="false" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Precio Boleto" />
-
-    <EditText
-        android:id="@+id/editPrecioBoleto"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:enabled="false"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:cursorVisible="false"
-        android:longClickable="false"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ubicacion Asiento" />
-    <EditText
-        android:id="@+id/editUbicacionAsiento"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        android:enabled ="false"
-        android:focusable="false"
-        android:focusableInTouchMode="false"
-        android:cursorVisible="false"
-        android:longClickable="false" />
 
 </LinearLayout>

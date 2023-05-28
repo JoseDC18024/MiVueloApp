@@ -2,47 +2,39 @@
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:paddingTop="10dip"
-    android:stretchColumns="1" >
+    android:paddingTop="16dip"
+    android:stretchColumns="2" >
 
-    <TableRow>
-        <TextView android:text="Numero De Cancelacion" />
-        <EditText
-            android:id="@+id/editNumeroCancelacion"
-            android:inputType="text"
-            android:maxLength="7" />
-    </TableRow>
+    <EditText
+        android:id="@+id/etIdCancelacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID Cancelación" />
 
-    <TableRow>
-        <TextView android:text="Motivo De Cancelacion" />
-        <EditText
-            android:id="@+id/editMotivoC"
-            android:inputType="text"
-            android:maxLength="7" />
-    </TableRow>
-    <TableRow>
-        <TextView android:text="Fecha Desde" />
-        <EditText
-            android:id="@+id/editFechaDesde"
-            android:inputType="text"
-            android:maxLength="30" />
-    </TableRow>
-    <TableRow>
-        <TextView android:text="Fecha Hasta" />
-        <EditText
-            android:id="@+id/editFechaHasta"
-            android:inputType="text"
-            android:maxLength="30" />
-    </TableRow>
+    <EditText
+        android:id="@+id/etMotivoCancelacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Motivo Cancelación" />
 
-    <TableRow>
-        <Button
-            android:onClick="insertarCancelacion"
-            android:text="insertar Cancelacion" />
-    </TableRow>
-    <TableRow>
-        <Button
-            android:onClick="limpiarTexto"
-            android:text="limpiar" />
-    </TableRow>
+    <EditText
+        android:id="@+id/etDesdeFecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Desde Fecha" />
+
+    <EditText
+        android:id="@+id/etHastaFecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hasta Fecha" />
+
+    <Button
+        android:id="@+id/btnInsertarCancelacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insertar Cancelación"
+        android:onClick="insertarCancelacion" />
+
+
 </TableLayout>

@@ -35,14 +35,14 @@ public class BoletosInsertarActivity extends AppCompatActivity {
         String idBoleto = editTextIdBoleto.getText().toString();
         String claseBoleto = editTextClaseBoleto.getText().toString();
         int precioBoleto = Integer.parseInt(editTextPrecioBoleto.getText().toString());
-        String ubicacionBoleto = editTextUbicacionAsiento.getText().toString();
+        String ubicacionAsiento = editTextUbicacionAsiento.getText().toString();
 
         // Crear un objeto ContentValues para almacenar los valores a insertar
         ContentValues values = new ContentValues();
         values.put("id_boleto", idBoleto);
         values.put("clase_boleto", claseBoleto);
         values.put("precio_boleto", precioBoleto);
-        values.put("ubicacion_boleto", ubicacionBoleto);
+        values.put("ubicacion_asiento", ubicacionAsiento);
 
         // Insertar los valores en la tabla "boleto"
         long resultado = database.insert("boleto", null, values);

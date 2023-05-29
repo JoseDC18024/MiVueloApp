@@ -1,4 +1,4 @@
-package com.example.mivueloapp;
+package com.example.mivueloapp.joseduran;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -6,6 +6,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.example.mivueloapp.DatabaseHelper;
+import com.example.mivueloapp.R;
+
 import java.util.ArrayList;
 import java.util.List;
 

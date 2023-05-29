@@ -1,4 +1,4 @@
-package com.example.mivueloapp;
+package com.example.mivueloapp.joseduran;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -30,7 +30,7 @@ public class BoletosMenuActivity extends ListActivity {
 
             try {
                 Class<?>
-                        clase = Class.forName("com.example.mivueloapp." + nombreValue);
+                        clase = Class.forName("com.example.mivueloapp.joseduran." + nombreValue);
                 Intent inte = new Intent(this, clase);
                 this.startActivity(inte);
             } catch (ClassNotFoundException e) {

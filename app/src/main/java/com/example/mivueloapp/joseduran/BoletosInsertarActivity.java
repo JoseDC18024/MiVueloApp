@@ -1,4 +1,4 @@
-package com.example.mivueloapp;
+package com.example.mivueloapp.joseduran;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -7,6 +7,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.mivueloapp.DatabaseHelper;
+import com.example.mivueloapp.R;
 
 public class BoletosInsertarActivity extends AppCompatActivity {
     private DatabaseHelper databaseHelper;

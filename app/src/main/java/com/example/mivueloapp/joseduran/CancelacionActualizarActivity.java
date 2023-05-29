@@ -1,4 +1,4 @@
-package com.example.mivueloapp;
+package com.example.mivueloapp.joseduran;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -8,6 +8,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.mivueloapp.DatabaseHelper;
+import com.example.mivueloapp.R;
 
 public class CancelacionActualizarActivity extends AppCompatActivity {
     private EditText idCancelacionEditText;

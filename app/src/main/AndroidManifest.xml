@@ -12,98 +12,51 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MiVueloApp">
+
         <activity
-            android:name=".MenuKevin"
+            android:name=".joseduran.CancelacionEliminarActivity"
             android:exported="false" />
         <activity
-            android:name=".InformeMenuActivity"
+            android:name=".joseduran.CancelacionActualizarActivity"
             android:exported="false" />
         <activity
-            android:name=".CupoMenuActivity"
+            android:name=".joseduran.CancelacionMenuActivity"
             android:exported="false" />
         <activity
-            android:name=".AvionMenuActivity"
+            android:name=".joseduran.CancelacionConsultarActivity"
             android:exported="false" />
         <activity
-            android:name=".Vm17017InformeEliminarActivity"
+            android:name=".joseduran.CancelacionInsertarActivity"
             android:exported="false" />
         <activity
-            android:name=".Vm17017InformeInsetarActivity"
+            android:name=".joseduran.EstadoVueloEliminarActivity"
             android:exported="false" />
         <activity
-            android:name=".Vm17017InformeActualizarActivity"
+            android:name=".joseduran.EstadoVueloActualizarActivity"
             android:exported="false" />
         <activity
-            android:name=".Vm17017InformeConsultarActivity"
+            android:name=".joseduran.EstadoVueloConsultarActivity"
             android:exported="false" />
         <activity
-            android:name=".Vm17017CupoEliminarActivity"
+            android:name=".joseduran.EstadoVueloInsertarActivity"
             android:exported="false" />
         <activity
-            android:name=".Vm17017CupoActualizarActivity"
+            android:name=".joseduran.EstadoVueloMenuActivity"
             android:exported="false" />
         <activity
-            android:name=".Vm17017CupoInsertarActivity"
+            android:name=".joseduran.BoletosEliminarActivity"
             android:exported="false" />
         <activity
-            android:name=".Vm17017CupoConsultarActivity"
+            android:name=".joseduran.BoletosActualizarActivity"
             android:exported="false" />
         <activity
-            android:name=".Vm17017AvionElminarActivity"
+            android:name=".joseduran.BoletosConsultarActivity"
             android:exported="false" />
         <activity
-            android:name=".Vm17017AvionConsultarActivity"
+            android:name=".joseduran.BoletosInsertarActivity"
             android:exported="false" />
         <activity
-            android:name=".Vm17017AvionActualizarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Vm17017AvionInsertarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CancelacionEliminarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CancelacionActualizarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CancelacionMenuActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CancelacionConsultarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CancelacionInsertarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EstadoVueloEliminarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EstadoVueloActualizarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EstadoVueloConsultarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EstadoVueloInsertarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EstadoVueloMenuActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BoletosEliminarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BoletosActualizarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BoletosConsultarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BoletosInsertarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BoletosMenuActivity"
+            android:name=".joseduran.BoletosMenuActivity"
             android:exported="false" />
         <activity
             android:name=".MenuJoseDuran"

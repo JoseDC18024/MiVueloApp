@@ -30,7 +30,7 @@ public class MenuJoseDuran extends ListActivity {
 
             try {
                 Class<?>
-                        clase = Class.forName("com.example.mivueloapp." + nombreValue);
+                        clase = Class.forName("com.example.mivueloapp.joseduran." + nombreValue);
                 Intent inte = new Intent(this, clase);
                 this.startActivity(inte);
             } catch (ClassNotFoundException e) {

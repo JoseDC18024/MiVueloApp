@@ -1,4 +1,4 @@
-package com.example.mivueloapp;
+package com.example.mivueloapp.joseduran;
 
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -9,6 +9,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.mivueloapp.DatabaseHelper;
+import com.example.mivueloapp.R;
 
 public class EstadoVueloActualizarActivity extends AppCompatActivity {
     private EditText editIdEstado, editDescripcionEstado, editTiempoRetraso;

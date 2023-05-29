@@ -12,8 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MiVueloApp">
+
         <activity
-            android:name=".MenuKevin"
+            android:name=".joseduran.CancelacionEliminarActivity"
             android:exported="false" />
         <activity
             android:name=".kevin.InformeMenuActivity"

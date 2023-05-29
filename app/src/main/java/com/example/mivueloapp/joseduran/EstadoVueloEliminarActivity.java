@@ -1,4 +1,4 @@
-package com.example.mivueloapp;
+package com.example.mivueloapp.joseduran;
 
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnClickListener;
@@ -11,6 +11,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.mivueloapp.DatabaseHelper;
+import com.example.mivueloapp.R;
 
 public class EstadoVueloEliminarActivity extends AppCompatActivity {
     private EditText editIdEstado;

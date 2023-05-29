@@ -14,9 +14,6 @@
         android:theme="@style/Theme.MiVueloApp">
 
         <activity
-            android:name=".joseduran.CancelacionEliminarActivity"
-            android:exported="false" />
-        <activity
             android:name=".kevin.InformeMenuActivity"
             android:exported="false" />
         <activity
@@ -61,62 +58,52 @@
         <activity
             android:name=".kevin.Vm17017AvionInsertarActivity"
             android:exported="false" />
+
         <activity
-            android:name=".CancelacionEliminarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CancelacionActualizarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CancelacionMenuActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CancelacionConsultarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CancelacionInsertarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EstadoVueloEliminarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EstadoVueloActualizarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EstadoVueloConsultarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EstadoVueloInsertarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".EstadoVueloMenuActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BoletosEliminarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BoletosActualizarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BoletosConsultarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BoletosInsertarActivity"
-            android:exported="false" />
-        <activity
-            android:name=".BoletosMenuActivity"
+            android:name=".joseduran.CancelacionEliminarActivity"
             android:exported="false" />
 
         <activity
-            android:name=".kevin.AvionMenuActivity"
+            android:name=".joseduran.CancelacionActualizarActivity"
             android:exported="false" />
-
         <activity
-            android:name=".kevin.CupoMenuActivity"
+            android:name=".joseduran.CancelacionMenuActivity"
             android:exported="false" />
-
         <activity
-            android:name=".kevin.InformeMenuActivity"
+            android:name=".joseduran.CancelacionConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joseduran.CancelacionInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joseduran.EstadoVueloEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joseduran.EstadoVueloActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joseduran.EstadoVueloConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joseduran.EstadoVueloInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joseduran.EstadoVueloMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joseduran.BoletosEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joseduran.BoletosActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joseduran.BoletosConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joseduran.BoletosInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joseduran.BoletosMenuActivity"
             android:exported="false" />
 
         <activity
@@ -127,9 +114,6 @@
             android:name=".MenuKevin"
             android:exported="false" />
 
-        <activity
-            android:name=".MenuKevin"
-            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

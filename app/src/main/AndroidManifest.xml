@@ -107,7 +107,62 @@
             android:exported="false" />
 
         <activity
+            android:name=".vlad.PasajeroEliminarActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".vlad.PasajeroUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".vlad.PasajeroMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".vlad.PasajeroConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".vlad.PasajeroInsertarActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".vlad.ReclamoEliminarActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".vlad.ReclamoUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".vlad.ReclamoMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".vlad.ReclamoConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".vlad.ReclamoInsertarActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".vlad.UsuarioEliminarActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".vlad.UsuarioUpdateActivity"
+            android:exported="false" />
+        <activity
+            android:name=".vlad.UsuarioMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".vlad.UsuarioConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".vlad.UsuarioInsertarActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".MenuJoseDuran"
+            android:exported="false" />
+
+        <activity
+            android:name=".VladimirMenuActivity"
             android:exported="false" />
 
         <activity

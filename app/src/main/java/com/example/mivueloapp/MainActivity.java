@@ -12,7 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
-    String[] menu = {"Menu Jose Duran", "Menu Kevin Villalta", "Menu Jose Lucero", "Menu Bladimir Soriano", "Menu Bryan Grande"};
+    String[] menu = {"Menu Jose Duran", "Menu Kevin Villalta","Menu Vladimir Soriano", "Menu Jose Lucero", "Menu Bryan Grande"};
     String[] activities = {"MenuJoseDuran", "MenuKevin","VladimirMenuActivity"};
 
     private ListView listView;
@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position != 4) {
+                if (position != 5) {
                     String nombreValue = activities[position];
                     try {
                         Class<?> clase = Class.forName("com.example.mivueloapp." + nombreValue);

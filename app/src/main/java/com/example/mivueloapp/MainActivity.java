@@ -42,7 +42,7 @@ public class MainActivity extends ListActivity {
                 Class<?>
                         clase = Class.forName("com.example.mivueloapp." + nombreValue);
                 Intent inte = new Intent(this, clase);
-                System.out.println("/////////////" + nombreValue);
+;
                 this.startActivity(inte);
             } catch (ClassNotFoundException e) {
                 e.printStackTrace();

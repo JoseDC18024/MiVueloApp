@@ -11,7 +11,7 @@ import android.widget.ListView;
 public class AvionMenuActivity extends ListActivity {
 
     String[] menu = {"Insertar Avion", "Consultar Avion", "Actualizar Avion", "Eliminar Avion"};
-    String[] activities = {"Vm17017InsertarActivity", "Vm17017ConsultarActivity", "Vm17017ActualizarActivity", "Vm17017EliminarActivity"};
+    String[] activities = {"Vm17017AvionInsertarActivity", "Vm17017AvionConsultarActivity", "Vm17017AvionActualizarActivity", "Vm17017AvionElminarActivity"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,7 +30,7 @@ public class AvionMenuActivity extends ListActivity {
 
             try {
                 Class<?>
-                        clase = Class.forName("com.example.mivueloapp." + nombreValue);
+                        clase = Class.forName("com.example.mivueloapp.kevin." + nombreValue);
                 Intent inte = new Intent(this, clase);
                 this.startActivity(inte);
             } catch (ClassNotFoundException e) {

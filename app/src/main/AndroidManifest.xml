@@ -16,49 +16,49 @@
             android:name=".MenuKevin"
             android:exported="false" />
         <activity
-            android:name=".InformeMenuActivity"
+            android:name=".kevin.InformeMenuActivity"
             android:exported="false" />
         <activity
-            android:name=".CupoMenuActivity"
+            android:name=".kevin.CupoMenuActivity"
             android:exported="false" />
         <activity
-            android:name=".AvionMenuActivity"
+            android:name=".kevin.AvionMenuActivity"
             android:exported="false" />
         <activity
-            android:name=".Vm17017InformeEliminarActivity"
+            android:name=".kevin.Vm17017InformeEliminarActivity"
             android:exported="false" />
         <activity
-            android:name=".Vm17017InformeInsetarActivity"
+            android:name=".kevin.Vm17017InformeInsetarActivity"
             android:exported="false" />
         <activity
-            android:name=".Vm17017InformeActualizarActivity"
+            android:name=".kevin.Vm17017InformeActualizarActivity"
             android:exported="false" />
         <activity
-            android:name=".Vm17017InformeConsultarActivity"
+            android:name=".kevin.Vm17017InformeConsultarActivity"
             android:exported="false" />
         <activity
-            android:name=".Vm17017CupoEliminarActivity"
+            android:name=".kevin.Vm17017CupoEliminarActivity"
             android:exported="false" />
         <activity
-            android:name=".Vm17017CupoActualizarActivity"
+            android:name=".kevin.Vm17017CupoActualizarActivity"
             android:exported="false" />
         <activity
-            android:name=".Vm17017CupoInsertarActivity"
+            android:name=".kevin.Vm17017CupoInsertarActivity"
             android:exported="false" />
         <activity
-            android:name=".Vm17017CupoConsultarActivity"
+            android:name=".kevin.Vm17017CupoConsultarActivity"
             android:exported="false" />
         <activity
-            android:name=".Vm17017AvionElminarActivity"
+            android:name=".kevin.Vm17017AvionElminarActivity"
             android:exported="false" />
         <activity
-            android:name=".Vm17017AvionConsultarActivity"
+            android:name=".kevin.Vm17017AvionConsultarActivity"
             android:exported="false" />
         <activity
-            android:name=".Vm17017AvionActualizarActivity"
+            android:name=".kevin.Vm17017AvionActualizarActivity"
             android:exported="false" />
         <activity
-            android:name=".Vm17017AvionInsertarActivity"
+            android:name=".kevin.Vm17017AvionInsertarActivity"
             android:exported="false" />
         <activity
             android:name=".CancelacionEliminarActivity"

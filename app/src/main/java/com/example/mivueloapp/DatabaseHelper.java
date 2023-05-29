@@ -8,6 +8,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "mivueloapp.s3db";
     private static final int DATABASE_VERSION = 1;
 
+    // Sentencia SQL para crear la tabla "avion"
+    private static final String CREATE_TABLE_AVION = "CREATE TABLE IF NOT EXISTS avion (id_avion CHAR(11) NOT NULL, " +
+            "modelo_avion CHAR(30) NOT NULL, año_fabricacion INTEGER NOT NULL);";
+
     // Sentencia SQL para crear la tabla "boleto"
     private static final String CREATE_TABLE_BOLETO = "CREATE TABLE boleto (id_boleto CHAR(11) NOT NULL, " +
             "clase_boleto CHAR(30) NOT NULL, precio_boleto INTEGER NOT NULL, ubicacion_asiento CHAR(30) NOT NULL);";
@@ -29,6 +33,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_BOLETO);
         db.execSQL(CREATE_TABLE_ESTADO_VUELO);
         db.execSQL(CREATE_TABLE_CANCELACION);
+        db.execSQL(CREATE_TABLE_AVION);
     }
 
     @Override

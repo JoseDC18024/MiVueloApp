@@ -3,17 +3,16 @@ package com.example.mivueloapp.vlad;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.content.DialogInterface;
+import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.mivueloapp.DatabaseHelper;
 import com.example.mivueloapp.R;
-import com.example.mivueloapp.joseduran.BoletosEliminarActivity;
 
 public class PasajeroEliminarActivity extends AppCompatActivity {
 
@@ -36,14 +35,14 @@ public class PasajeroEliminarActivity extends AppCompatActivity {
         editTextIdPasajero = findViewById(R.id.editTextIdPasajero);
     }
 
-    public void eliminarBoleto(View view) {
+    public void eliminarPasajero(View view) {
         final String idPasajero = editTextIdPasajero.getText().toString();
 
         // Realizar la consulta para verificar si el boleto existe
         String[] projection = {"id_pasajero"};
         String selection = "id_pasajero = ?";
         String[] selectionArgs = {idPasajero};
-        Cursor cursor = database.query("pasajero", projection, selection, selectionArgs, null, null, null);
+        Cursor cursor = database.query("Pasajero", projection, selection, selectionArgs, null, null, null);
 
         if (cursor.moveToFirst()) {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -53,7 +52,7 @@ public class PasajeroEliminarActivity extends AppCompatActivity {
                             // Eliminar el boleto de la base de datos
                             String whereClause = "id_pasajero = ?";
                             String[] whereArgs = {idPasajero};
-                            int rowsAffected = database.delete("boleto", whereClause, whereArgs);
+                            int rowsAffected = database.delete("Pasajero", whereClause, whereArgs);
 
                             if (rowsAffected > 0) {
                                 Toast.makeText(PasajeroEliminarActivity.this, "pasajero eliminado correctamente", Toast.LENGTH_SHORT).show();
@@ -64,13 +63,13 @@ public class PasajeroEliminarActivity extends AppCompatActivity {
                     })
                     .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
-                            // Cancelar la eliminación del boleto
+                            // Cancelar la eliminación
                             dialog.dismiss();
                         }
                     });
             builder.create().show();
         } else {
-            Toast.makeText(this, "El boleto no existe", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "El pasajero no existe", Toast.LENGTH_SHORT).show();
         }
 
         cursor.close();

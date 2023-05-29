@@ -26,6 +26,8 @@ public class PasajeroUpdateActivity extends AppCompatActivity {
     EditText editNombre;
     EditText editFechanacimiento;
     EditText editSexo;
+
+    EditText editTextBuscarIdPasajero;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +41,7 @@ public class PasajeroUpdateActivity extends AppCompatActivity {
         database = databaseHelper.getWritableDatabase();
 
         // Obtener referencias de los elementos de la interfaz de usuario
+        editTextBuscarIdPasajero = findViewById(R.id.editTextBuscarIdPasajero);
         editIdPasajero = (EditText) findViewById(R.id.editTextIdPasajero);
         editNombre = (EditText) findViewById(R.id.editTextNombrePasajero);
         editFechanacimiento = (EditText) findViewById(R.id.editTextFechaNacimiento);
@@ -46,16 +49,16 @@ public class PasajeroUpdateActivity extends AppCompatActivity {
     }
     @SuppressLint("Range")
     public void buscarPasajero(View view) {
-        String idPasajero =editIdPasajero.getText().toString();
+        String idPasajero =editTextBuscarIdPasajero.getText().toString();
 
         // Realizar la consulta para obtener los datos del boleto
         String[] projection = {"id_pasajero", "nombre_pasajero", "fecha_nacimiento", "genero_pasajero"};
         String selection = "id_pasajero = ?";
         String[] selectionArgs = {idPasajero};
-        Cursor cursor = database.query("boleto", projection, selection, selectionArgs, null, null, null);
+        Cursor cursor = database.query("Pasajero", projection, selection, selectionArgs, null, null, null);
 
         if (cursor.moveToFirst()) {
-            // El boleto fue encontrado, habilitar la edición y mostrar los datos
+            // El pasajero fue encontrado, habilitar la edición y mostrar los datos
             editIdPasajero.setEnabled(true);
             editNombre.setEnabled(true);
             editFechanacimiento.setEnabled(true);
@@ -77,21 +80,20 @@ public class PasajeroUpdateActivity extends AppCompatActivity {
         String id=editIdPasajero.getText().toString();
         String nombre=editNombre.getText().toString();
         String fechaf=editFechanacimiento.getText().toString();
-        DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
-        Date fecha = formatoFecha.parse(fechaf);
         String sexo=editSexo.getText().toString();
 
         // Crear un objeto ContentValues para almacenar los valores a insertar
         ContentValues values = new ContentValues();
         values.put("id_pasajero", id);
         values.put("nombre_pasajero", nombre);
-        values.put("precio_boleto", fechaf);
-        values.put("ubicacion_asiento", sexo);
+        values.put("fecha_nacimiento", fechaf);
+        values.put("genero_pasajero", sexo);
 
-        // Insertar los valores en la tabla "pasajero"
-        long resultado = database.insert("boleto", null, values);
+        String whereClause = "id_pasajero = ?";
+        String[] whereArgs = {id};
+        int rowsAffected = database.update("Pasajero", values, whereClause, whereArgs);
 
-        if (resultado != -1) {
+        if (rowsAffected > 0) {
             Toast.makeText(this, "Pasajero insertado correctamente", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "Error al insertar el pasajero", Toast.LENGTH_SHORT).show();

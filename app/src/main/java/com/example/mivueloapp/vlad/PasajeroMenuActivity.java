@@ -14,7 +14,7 @@ import com.example.mivueloapp.R;
 public class PasajeroMenuActivity extends ListActivity {
 
     String[] menu = {"Insertar Pasajero", "Consultar Pasajero", "Actualizar Pasajero", "Eliminar Pasajero"};
-    String[] activities = {"PasajeroInsertarActivity","PajsaroConsultarActivity","PasajeroUpdateActivity","PasajeroEliminarActivity"};
+    String[] activities = {"PasajeroInsertarActivity","PasajeroConsultarActivity","PasajeroUpdateActivity","PasajeroEliminarActivity"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

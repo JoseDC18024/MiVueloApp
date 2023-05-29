@@ -11,7 +11,7 @@ import android.widget.ListView;
 
 public class VladimirMenuActivity extends ListActivity {
     String[] menu = {"Pasajeros", "Reclamos", "Usuarios"};
-    String[] activities = {"PajeroMenuActivity","ReclamoMenuActivity","UsuarioMenuActivity"};
+    String[] activities = {"PasajeroMenuActivity","ReclamoMenuActivity","UsuarioMenuActivity"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

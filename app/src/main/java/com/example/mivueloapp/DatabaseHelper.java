@@ -24,7 +24,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String CREATE_TABLE_CANCELACION = "CREATE TABLE cancelacion (id_cancelacion CHAR(11) NOT NULL, " +
             "motivo_cancelacion CHAR(30) NOT NULL, hasta_fecha CHAR(10) NOT NULL, desde_fecha CHAR(30) NOT NULL);";
 
-    private static final String CREATE_TABLE_PASAJERO = "CREATE TABLE Pasajero (id_pasajero VARCHAR(50) PRIMARY KEY,nombre_pasajero VARCHAR(100),fecha_nacimiento DATE,genero_pasajero VARCHAR(10));";
+    private static final String CREATE_TABLE_PASAJERO = "CREATE TABLE Pasajero (id_pasajero VARCHAR(50) PRIMARY KEY,nombre_pasajero VARCHAR(100),fecha_nacimiento VARCHAR(10),genero_pasajero VARCHAR(10));";
 
     private static final String CREATE_TABLE_RECLAMO = "CREATE TABLE Reclamo (\n" +
             "  id_reclamo VARCHAR(50) PRIMARY KEY,\n" +

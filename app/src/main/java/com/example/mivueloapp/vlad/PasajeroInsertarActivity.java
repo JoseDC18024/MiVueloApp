@@ -45,23 +45,21 @@ public class PasajeroInsertarActivity extends AppCompatActivity {
         editSexo = (EditText) findViewById(R.id.editTextGenero);
     }
 
-    public void insertarBoleto(View view) throws ParseException {
+    public void insertarPasajero(View view) {
         String id=editIdPasajero.getText().toString();
         String nombre=editNombre.getText().toString();
         String fechaf=editFechanacimiento.getText().toString();
-        DateFormat formatoFecha = new SimpleDateFormat("dd/MM/yyyy");
-        Date fecha = formatoFecha.parse(fechaf);
         String sexo=editSexo.getText().toString();
 
         // Crear un objeto ContentValues para almacenar los valores a insertar
         ContentValues values = new ContentValues();
         values.put("id_pasajero", id);
         values.put("nombre_pasajero", nombre);
-        values.put("precio_boleto", fechaf);
-        values.put("ubicacion_asiento", sexo);
+        values.put("fecha_nacimiento", fechaf);
+        values.put("genero_pasajero", sexo);
 
         // Insertar los valores en la tabla "pasajero"
-        long resultado = database.insert("boleto", null, values);
+        long resultado = database.insert("Pasajero", null, values);
 
         if (resultado != -1) {
             Toast.makeText(this, "Pasajero insertado correctamente", Toast.LENGTH_SHORT).show();

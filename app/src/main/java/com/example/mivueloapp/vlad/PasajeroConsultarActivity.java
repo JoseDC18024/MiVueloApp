@@ -56,9 +56,9 @@ public class PasajeroConsultarActivity extends AppCompatActivity {
         // Iterar sobre el cursor y agregar los boletos a la lista
         while (cursor.moveToNext()) {
             String idPasajero = cursor.getString(cursor.getColumnIndex("id_pasajero"));
-            String nombre = cursor.getString(cursor.getColumnIndex("nombre"));
+            String nombre = cursor.getString(cursor.getColumnIndex("nombre_pasajero"));
             String fecha_nacimiento = String.valueOf(cursor.getInt(cursor.getColumnIndex("fecha_nacimiento")));
-            String sexo = cursor.getString(cursor.getColumnIndex("sexo"));
+            String sexo = cursor.getString(cursor.getColumnIndex("genero_pasajero"));
 
             String pasajero = "ID: " + idPasajero + "\n" +
                     "Nombre: " + nombre + "\n" +

@@ -58,9 +58,27 @@
         <activity
             android:name=".joseduran.BoletosMenuActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".kevin.AvionMenuActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".kevin.CupoMenuActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".kevin.InformeMenuActivity"
+            android:exported="false" />
+
         <activity
             android:name=".MenuJoseDuran"
             android:exported="false" />
+
+        <activity
+            android:name=".MenuKevin"
+            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

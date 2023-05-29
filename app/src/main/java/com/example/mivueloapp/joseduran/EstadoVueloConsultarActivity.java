@@ -5,6 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -33,10 +34,14 @@ public class EstadoVueloConsultarActivity extends AppCompatActivity {
         // Consultar los datos de estado_vuelo
         List<String> estados = consultarEstados();
 
-        // Crear un ArrayAdapter y configurarlo en el ListView
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_1, estados);
-        listViewEstados.setAdapter(adapter);
+        if (estados.isEmpty()) {
+            Toast.makeText(this, "No hay datos disponibles", Toast.LENGTH_SHORT).show();
+        } else {
+            // Crear un ArrayAdapter y configurarlo en el ListView
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+                    android.R.layout.simple_list_item_1, estados);
+            listViewEstados.setAdapter(adapter);
+        }
     }
 
     private List<String> consultarEstados() {
@@ -57,11 +62,10 @@ public class EstadoVueloConsultarActivity extends AppCompatActivity {
 
                 estados.add(estado);
             } while (cursor.moveToNext());
-        }
 
+        }
         // Cerrar el cursor
         cursor.close();
-
         return estados;
     }
 }

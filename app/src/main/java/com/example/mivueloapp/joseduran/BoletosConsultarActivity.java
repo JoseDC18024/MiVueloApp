@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.mivueloapp.DatabaseHelper;
 import com.example.mivueloapp.R;
@@ -64,8 +65,15 @@ public class BoletosConsultarActivity extends AppCompatActivity {
             listaBoletos.add(boleto);
         }
 
-        cursor.close();
+        // Mostrar mensaje si no hay datos
+        if (listaBoletos.isEmpty()) {
+            Toast.makeText(this, "No hay datos disponibles.", Toast.LENGTH_SHORT).show();
 
+        }
+        cursor.close();
         return listaBoletos;
     }
+
 }
+
+

@@ -13,7 +13,7 @@ import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
     String[] menu = {"Menu Jose Duran", "Menu Kevin Villalta", "Menu Jose Lucero", "Menu Bladimir Soriano", "Menu Bryan Grande"};
-    String[] activities = {"MenuJoseDuran", "MenuKevin"};
+    String[] activities = {"MenuJoseDuran", "MenuKevin","VladimirMenuActivity"};
 
     private ListView listView;
     private DatabaseHelper databaseHelper;

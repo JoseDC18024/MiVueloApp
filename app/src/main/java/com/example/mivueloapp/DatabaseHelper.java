@@ -24,6 +24,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String CREATE_TABLE_CANCELACION = "CREATE TABLE cancelacion (id_cancelacion CHAR(11) NOT NULL, " +
             "motivo_cancelacion CHAR(30) NOT NULL, hasta_fecha CHAR(10) NOT NULL, desde_fecha CHAR(30) NOT NULL);";
 
+    private static final String CREATE_TABLE_PASAJERO = "CREATE TABLE Pasajero (id_pasajero VARCHAR(50) PRIMARY KEY,nombre_pasajero VARCHAR(100),fecha_nacimiento DATE,genero_pasajero VARCHAR(10));";
+
+    private static final String CREATE_TABLE_RECLAMO = "CREATE TABLE Reclamo (\n" +
+            "  id_reclamo VARCHAR(50) PRIMARY KEY,\n" +
+            "  fecha_reclamo DATE,\n" +
+            "  descripcion_reclamo VARCHAR(255),\n" +
+            "  estado VARCHAR(20),\n" +
+            "  campo VARCHAR(50)\n" +
+            ");";
+
+    private static final String CREATE_TABLE_USUARIO = "CREATE TABLE Usuario (\n" +
+            "  id_usuario VARCHAR(50) PRIMARY KEY,\n" +
+            "  email VARCHAR(100),\n" +
+            "  pasaporte VARCHAR(50),\n" +
+            "  contrasena VARCHAR(50)\n" +
+            ");\n";
+
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -34,6 +51,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_ESTADO_VUELO);
         db.execSQL(CREATE_TABLE_CANCELACION);
         db.execSQL(CREATE_TABLE_AVION);
+        db.execSQL(CREATE_TABLE_PASAJERO);
+        db.execSQL(CREATE_TABLE_RECLAMO);
+        db.execSQL(CREATE_TABLE_USUARIO);
     }
 
     @Override

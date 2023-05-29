@@ -1,8 +1,10 @@
-package com.example.mivueloapp;
+package com.example.mivueloapp.vlad;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.mivueloapp.R;
 
 public class UsuarioEliminarActivity extends AppCompatActivity {
 

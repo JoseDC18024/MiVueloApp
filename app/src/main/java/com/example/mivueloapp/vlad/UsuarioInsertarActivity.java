@@ -1,14 +1,16 @@
-package com.example.mivueloapp;
+package com.example.mivueloapp.vlad;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class PasajeroMenuActivity extends AppCompatActivity {
+import com.example.mivueloapp.R;
+
+public class UsuarioInsertarActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pasajero_menu);
+        setContentView(R.layout.activity_usuario_insertar);
     }
 }

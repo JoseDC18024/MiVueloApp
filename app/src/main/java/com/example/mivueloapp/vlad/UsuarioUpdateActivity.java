@@ -47,14 +47,14 @@ public class UsuarioUpdateActivity extends AppCompatActivity {
     public void buscarUsuario(View view) {
         String idUsuario = editTextBuscarIdUsuario.getText().toString();
 
-        // Realizar la consulta para obtener los datos del boleto
+        // Realizar la consulta para obtener los datos del usuaario
         String[] projection = {"id_usuario", "email", "pasaporte", "contrasena"};
         String selection = "id_usuario = ?";
         String[] selectionArgs = {idUsuario};
         Cursor cursor = database.query("Usuario", projection, selection, selectionArgs, null, null, null);
 
         if (cursor.moveToFirst()) {
-            // El pasajero fue encontrado, habilitar la edición y mostrar los datos
+            // El usuario fue encontrado, habilitar la edición y mostrar los datos
             editIdUsuario.setEnabled(true);
             editEmail.setEnabled(true);
             editPasaporte.setEnabled(true);
@@ -65,7 +65,7 @@ public class UsuarioUpdateActivity extends AppCompatActivity {
             editContrasena.setText(cursor.getString(cursor.getColumnIndex("contrasena")));
             findViewById(R.id.btnActualizar).setEnabled(true);
         } else {
-            // El boleto no fue encontrado, mostrar un mensaje de error
+            // El usuario no fue encontrado, mostrar un mensaje de error
             Toast.makeText(this, "El usuario no existe", Toast.LENGTH_SHORT).show();
         }
 

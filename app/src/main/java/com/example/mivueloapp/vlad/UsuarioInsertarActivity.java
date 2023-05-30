@@ -52,7 +52,7 @@ public class UsuarioInsertarActivity extends AppCompatActivity {
         values.put("pasaporte", pasaporte);
         values.put("contrasena", contrasena);
 
-        // Insertar los valores en la tabla "pasajero"
+        // Insertar los valores en la tabla "usuario"
         long resultado = database.insert("Usuario", null, values);
 
         if (resultado != -1) {

@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".joselucero.TripulanteActualizarActivity">
+
+    <EditText
+        android:id="@+id/idTripulanteEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID de tripulante" />
+
+    <EditText
+        android:id="@+id/nombreTripulanteEDT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nuevo nombre de tripulante" />
+
+    <EditText
+        android:id="@+id/campoEDT"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nuevo campo" />
+
+    <Button
+        android:id="@+id/actualizarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Actualizar" />
+
+</LinearLayout>

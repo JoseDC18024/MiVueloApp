@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".joselucero.VueloInsertarActivity">
+
+    <EditText
+        android:id="@+id/idVueloEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID Vuelo" />
+
+    <EditText
+        android:id="@+id/numeroVueloEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Número de Vuelo" />
+
+    <EditText
+        android:id="@+id/fechaSalidaEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Fecha de Salida" />
+
+    <EditText
+        android:id="@+id/fechaLlegadaEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Fecha de Llegada" />
+
+    <EditText
+        android:id="@+id/horaSalidaEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hora de Salida" />
+
+    <EditText
+        android:id="@+id/horaLlegadaEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hora de Llegada" />
+
+    <Button
+        android:id="@+id/insertarButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Insertar" />
+
+</LinearLayout>

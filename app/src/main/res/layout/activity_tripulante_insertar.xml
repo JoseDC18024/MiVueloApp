@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/idTripulanteEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID de tripulante" />
+
+    <EditText
+        android:id="@+id/nTripulanteEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre de tripulante" />
+
+    <EditText
+        android:id="@+id/campEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Campo" />
+
+    <Button
+        android:id="@+id/insertarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insertar" />
+
+</LinearLayout>

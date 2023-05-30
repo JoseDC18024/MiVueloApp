@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".joselucero.VueloActualizarActivity">
+
+    <EditText
+        android:id="@+id/idVueloEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID de vuelo" />
+
+    <EditText
+        android:id="@+id/numeroVueloEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Número de vuelo" />
+
+    <EditText
+        android:id="@+id/fechaSalidaEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Fecha de salida" />
+
+    <EditText
+        android:id="@+id/fechaLlegadaEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Fecha de llegada" />
+
+    <EditText
+        android:id="@+id/horaSalidaEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hora de salida" />
+
+    <EditText
+        android:id="@+id/horaLlegadaEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hora de llegada" />
+
+    <Button
+        android:id="@+id/actualizarButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Actualizar" />
+
+</LinearLayout>

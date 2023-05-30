@@ -12,7 +12,54 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MiVueloApp">
-
+        <activity
+            android:name=".joselucero.TripulanteEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joselucero.ActivityEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joselucero.TripulanteActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joselucero.TripulanteConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joselucero.TripulanteInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joselucero.TripulacionEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joselucero.TripulacionConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joselucero.TripulacionActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joselucero.VueloEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joselucero.VueloActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joselucero.VueloConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joselucero.VueloInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joselucero.TripulacionInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joselucero.TripulanteMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joselucero.TripulacionMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".joselucero.VueloMenuActivity"
+            android:exported="false" />
         <activity
             android:name=".kevin.InformeMenuActivity"
             android:exported="false" />
@@ -58,11 +105,9 @@
         <activity
             android:name=".kevin.Vm17017AvionInsertarActivity"
             android:exported="false" />
-
         <activity
             android:name=".joseduran.CancelacionEliminarActivity"
             android:exported="false" />
-
         <activity
             android:name=".joseduran.CancelacionActualizarActivity"
             android:exported="false" />
@@ -105,11 +150,9 @@
         <activity
             android:name=".joseduran.BoletosMenuActivity"
             android:exported="false" />
-
         <activity
             android:name=".vlad.PasajeroEliminarActivity"
             android:exported="false" />
-
         <activity
             android:name=".vlad.PasajeroUpdateActivity"
             android:exported="false" />
@@ -122,11 +165,9 @@
         <activity
             android:name=".vlad.PasajeroInsertarActivity"
             android:exported="false" />
-
         <activity
             android:name=".vlad.ReclamoEliminarActivity"
             android:exported="false" />
-
         <activity
             android:name=".vlad.ReclamoUpdateActivity"
             android:exported="false" />
@@ -139,11 +180,9 @@
         <activity
             android:name=".vlad.ReclamoInsertarActivity"
             android:exported="false" />
-
         <activity
             android:name=".vlad.UsuarioEliminarActivity"
             android:exported="false" />
-
         <activity
             android:name=".vlad.UsuarioUpdateActivity"
             android:exported="false" />
@@ -156,19 +195,18 @@
         <activity
             android:name=".vlad.UsuarioInsertarActivity"
             android:exported="false" />
-
         <activity
             android:name=".MenuJoseDuran"
             android:exported="false" />
-
         <activity
             android:name=".VladimirMenuActivity"
             android:exported="false" />
-
         <activity
             android:name=".MenuKevin"
             android:exported="false" />
-
+        <activity
+            android:name=".MenuJoseLucero"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

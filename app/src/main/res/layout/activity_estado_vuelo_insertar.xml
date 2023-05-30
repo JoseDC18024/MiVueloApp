@@ -1,10 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:paddingTop="10dip"
-    android:stretchColumns="1" >
-
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -12,6 +5,15 @@
         android:orientation="vertical"
         android:padding="16dp"
         tools:context=".MainActivity">
+
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo_insertarestadovuelo"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:layout_marginBottom="16dp" />
 
         <EditText
             android:id="@+id/editIdEstado"
@@ -38,5 +40,3 @@
             android:onClick="insertarEstado" />
 
     </LinearLayout>
-
-</TableLayout>

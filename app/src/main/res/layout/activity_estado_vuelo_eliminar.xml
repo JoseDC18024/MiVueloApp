@@ -1,9 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
-
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
@@ -12,11 +6,20 @@
         android:padding="16dp"
         tools:context=".MainActivity">
 
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo_eliminarestadovuelo"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:layout_marginBottom="16dp" />
+
         <EditText
             android:id="@+id/editIdEstado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="ID Estado" />
+            android:hint="ID Estado Vuelo" />
 
         <Button
             android:layout_width="wrap_content"
@@ -26,4 +29,3 @@
 
     </LinearLayout>
 
-</LinearLayout>

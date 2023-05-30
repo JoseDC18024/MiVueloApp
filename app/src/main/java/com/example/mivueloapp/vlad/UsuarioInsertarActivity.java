@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -40,25 +41,55 @@ public class UsuarioInsertarActivity extends AppCompatActivity {
     }
 
     public void insertarUsuario(View view) {
-        String id= editIdUsuario.getText().toString();
-        String email= editEmail.getText().toString();
-        String pasaporte= editPasaporte.getText().toString();
-        String contrasena= editContrasena.getText().toString();
+        String id = editIdUsuario.getText().toString();
+        String email = editEmail.getText().toString();
+        String pasaporte = editPasaporte.getText().toString();
+        String contrasena = editContrasena.getText().toString();
 
-        // Crear un objeto ContentValues para almacenar los valores a insertar
-        ContentValues values = new ContentValues();
-        values.put("id_usuario", id);
-        values.put("email", email);
-        values.put("pasaporte", pasaporte);
-        values.put("contrasena", contrasena);
+        // Validar el formato de correo electrónico utilizando una expresión regular
+        String emailPattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
+        if (!email.matches(emailPattern)) {
+            Toast.makeText(this, "El formato del email no es válido", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-        // Insertar los valores en la tabla "usuario"
-        long resultado = database.insert("Usuario", null, values);
+        // Validar el formato del pasaporte utilizando una expresión regular
+        String pasaportePattern = "^X[0-9]{6}$";
+        if (!pasaporte.matches(pasaportePattern)) {
+            Toast.makeText(this, "El formato del pasaporte no es válido. Debe tener el formato X999999", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-        if (resultado != -1) {
-            Toast.makeText(this, "usuario insertado correctamente", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Error al insertar el usuario", Toast.LENGTH_SHORT).show();
+        try {
+            database.beginTransaction();
+
+            // Insertar el usuario en la tabla "Usuario"
+            ContentValues usuarioValues = new ContentValues();
+            usuarioValues.put("id_usuario", id);
+            usuarioValues.put("email", email);
+            usuarioValues.put("pasaporte", pasaporte);
+            usuarioValues.put("contrasena", contrasena);
+            long usuarioResultado = database.insert("Usuario", null, usuarioValues);
+
+            // Insertar el pasajero vacío en la tabla "Pasajero" con el mismo ID
+            ContentValues pasajeroValues = new ContentValues();
+            pasajeroValues.put("id_pasajero", id);
+            pasajeroValues.put("nombre_pasajero", "");
+            pasajeroValues.put("fecha_nacimiento", "");
+            pasajeroValues.put("genero_pasajero", "");
+            long pasajeroResultado = database.insert("Pasajero", null, pasajeroValues);
+
+            if (usuarioResultado != -1 && pasajeroResultado != -1) {
+                database.setTransactionSuccessful();
+                Toast.makeText(this, "Usuario insertado correctamente", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Error al insertar el usuario", Toast.LENGTH_SHORT).show();
+            }
+        } catch (SQLiteException e) {
+            Toast.makeText(this, "Error en la inserción: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        } finally {
+            database.endTransaction();
         }
     }
+
 }

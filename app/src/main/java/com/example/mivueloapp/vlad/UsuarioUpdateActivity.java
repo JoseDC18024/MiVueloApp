@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -61,7 +62,7 @@ public class UsuarioUpdateActivity extends AppCompatActivity {
             editContrasena.setEnabled(true);
             editIdUsuario.setText(cursor.getString(cursor.getColumnIndex("id_usuario")));
             editEmail.setText(cursor.getString(cursor.getColumnIndex("email")));
-            editPasaporte.setText(String.valueOf(cursor.getInt(cursor.getColumnIndex("pasaporte"))));
+            editPasaporte.setText(cursor.getString(cursor.getColumnIndex("pasaporte")));
             editContrasena.setText(cursor.getString(cursor.getColumnIndex("contrasena")));
             findViewById(R.id.btnActualizar).setEnabled(true);
         } else {
@@ -72,27 +73,57 @@ public class UsuarioUpdateActivity extends AppCompatActivity {
         cursor.close();
     }
 
-    public void actualizarUsuario(View view)  {
-        String id= editIdUsuario.getText().toString();
-        String email= editEmail.getText().toString();
-        String pasaporte= editPasaporte.getText().toString();
-        String contrasena= editContrasena.getText().toString();
+    public void actualizarUsuario(View view) {
+        String id = editIdUsuario.getText().toString();
+        String email = editEmail.getText().toString();
+        String pasaporte = editPasaporte.getText().toString();
+        String contrasena = editContrasena.getText().toString();
 
-        // Crear un objeto ContentValues para almacenar los valores a insertar
-        ContentValues values = new ContentValues();
-        values.put("id_usuario", id);
-        values.put("email", email);
-        values.put("pasaporte", pasaporte);
-        values.put("contrasena", contrasena);
+        // Validar el formato de correo electrónico utilizando una expresión regular
+        String emailPattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
+        if (!email.matches(emailPattern)) {
+            Toast.makeText(this, "El formato del email no es válido", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-        String whereClause = "id_usuario = ?";
-        String[] whereArgs = {id};
-        int rowsAffected = database.update("Usuario", values, whereClause, whereArgs);
+        // Validar el formato del pasaporte utilizando una expresión regular
+        String pasaportePattern = "^X[0-9]{6}$";
+        if (!pasaporte.matches(pasaportePattern)) {
+            Toast.makeText(this, "El formato del pasaporte no es válido. Debe tener el formato X999999", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-        if (rowsAffected > 0) {
-            Toast.makeText(this, "usuario insertado correctamente", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Error al insertar el usuario", Toast.LENGTH_SHORT).show();
+        try {
+            database.beginTransaction();
+
+            // Actualizar el usuario en la tabla "Usuario"
+            ContentValues usuarioValues = new ContentValues();
+            usuarioValues.put("id_usuario", id);
+            usuarioValues.put("email", email);
+            usuarioValues.put("pasaporte", pasaporte);
+            usuarioValues.put("contrasena", contrasena);
+            String usuarioWhereClause = "id_usuario = ?";
+            String[] usuarioWhereArgs = {id};
+            int usuarioRowsAffected = database.update("Usuario", usuarioValues, usuarioWhereClause, usuarioWhereArgs);
+
+            // Actualizar el pasajero en la tabla "Pasajero" si cambia el ID
+            ContentValues pasajeroValues = new ContentValues();
+            pasajeroValues.put("id_pasajero", id);
+            String pasajeroWhereClause = "id_pasajero = ?";
+            String[] pasajeroWhereArgs = {id};
+            int pasajeroRowsAffected = database.update("Pasajero", pasajeroValues, pasajeroWhereClause, pasajeroWhereArgs);
+
+            if (usuarioRowsAffected > 0 || pasajeroRowsAffected > 0) {
+                database.setTransactionSuccessful();
+                Toast.makeText(this, "Usuario actualizado correctamente", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Error al actualizar el usuario", Toast.LENGTH_SHORT).show();
+            }
+        } catch (SQLiteException e) {
+            Toast.makeText(this, "Error en la actualización: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+        } finally {
+            database.endTransaction();
         }
     }
+
 }

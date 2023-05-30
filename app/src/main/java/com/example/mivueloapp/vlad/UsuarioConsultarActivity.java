@@ -56,12 +56,12 @@ public class UsuarioConsultarActivity extends AppCompatActivity {
         while (cursor.moveToNext()) {
             String idUsuario = cursor.getString(cursor.getColumnIndex("id_usuario"));
             String email = cursor.getString(cursor.getColumnIndex("email"));
-            String pasaporte = String.valueOf(cursor.getInt(cursor.getColumnIndex("pasaporte")));
+            String pasaporte = cursor.getString(cursor.getColumnIndex("pasaporte"));
             String contrasena = cursor.getString(cursor.getColumnIndex("contrasena"));
 
             String usuario = "ID: " + idUsuario + "\n" +
                     "Email: " + email + "\n" +
-                    "Numero de pasaporte" + pasaporte + "\n" +
+                    "Numero de pasaporte: " + pasaporte + "\n" +
                     "contraseña: " + contrasena;
 
             listaUsuarios.add(usuario);

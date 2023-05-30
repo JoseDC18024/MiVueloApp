@@ -10,56 +10,56 @@
         android:id="@+id/logoImageView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/logo_actualizarboleto"
-        android:scaleType="centerInside"
-        android:adjustViewBounds="true"
-        android:layout_marginBottom="16dp" />
+    android:src="@drawable/logo_actualizarboleto"
+     android:scaleType="centerInside"
+     android:adjustViewBounds="true"
+     android:layout_marginBottom="16dp" />
 
-    <EditText
-        android:id="@+id/editTextBuscarIdBoleto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="ID del Boleto a buscar" />
+ <EditText
+     android:id="@+id/editTextBuscarIdBoleto"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:hint="ID del Boleto a buscar" />
 
-    <Button
-        android:id="@+id/btnBuscar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Buscar"
-        android:onClick="buscarBoleto" />
+ <Button
+     android:id="@+id/btnBuscar"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="Buscar"
+     android:onClick="buscarBoleto" />
 
-    <EditText
-        android:id="@+id/editTextIdBoleto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="ID del Boleto"
-        android:enabled="false" />
+ <EditText
+     android:id="@+id/editTextIdBoleto"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:hint="ID del Boleto"
+     android:enabled="false" />
 
-    <EditText
-        android:id="@+id/editTextClaseBoleto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Clase del Boleto" />
+ <EditText
+     android:id="@+id/editTextClaseBoleto"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:hint="Clase del Boleto" />
 
-    <EditText
-        android:id="@+id/editTextPrecioBoleto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Precio del Boleto" />
+ <EditText
+     android:id="@+id/editTextPrecioBoleto"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:hint="Precio del Boleto" />
 
-    <EditText
-        android:id="@+id/editTextUbicacionAsiento"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Ubicación del Asiento" />
+ <EditText
+     android:id="@+id/editTextUbicacionAsiento"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:hint="Ubicación del Asiento" />
 
-    <Button
-        android:id="@+id/btnActualizar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Actualizar"
-        android:onClick="actualizarBoleto"
-        android:enabled="false" />
+ <Button
+     android:id="@+id/btnActualizar"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="Actualizar"
+     android:onClick="actualizarBoleto"
+     android:enabled="false" />
 
 
 

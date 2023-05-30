@@ -1,9 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.mivueloapp.vlad.ReclamoUpdateActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/editTextBuscarIdReclamo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID del reclamo a buscar" />
+
+    <Button
+        android:id="@+id/btnBuscar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Buscar"
+        android:onClick="buscarReclamo" />
+
+    <EditText
+        android:id="@+id/editTextIdReclamo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID del Reclamo"
+        android:enabled="false" />
+
+    <EditText
+        android:id="@+id/editTextFechaReclamo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Fecha del Reclamo" />
+
+    <EditText
+        android:id="@+id/editTextDescripcionReclamo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descripcion del Reclamo" />
+
+    <EditText
+        android:id="@+id/editTextEstado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="estado del reclamo" />
+
+    <Button
+        android:id="@+id/btnActualizar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Actualizar"
+        android:onClick="actualizarReclamo"
+        android:enabled="false" />
+
+
+</TableLayout>
+
+

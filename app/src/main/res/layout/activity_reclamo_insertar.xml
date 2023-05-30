@@ -1,9 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.mivueloapp.vlad.ReclamoInsertarActivity">
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="10dip"
+    android:stretchColumns="1" >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:id="@+id/editTextIdReclamo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID del Reclamo" />
+
+    <EditText
+        android:id="@+id/editTextFechaReclamo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Fecha del reclamo" />
+
+    <EditText
+        android:id="@+id/editTextDescripcionReclamo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Descripcion del reclamo" />
+
+    <EditText
+        android:id="@+id/editTextEstado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Estado del Reclamo" />
+
+    <Button
+        android:id="@+id/btnInsertar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Insertar"
+        android:onClick="insertarReclamo" />
+
+
+</TableLayout>

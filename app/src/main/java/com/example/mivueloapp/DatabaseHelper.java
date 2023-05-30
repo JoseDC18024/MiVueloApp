@@ -28,10 +28,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String CREATE_TABLE_RECLAMO = "CREATE TABLE Reclamo (\n" +
             "  id_reclamo VARCHAR(50) PRIMARY KEY,\n" +
-            "  fecha_reclamo DATE,\n" +
+            "  fecha_reclamo VARCHAR(20),\n" +
             "  descripcion_reclamo VARCHAR(255),\n" +
-            "  estado VARCHAR(20),\n" +
-            "  campo VARCHAR(50)\n" +
+            "  estado VARCHAR(20)\n" +
             ");";
 
     private static final String CREATE_TABLE_USUARIO = "CREATE TABLE Usuario (\n" +

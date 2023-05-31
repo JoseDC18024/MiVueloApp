@@ -9,11 +9,11 @@
     <ImageView
         android:id="@+id/logoImageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo_actualizareclamo"
-        android:scaleType="centerInside"
+        android:layout_height="180dp"
+        android:layout_marginBottom="16dp"
         android:adjustViewBounds="true"
-        android:layout_marginBottom="16dp" />
+        android:scaleType="centerInside"
+        android:src="@drawable/logo_actualizareclamo" />
 
     <EditText
         android:id="@+id/editTextBuscarIdReclamo"
@@ -39,6 +39,7 @@
         android:id="@+id/editTextFechaReclamo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="date"
         android:hint="Fecha del Reclamo" />
 
     <EditText

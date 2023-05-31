@@ -9,11 +9,11 @@
     <ImageView
         android:id="@+id/logoImageView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/logo_actualizarpasajero"
-        android:scaleType="centerInside"
+        android:layout_height="184dp"
+        android:layout_marginBottom="16dp"
         android:adjustViewBounds="true"
-        android:layout_marginBottom="16dp" />
+        android:scaleType="centerInside"
+        android:src="@drawable/logo_actualizarpasajero" />
 
     <EditText
         android:id="@+id/editTextBuscarIdPasajero"
@@ -45,6 +45,7 @@
         android:id="@+id/editTextFechaNacimiento"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="date"
         android:hint="Fecha de nacimiento del pasajero" />
 
     <EditText

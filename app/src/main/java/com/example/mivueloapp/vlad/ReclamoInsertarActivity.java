@@ -69,45 +69,48 @@ public class ReclamoInsertarActivity extends AppCompatActivity {
         }
         cursor.close();
 
-        // Verificar el formato de fecha del reclamo
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
-        try {
-            dateFormat.parse(fecha);
-        } catch (ParseException e) {
-            Toast.makeText(this, "Formato de fecha inválido. Debe ser dd/MM/yyyy", Toast.LENGTH_SHORT).show();
+        // Verificar el formato de fecha del reclamo utilizando una expresión regular (dd/MM/yyyy)
+        String fechaReclamoPattern = "^(?:3[01]|[12][0-9]|0?[1-9])([\\-/.])(0?[1-9]|1[1-2])\\1\\d{4}$";
+        if (!fecha.matches(fechaReclamoPattern)) {
+            Toast.makeText(this, "Formato de fecha inválido. Debe ser dd/MM/yyyy ", Toast.LENGTH_SHORT).show();
             return;
         }
 
         // Verificar el estado del reclamo
-        if (!estado.equals("activo") && !estado.equals("cancelado") && !estado.equals("solucionado") && !estado.equals("terminado")) {
+        if (!estado.matches("^(activo|cancelado|solucionado|terminado)$")) {
             Toast.makeText(this, "El estado del reclamo debe ser activo, cancelado, solucionado o terminado", Toast.LENGTH_SHORT).show();
             return;
         }
 
-        // Crear un objeto ContentValues para almacenar los valores a insertar
-        ContentValues values = new ContentValues();
-        values.put("id_reclamo", id);
-        values.put("fecha_reclamo", fecha);
-        values.put("descripcion_reclamo", descripcion);
-        values.put("estado", estado);
+        try {
+            // Crear un objeto ContentValues para almacenar los valores a insertar
+            ContentValues values = new ContentValues();
+            values.put("id_reclamo", id);
+            values.put("fecha_reclamo", fecha);
+            values.put("descripcion_reclamo", descripcion);
+            values.put("estado", estado);
 
-        // Insertar los valores en la tabla "Reclamo"
-        long resultado = database.insert("Reclamo", null, values);
+            // Insertar los valores en la tabla "Reclamo"
+            long resultado = database.insert("Reclamo", null, values);
 
-        if (resultado != -1) {
-            Toast.makeText(this, "Reclamo insertado correctamente", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Error al insertar el reclamo", Toast.LENGTH_SHORT).show();
+            if (resultado != -1) {
+                Toast.makeText(this, "Reclamo insertado correctamente", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Error al insertar el reclamo", Toast.LENGTH_SHORT).show();
+            }
+
+            // Limpiar los campos de texto
+            editIdReclamo.setText("");
+            editFechaReclamo.setText("");
+            editDescripcionReclamo.setText("");
+            editEstado.setText("");
+
+            // Restaurar el foco al primer campo de texto
+            editIdReclamo.requestFocus();
+        } catch (SQLiteException e) {
+            Toast.makeText(this, "Error en la inserción: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
-
-        // Limpiar los campos de texto
-        editIdReclamo.setText("");
-        editFechaReclamo.setText("");
-        editDescripcionReclamo.setText("");
-        editEstado.setText("");
-
-        // Restaurar el foco al primer campo de texto
-        editIdReclamo.requestFocus();
     }
+
 
 }

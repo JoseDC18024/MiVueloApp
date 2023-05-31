@@ -69,7 +69,7 @@ public class ReclamoUpdateActivity extends AppCompatActivity {
             findViewById(R.id.btnActualizar).setEnabled(true);
         } else {
             // El boleto no fue encontrado, mostrar un mensaje de error
-            Toast.makeText(this, "El reclamo no existe", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "El reclamo no existe ", Toast.LENGTH_SHORT).show();
         }
 
         cursor.close();
@@ -82,7 +82,7 @@ public class ReclamoUpdateActivity extends AppCompatActivity {
         String estado = editEstado.getText().toString();
 
         // Validar el formato de la fecha del reclamo utilizando una expresión regular (dd/mm/yyyy)
-        String fechaReclamoPattern = "^(0?[1-9]|1[0-2])/(0?[1-9]|[12][0-9]|3[01])/(19|20)\\d{2}$";
+        String fechaReclamoPattern = "^(?:3[01]|[12][0-9]|0?[1-9])([\\-/.])(0?[1-9]|1[1-2])\\1\\d{4}$";
         if (!fecha.matches(fechaReclamoPattern)) {
             Toast.makeText(this, "El formato de la fecha del reclamo no es válido. Debe ser dd/mm/yyyy", Toast.LENGTH_SHORT).show();
             return;
@@ -111,6 +111,14 @@ public class ReclamoUpdateActivity extends AppCompatActivity {
             } else {
                 Toast.makeText(this, "Error al actualizar el reclamo", Toast.LENGTH_SHORT).show();
             }
+            // Limpiar los campos de texto
+            editIdReclamo.setText("");
+            editFecha.setText("");
+            editDescripcionReclamo.setText("");
+            editEstado.setText("");
+
+            // Restaurar el foco al primer campo de texto
+            editIdReclamo.requestFocus();
         } catch (SQLiteException e) {
             Toast.makeText(this, "Error en la actualización: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }

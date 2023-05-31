@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".kevin.Vm17017CupoActualizarActivity">
 
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo_actualizarcupo"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:layout_marginBottom="16dp" />
+
     <EditText
         android:id="@+id/editTextBuscarIdCupo"
         android:layout_width="match_parent"

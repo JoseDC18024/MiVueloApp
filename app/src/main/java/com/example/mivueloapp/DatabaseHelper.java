@@ -8,6 +8,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "mivueloapp.s3db";
     private static final int DATABASE_VERSION = 1;
 
+    // Sentencia SQL para crear la tabla "cupo"
+    private static final String CREATE_TABLE_CUPO = "CREATE TABLE IF NOT EXISTS cupo (id_cupo CHAR(11) NOT NULL, " +
+            "cantidad_cupo INTEGER NOT NULL);";
+
     // Sentencia SQL para crear la tabla "avion"
     private static final String CREATE_TABLE_AVION = "CREATE TABLE IF NOT EXISTS avion (id_avion CHAR(11) PRIMARY KEY, " +
             "modelo_avion CHAR(30) NOT NULL, año_fabricacion INTEGER NOT NULL);";
@@ -175,6 +179,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_PASAJERO);
         db.execSQL(CREATE_TABLE_RECLAMO);
         db.execSQL(CREATE_TABLE_USUARIO);
+<<<<<<< Updated upstream
         db.execSQL(CREATE_TABLE_VUELO);
         db.execSQL(CREATE_TABLE_TRIPULACION_VUELO);
         db.execSQL(CREATE_TABLE_TRIPULANTE);
@@ -188,6 +193,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(evitar_duplicado_id_reclamo);
         db.execSQL(validar_email_usuario);
 
+=======
+        db.execSQL(CREATE_TABLE_CUPO);
+>>>>>>> Stashed changes
     }
 
     @Override

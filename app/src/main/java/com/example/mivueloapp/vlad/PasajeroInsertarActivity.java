@@ -88,6 +88,7 @@ public class PasajeroInsertarActivity extends AppCompatActivity {
             values.put("nombre_pasajero", nombre);
             values.put("fecha_nacimiento", fechaf);
             values.put("genero_pasajero", sexo);
+            
 
             // Insertar los valores en la tabla "pasajero"
             long resultado = database.insert("Pasajero", null, values);

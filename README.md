@@ -3,7 +3,7 @@ Desarrollo de una aplicación móvil MiVueloApp para la gestión de boletos aere
 
 Descripción📋: Esta aplicacion movil permite gestionar boletos aereos, guardar tickets, consultar, actualizar y eliminar cuando lo requiera. 
 
-Comenzando 🚀: Para abrir el proyecto de la aplicación en tu PC, para propósitos de desarrollo y pruebas, necesitas el IDE ANDROID STUDIO, compatible con: Windows, MAC, Linux, Chrome OS. Descargalo en: https://developer.android.com/studio?hl=es-419&gclid=Cj0KCQjwm6KUBhC3ARIsACIwxBgddWbp3wuGRj8FBd8cggqFARpi7pXZsN8fHXB32BgnwbAuw3dct24aAimAEALw_wcB&gclsrc=aw.ds#downloads.
+Comenzando 🚀: Para abrir el proyecto de la aplicación en tu PC, para propósitos de desarrollo y pruebas, necesitas el IDE ANDROID STUDIO, compatible con: Windows, MAC, Linux, Chrome OS. Descargalo en: https://developer.android.com/studio?hl=es-419&gclid=Cj0KCQjwm6KUBhC3ARIsACIwxBgddWbp3wuGRj8FBd8cggqFARpi7pXZsN8fHXB32BgnwbAuw3dct24aAimAEALw_wcB&gclsrc=aw.ds#downloads. Tome en cuenta que esta desarrollado en la version version '7.1.1'. (build.gradle)
 
 
 Requisitos moviles📋: Android 5.1 y versiones nuevas.

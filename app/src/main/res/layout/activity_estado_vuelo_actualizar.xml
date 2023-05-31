@@ -15,7 +15,21 @@
         android:adjustViewBounds="true"
         android:layout_marginBottom="16dp" />
 
-        <EditText
+    <EditText
+        android:id="@+id/editTextBuscarIdEstado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID del Estado a buscar" />
+
+    <Button
+        android:id="@+id/btnBuscarEstado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buscar"
+        android:onClick="buscarEstado" />
+
+
+    <EditText
             android:id="@+id/editIdEstado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,7 +48,7 @@
             android:hint="Tiempo de Retraso" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Actualizar"
             android:onClick="actualizarEstado" />

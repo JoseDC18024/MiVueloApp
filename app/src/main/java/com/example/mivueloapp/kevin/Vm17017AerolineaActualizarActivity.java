@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.example.mivueloapp.R;
 
-public class Vm17017InformeActualizarActivity extends AppCompatActivity {
+public class Vm17017AerolineaActualizarActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_vm17017_informe_actualizar);
+        setContentView(R.layout.activity_vm17017_aerolinea_actualizar);
     }
 }

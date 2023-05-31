@@ -179,7 +179,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_PASAJERO);
         db.execSQL(CREATE_TABLE_RECLAMO);
         db.execSQL(CREATE_TABLE_USUARIO);
-<<<<<<< Updated upstream
         db.execSQL(CREATE_TABLE_VUELO);
         db.execSQL(CREATE_TABLE_TRIPULACION_VUELO);
         db.execSQL(CREATE_TABLE_TRIPULANTE);
@@ -193,9 +192,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(evitar_duplicado_id_reclamo);
         db.execSQL(validar_email_usuario);
 
-=======
         db.execSQL(CREATE_TABLE_CUPO);
->>>>>>> Stashed changes
     }
 
     @Override

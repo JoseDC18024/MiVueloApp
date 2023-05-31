@@ -70,16 +70,16 @@
             android:name=".kevin.AvionMenuActivity"
             android:exported="false" />
         <activity
-            android:name=".kevin.Vm17017InformeEliminarActivity"
+            android:name=".kevin.Vm17017AerolineaEliminarActivity"
             android:exported="false" />
         <activity
-            android:name=".kevin.Vm17017InformeInsetarActivity"
+            android:name=".kevin.Vm17017AerolineaInsertarActivity"
             android:exported="false" />
         <activity
-            android:name=".kevin.Vm17017InformeActualizarActivity"
+            android:name=".kevin.Vm17017AerolineaActualizarActivity"
             android:exported="false" />
         <activity
-            android:name=".kevin.Vm17017InformeConsultarActivity"
+            android:name=".kevin.Vm17017AerolineaConsultarActivity"
             android:exported="false" />
         <activity
             android:name=".kevin.Vm17017CupoEliminarActivity"

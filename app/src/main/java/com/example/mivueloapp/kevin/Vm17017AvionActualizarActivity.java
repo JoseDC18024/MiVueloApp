@@ -17,12 +17,12 @@ public class Vm17017AvionActualizarActivity extends AppCompatActivity {
 
     private DatabaseHelper databaseHelper;
     private SQLiteDatabase database;
-    private EditText editTextBuscarIdBoleto, editTextIdBoleto, editTextClaseBoleto, editTextPrecioBoleto, editTextUbicacionAsiento;
+    private EditText editTextBuscarIdAvion, editTextIdAvion, editTextModeloAvion, editTextAñoFabricacion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_boletos_actualizar);
+        setContentView(R.layout.activity_vm17017_avion_actualizar);
 
         // Crear instancia del DatabaseHelper
         databaseHelper = new DatabaseHelper(this);
@@ -31,63 +31,59 @@ public class Vm17017AvionActualizarActivity extends AppCompatActivity {
         database = databaseHelper.getWritableDatabase();
 
         // Obtener referencias de los elementos de la interfaz de usuario
-        editTextBuscarIdBoleto = findViewById(R.id.editTextBuscarIdBoleto);
-        editTextIdBoleto = findViewById(R.id.editTextIdBoleto);
-        editTextClaseBoleto = findViewById(R.id.editTextClaseBoleto);
-        editTextPrecioBoleto = findViewById(R.id.editTextPrecioBoleto);
-        editTextUbicacionAsiento = findViewById(R.id.editTextUbicacionAsiento);
+        editTextBuscarIdAvion = findViewById(R.id.editTextBuscarIdAvion);
+        editTextIdAvion = findViewById(R.id.editTextIdAvion);
+        editTextModeloAvion = findViewById(R.id.editTextModeloAvion);
+        editTextAñoFabricacion = findViewById(R.id.editTextAñoFabricacion);
     }
 
     @SuppressLint("Range")
-    public void buscarBoleto(View view) {
-        String idBoleto = editTextBuscarIdBoleto.getText().toString();
+    public void buscarAvion(View view) {
+        String idAvion = editTextBuscarIdAvion.getText().toString();
 
-        // Realizar la consulta para obtener los datos del boleto
-        String[] projection = {"id_boleto", "clase_boleto", "precio_boleto", "ubicacion_asiento"};
-        String selection = "id_boleto = ?";
-        String[] selectionArgs = {idBoleto};
-        Cursor cursor = database.query("boleto", projection, selection, selectionArgs, null, null, null);
+        // Realizar la consulta para obtener los datos del avio6
+
+        String[] projection = {"id_avion", "modelo_avion", "año_fabricacion"};
+        String selection = "id_avion = ?";
+        String[] selectionArgs = {idAvion};
+        Cursor cursor = database.query("avion", projection, selection, selectionArgs, null, null, null);
 
         if (cursor.moveToFirst()) {
-            // El boleto fue encontrado, habilitar la edición y mostrar los datos
-            editTextIdBoleto.setEnabled(true);
-            editTextClaseBoleto.setEnabled(true);
-            editTextPrecioBoleto.setEnabled(true);
-            editTextUbicacionAsiento.setEnabled(true);
-            editTextIdBoleto.setText(cursor.getString(cursor.getColumnIndex("id_boleto")));
-            editTextClaseBoleto.setText(cursor.getString(cursor.getColumnIndex("clase_boleto")));
-            editTextPrecioBoleto.setText(String.valueOf(cursor.getInt(cursor.getColumnIndex("precio_boleto"))));
-            editTextUbicacionAsiento.setText(cursor.getString(cursor.getColumnIndex("ubicacion_asiento")));
+            // El avion fue encontrado, habilitar la edición y mostrar los datos
+            editTextIdAvion.setEnabled(true);
+            editTextModeloAvion.setEnabled(true);
+            editTextAñoFabricacion.setEnabled(true);
+            editTextIdAvion.setText(cursor.getString(cursor.getColumnIndex("id_avion")));
+            editTextModeloAvion.setText(cursor.getString(cursor.getColumnIndex("modelo_avion")));
+            editTextAñoFabricacion.setText(String.valueOf(cursor.getInt(cursor.getColumnIndex("año_fabricacion"))));
             findViewById(R.id.btnActualizar).setEnabled(true);
         } else {
-            // El boleto no fue encontrado, mostrar un mensaje de error
-            Toast.makeText(this, "El boleto no existe", Toast.LENGTH_SHORT).show();
+            // El avion no fue encontrado, mostrar un mensaje de error
+            Toast.makeText(this, "El avion no existe", Toast.LENGTH_SHORT).show();
         }
 
         cursor.close();
     }
 
-    public void actualizarBoleto(View view) {
-        String idBoleto = editTextIdBoleto.getText().toString();
-        String claseBoleto = editTextClaseBoleto.getText().toString();
-        int precioBoleto = Integer.parseInt(editTextPrecioBoleto.getText().toString());
-        String ubicacionAsiento = editTextUbicacionAsiento.getText().toString();
+    public void actualizarAvion(View view) {
+        String idAvion = editTextIdAvion.getText().toString();
+        String modeloAvion = editTextModeloAvion.getText().toString();
+        int anioFabricacion = Integer.parseInt(editTextAñoFabricacion.getText().toString());
 
         // Crear un objeto ContentValues para almacenar los valores a actualizar
         ContentValues values = new ContentValues();
-        values.put("clase_boleto", claseBoleto);
-        values.put("precio_boleto", precioBoleto);
-        values.put("ubicacion_asiento", ubicacionAsiento);
+        values.put("modelo_avion", modeloAvion);
+        values.put("año_fabricacion", anioFabricacion);
 
-        // Actualizar los valores en la tabla "boleto"
-        String whereClause = "id_boleto = ?";
-        String[] whereArgs = {idBoleto};
-        int rowsAffected = database.update("boleto", values, whereClause, whereArgs);
+        // Actualizar los valores en la tabla "avion"
+        String whereClause = "id_avion = ?";
+        String[] whereArgs = {idAvion};
+        int rowsAffected = database.update("avion", values, whereClause, whereArgs);
 
         if (rowsAffected > 0) {
-            Toast.makeText(this, "Boleto actualizado correctamente", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Avion actualizado correctamente", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "Error al actualizar el boleto", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Error al actualizar el avion", Toast.LENGTH_SHORT).show();
         }
     }
 }

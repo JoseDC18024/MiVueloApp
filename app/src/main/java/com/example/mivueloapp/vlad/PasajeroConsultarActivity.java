@@ -57,12 +57,12 @@ public class PasajeroConsultarActivity extends AppCompatActivity {
         while (cursor.moveToNext()) {
             String idPasajero = cursor.getString(cursor.getColumnIndex("id_pasajero"));
             String nombre = cursor.getString(cursor.getColumnIndex("nombre_pasajero"));
-            String fecha_nacimiento = String.valueOf(cursor.getInt(cursor.getColumnIndex("fecha_nacimiento")));
+            String fecha_nacimiento = cursor.getString(cursor.getColumnIndex("fecha_nacimiento"));
             String sexo = cursor.getString(cursor.getColumnIndex("genero_pasajero"));
 
             String pasajero = "ID: " + idPasajero + "\n" +
                     "Nombre: " + nombre + "\n" +
-                    "Fecha de Nacimiento" + fecha_nacimiento + "\n" +
+                    "Fecha de Nacimiento: " + fecha_nacimiento + "\n" +
                     "sexo: " + sexo;
 
             listaPasajeros.add(pasajero);

@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -63,7 +64,7 @@ public class ReclamoUpdateActivity extends AppCompatActivity {
             editEstado.setEnabled(true);
             editIdReclamo.setText(cursor.getString(cursor.getColumnIndex("id_reclamo")));
             editFecha.setText(cursor.getString(cursor.getColumnIndex("fecha_reclamo")));
-            editDescripcionReclamo.setText(String.valueOf(cursor.getInt(cursor.getColumnIndex("descripcion_reclamo"))));
+            editDescripcionReclamo.setText(cursor.getString(cursor.getColumnIndex("descripcion_reclamo")));
             editEstado.setText(cursor.getString(cursor.getColumnIndex("estado")));
             findViewById(R.id.btnActualizar).setEnabled(true);
         } else {
@@ -74,27 +75,46 @@ public class ReclamoUpdateActivity extends AppCompatActivity {
         cursor.close();
     }
 
-    public void actualizarReclamo(View view)  {
-        String id= editIdReclamo.getText().toString();
-        String fecha= editFecha.getText().toString();
-        String descripcion= editDescripcionReclamo.getText().toString();
-        String estado= editEstado.getText().toString();
+    public void actualizarReclamo(View view) {
+        String id = editIdReclamo.getText().toString();
+        String fecha = editFecha.getText().toString();
+        String descripcion = editDescripcionReclamo.getText().toString();
+        String estado = editEstado.getText().toString();
 
-        // Crear un objeto ContentValues para almacenar los valores a insertar
-        ContentValues values = new ContentValues();
-        values.put("id_reclamo", id);
-        values.put("fecha_reclamo", fecha);
-        values.put("descripcion_reclamo", descripcion);
-        values.put("estado", estado);
+        // Validar el formato de la fecha del reclamo utilizando una expresión regular (dd/mm/yyyy)
+        String fechaReclamoPattern = "^(0?[1-9]|1[0-2])/(0?[1-9]|[12][0-9]|3[01])/(19|20)\\d{2}$";
+        if (!fecha.matches(fechaReclamoPattern)) {
+            Toast.makeText(this, "El formato de la fecha del reclamo no es válido. Debe ser dd/mm/yyyy", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-        String whereClause = "id_reclamo = ?";
-        String[] whereArgs = {id};
-        int rowsAffected = database.update("Reclamo", values, whereClause, whereArgs);
+        // Validar que el estado del reclamo sea uno de los valores permitidos (activo, cancelado, solucionado, terminado)
+        String estadoPattern = "^(activo|cancelado|solucionado|terminado)$";
+        if (!estado.matches(estadoPattern)) {
+            Toast.makeText(this, "El estado del reclamo no es válido. Los valores permitidos son activo, cancelado, solucionado o terminado", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-        if (rowsAffected > 0) {
-            Toast.makeText(this, "Reclamo insertado correctamente", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Error al insertar el reclamo", Toast.LENGTH_SHORT).show();
+        try {
+            // Crear un objeto ContentValues para almacenar los valores a actualizar
+            ContentValues values = new ContentValues();
+            values.put("fecha_reclamo", fecha);
+            values.put("descripcion_reclamo", descripcion);
+            values.put("estado", estado);
+
+            String whereClause = "id_reclamo = ?";
+            String[] whereArgs = {id};
+            int rowsAffected = database.update("Reclamo", values, whereClause, whereArgs);
+
+            if (rowsAffected > 0) {
+                Toast.makeText(this, "Reclamo actualizado correctamente", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Error al actualizar el reclamo", Toast.LENGTH_SHORT).show();
+            }
+        } catch (SQLiteException e) {
+            Toast.makeText(this, "Error en la actualización: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
+
+
 }

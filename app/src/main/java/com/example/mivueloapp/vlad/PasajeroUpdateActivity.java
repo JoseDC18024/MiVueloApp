@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -65,7 +66,7 @@ public class PasajeroUpdateActivity extends AppCompatActivity {
             editSexo.setEnabled(true);
             editIdPasajero.setText(cursor.getString(cursor.getColumnIndex("id_pasajero")));
             editNombre.setText(cursor.getString(cursor.getColumnIndex("nombre_pasajero")));
-            editFechanacimiento.setText(String.valueOf(cursor.getInt(cursor.getColumnIndex("fecha_nacimiento"))));
+            editFechanacimiento.setText(cursor.getString(cursor.getColumnIndex("fecha_nacimiento")));
             editSexo.setText(cursor.getString(cursor.getColumnIndex("genero_pasajero")));
             findViewById(R.id.btnActualizar).setEnabled(true);
         } else {
@@ -76,27 +77,46 @@ public class PasajeroUpdateActivity extends AppCompatActivity {
         cursor.close();
     }
 
-    public void actualizarPasajero(View view) throws ParseException {
-        String id=editIdPasajero.getText().toString();
-        String nombre=editNombre.getText().toString();
-        String fechaf=editFechanacimiento.getText().toString();
-        String sexo=editSexo.getText().toString();
+    public void actualizarPasajero(View view) {
+        String id = editIdPasajero.getText().toString();
+        String nombre = editNombre.getText().toString();
+        String fechaf = editFechanacimiento.getText().toString();
+        String sexo = editSexo.getText().toString();
 
-        // Crear un objeto ContentValues para almacenar los valores a insertar
-        ContentValues values = new ContentValues();
-        values.put("id_pasajero", id);
-        values.put("nombre_pasajero", nombre);
-        values.put("fecha_nacimiento", fechaf);
-        values.put("genero_pasajero", sexo);
+        // Validar el formato de la fecha de nacimiento utilizando una expresión regular (dd/mm/yyyy)
+        String fechaNacimientoPattern = "^(0?[1-9]|1[0-2])/(0?[1-9]|[12][0-9]|3[01])/(19|20)\\d{2}$";
+        if (!fechaf.matches(fechaNacimientoPattern)) {
+            Toast.makeText(this, "El formato de la fecha de nacimiento no es válido. Debe ser dd/mm/yyyy", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-        String whereClause = "id_pasajero = ?";
-        String[] whereArgs = {id};
-        int rowsAffected = database.update("Pasajero", values, whereClause, whereArgs);
+        // Validar que el género sea válido (M, F, Masculino, Femenino)
+        String generoPattern = "^(M|F|Masculino|Femenino)$";
+        if (!sexo.matches(generoPattern)) {
+            Toast.makeText(this, "El género no es válido. Los valores permitidos son M, F, Masculino o Femenino", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-        if (rowsAffected > 0) {
-            Toast.makeText(this, "Pasajero insertado correctamente", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Error al insertar el pasajero", Toast.LENGTH_SHORT).show();
+        try {
+            // Crear un objeto ContentValues para almacenar los valores a actualizar
+            ContentValues values = new ContentValues();
+            values.put("nombre_pasajero", nombre);
+            values.put("fecha_nacimiento", fechaf);
+            values.put("genero_pasajero", sexo);
+
+            String whereClause = "id_pasajero = ?";
+            String[] whereArgs = {id};
+            int rowsAffected = database.update("Pasajero", values, whereClause, whereArgs);
+
+            if (rowsAffected > 0) {
+                Toast.makeText(this, "Pasajero actualizado correctamente", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Error al actualizar el pasajero", Toast.LENGTH_SHORT).show();
+            }
+        } catch (SQLiteException e) {
+            Toast.makeText(this, "Error en la actualización: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
+
+
 }

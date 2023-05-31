@@ -3,7 +3,9 @@ package com.example.mivueloapp.vlad;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -11,6 +13,10 @@ import android.widget.Toast;
 
 import com.example.mivueloapp.DatabaseHelper;
 import com.example.mivueloapp.R;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 public class ReclamoInsertarActivity extends AppCompatActivity {
 
@@ -40,10 +46,43 @@ public class ReclamoInsertarActivity extends AppCompatActivity {
     }
 
     public void insertarReclamo(View view) {
-        String id= editIdReclamo.getText().toString();
-        String fecha=editFechaReclamo.getText().toString();
-        String descripcion= editDescripcionReclamo.getText().toString();
-        String estado=editEstado.getText().toString();
+        String id = editIdReclamo.getText().toString();
+        String fecha = editFechaReclamo.getText().toString();
+        String descripcion = editDescripcionReclamo.getText().toString();
+        String estado = editEstado.getText().toString();
+
+        // Verificar el formato del ID de reclamo
+        if (!id.matches("[A-Za-z0-9]+")) {
+            Toast.makeText(this, "El ID del reclamo debe contener solo letras y números", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Verificar si el ID de reclamo ya existe en la base de datos
+        Cursor cursor = database.rawQuery("SELECT COUNT(*) FROM Reclamo WHERE id_reclamo = ?", new String[]{id});
+        if (cursor.moveToFirst()) {
+            int count = cursor.getInt(0);
+            if (count > 0) {
+                Toast.makeText(this, "El ID del reclamo ya existe", Toast.LENGTH_SHORT).show();
+                cursor.close();
+                return;
+            }
+        }
+        cursor.close();
+
+        // Verificar el formato de fecha del reclamo
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
+        try {
+            dateFormat.parse(fecha);
+        } catch (ParseException e) {
+            Toast.makeText(this, "Formato de fecha inválido. Debe ser dd/MM/yyyy", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Verificar el estado del reclamo
+        if (!estado.equals("activo") && !estado.equals("cancelado") && !estado.equals("solucionado") && !estado.equals("terminado")) {
+            Toast.makeText(this, "El estado del reclamo debe ser activo, cancelado, solucionado o terminado", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         // Crear un objeto ContentValues para almacenar los valores a insertar
         ContentValues values = new ContentValues();
@@ -52,13 +91,23 @@ public class ReclamoInsertarActivity extends AppCompatActivity {
         values.put("descripcion_reclamo", descripcion);
         values.put("estado", estado);
 
-        // Insertar los valores en la tabla "pasajero"
+        // Insertar los valores en la tabla "Reclamo"
         long resultado = database.insert("Reclamo", null, values);
 
         if (resultado != -1) {
-            Toast.makeText(this, "reclamo insertado correctamente", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Reclamo insertado correctamente", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "Error al insertar el reclamo", Toast.LENGTH_SHORT).show();
         }
+
+        // Limpiar los campos de texto
+        editIdReclamo.setText("");
+        editFechaReclamo.setText("");
+        editDescripcionReclamo.setText("");
+        editEstado.setText("");
+
+        // Restaurar el foco al primer campo de texto
+        editIdReclamo.requestFocus();
     }
+
 }

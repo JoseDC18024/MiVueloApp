@@ -56,12 +56,12 @@ public class ReclamoConsultarActivity extends AppCompatActivity {
         while (cursor.moveToNext()) {
             String idReclamo = cursor.getString(cursor.getColumnIndex("id_reclamo"));
             String fecha = cursor.getString(cursor.getColumnIndex("fecha_reclamo"));
-            String descripcion = String.valueOf(cursor.getInt(cursor.getColumnIndex("descripcion_reclamo")));
+            String descripcion = cursor.getString(cursor.getColumnIndex("descripcion_reclamo"));
             String estado = cursor.getString(cursor.getColumnIndex("estado"));
 
             String reclamo = "ID: " + idReclamo + "\n" +
                     "fecha del reclamo: " + fecha + "\n" +
-                    "Descripcion del reclamo" + descripcion + "\n" +
+                    "Descripcion del reclamo: " + descripcion + "\n" +
                     "estado: " + estado;
 
             listaReclamos.add(reclamo);

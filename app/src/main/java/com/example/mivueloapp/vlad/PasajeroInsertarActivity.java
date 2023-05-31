@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -46,25 +48,58 @@ public class PasajeroInsertarActivity extends AppCompatActivity {
     }
 
     public void insertarPasajero(View view) {
-        String id=editIdPasajero.getText().toString();
-        String nombre=editNombre.getText().toString();
-        String fechaf=editFechanacimiento.getText().toString();
-        String sexo=editSexo.getText().toString();
+        String id = editIdPasajero.getText().toString();
+        String nombre = editNombre.getText().toString();
+        String fechaf = editFechanacimiento.getText().toString();
+        String sexo = editSexo.getText().toString();
 
-        // Crear un objeto ContentValues para almacenar los valores a insertar
-        ContentValues values = new ContentValues();
-        values.put("id_pasajero", id);
-        values.put("nombre_pasajero", nombre);
-        values.put("fecha_nacimiento", fechaf);
-        values.put("genero_pasajero", sexo);
+        // Verificar si el ID del pasajero ya existe en la tabla
+        String query = "SELECT COUNT(*) FROM Pasajero WHERE id_pasajero = ?";
+        String[] selectionArgs = {id};
+        Cursor cursor = database.rawQuery(query, selectionArgs);
+        if (cursor.moveToFirst()) {
+            int rowCount = cursor.getInt(0);
+            if (rowCount > 0) {
+                Toast.makeText(this, "El ID del pasajero ya existe", Toast.LENGTH_SHORT).show();
+                cursor.close();
+                return;
+            }
+        }
+        cursor.close();
 
-        // Insertar los valores en la tabla "pasajero"
-        long resultado = database.insert("Pasajero", null, values);
+        // Validar el formato de la fecha de nacimiento utilizando una expresión regular (dd/mm/yyyy)
+        String fechaNacimientoPattern = "^(0?[1-9]|1[0-2])/(0?[1-9]|[12][0-9]|3[01])/(19|20)\\d{2}$";
+        if (!fechaf.matches(fechaNacimientoPattern)) {
+            Toast.makeText(this, "El formato de la fecha de nacimiento no es válido. Debe ser dd/mm/yyyy", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
-        if (resultado != -1) {
-            Toast.makeText(this, "Pasajero insertado correctamente", Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "Error al insertar el pasajero", Toast.LENGTH_SHORT).show();
+        // Validar que el género sea válido (M, F, Masculino, Femenino)
+        String generoPattern = "^(M|F|Masculino|Femenino)$";
+        if (!sexo.matches(generoPattern)) {
+            Toast.makeText(this, "El género no es válido. Los valores permitidos son M, F, Masculino o Femenino", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        try {
+            // Crear un objeto ContentValues para almacenar los valores a insertar
+            ContentValues values = new ContentValues();
+            values.put("id_pasajero", id);
+            values.put("nombre_pasajero", nombre);
+            values.put("fecha_nacimiento", fechaf);
+            values.put("genero_pasajero", sexo);
+
+            // Insertar los valores en la tabla "pasajero"
+            long resultado = database.insert("Pasajero", null, values);
+
+            if (resultado != -1) {
+                Toast.makeText(this, "Pasajero insertado correctamente", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Error al insertar el pasajero", Toast.LENGTH_SHORT).show();
+            }
+        } catch (SQLiteException e) {
+            Toast.makeText(this, "Error en la inserción: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
+
 }

@@ -6,6 +6,15 @@
     android:padding="16dp"
     tools:context=".joselucero.TripulanteConsultarActivity">
 
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo_consultartripulante"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:layout_marginBottom="16dp" />
+
     <ListView
         android:id="@+id/tripulanteListV"
         android:layout_width="match_parent"

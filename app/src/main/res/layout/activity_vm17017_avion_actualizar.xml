@@ -56,7 +56,4 @@
         android:onClick="actualizarAvion"
         android:enabled="false" />
 
-
-
-
 </TableLayout>

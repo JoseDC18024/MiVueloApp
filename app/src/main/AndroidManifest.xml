@@ -61,7 +61,7 @@
             android:name=".joselucero.VueloMenuActivity"
             android:exported="false" />
         <activity
-            android:name=".kevin.InformeMenuActivity"
+            android:name=".kevin.AerolineaMenuActivity"
             android:exported="false" />
         <activity
             android:name=".kevin.CupoMenuActivity"

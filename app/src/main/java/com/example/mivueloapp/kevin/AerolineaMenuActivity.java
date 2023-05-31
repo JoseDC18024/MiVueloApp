@@ -1,7 +1,5 @@
 package com.example.mivueloapp.kevin;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 
 import android.app.ListActivity;
 import android.content.Intent;
@@ -10,10 +8,10 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class InformeMenuActivity extends ListActivity {
+public class AerolineaMenuActivity extends ListActivity {
 
-    String[] menu = {"Insertar Informe", "Consultar Informe", "Actualizar Informe", "Eliminar Informe"};
-    String[] activities = {"Vm17017InformeInsetarActivity", "Vm17017InformeConsultarActivity", "Vm17017InformeActualizarActivity", "Vm17017InformeEliminarActivity"};
+    String[] menu = {"Insertar Aerolinea", "Consultar Aerolinea", "Actualizar Aerolinea", "Eliminar Aerolinea"};
+    String[] activities = {"Vm17017AerolineaInsertarActivity", "Vm17017AerolineaConsultarActivity", "Vm17017AerolineaActualizarActivity", "Vm17017AerolineaEliminarActivity"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

@@ -9,16 +9,41 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     // Sentencia SQL para crear la tabla "cupo"
-    private static final String CREATE_TABLE_CUPO = "CREATE TABLE IF NOT EXISTS cupo (id_cupo CHAR(11) PRIMARY KEY, " +
-            "cantidad_cupo INTEGER NOT NULL);";
+    private static final String CREATE_TABLE_CUPO = "CREATE TABLE IF NOT EXISTS cupo (id_cupo CHAR(11) NOT NULL, " +
+            "cantidad_cupo INTEGER NOT NULL, " +
+            "id_vuelo CHAR(11) NOT NULL, " +
+            "id_avion CHAR(11) NOT NULL, " +
+            "PRIMARY KEY (id_cupo), " +
+            "FOREIGN KEY (id_vuelo) REFERENCES vuelo(id_vuelo), " +
+            "FOREIGN KEY (id_avion) REFERENCES avion(id_avion));";
+
+    //Tigger para la tabla cupo
+    private static final String CREATE_TRIGGER_VALIDAR_CUPO = "CREATE TRIGGER IF NOT EXISTS validar_cupo " +
+            "BEFORE INSERT ON cupo " +
+            "FOR EACH ROW BEGIN " +
+            "SELECT RAISE(ABORT, 'El ID de vuelo no existe') " +
+            "WHERE (SELECT COUNT(*) FROM vuelo WHERE id_vuelo = NEW.id_vuelo) = 0; " +
+            "SELECT RAISE(ABORT, 'El ID de avion no existe') " +
+            "WHERE (SELECT COUNT(*) FROM avion WHERE id_avion = NEW.id_avion) = 0; " +
+            "END;";
+
+    // Sentencia SQL para crear la tabla "avion"
+    private static final String CREATE_TABLE_AVION = "CREATE TABLE IF NOT EXISTS avion (id_avion CHAR(11) PRIMARY KEY, " +
+            "modelo_avion CHAR(30) NOT NULL, año_fabricacion INTEGER NOT NULL, " +
+            "id_aerolinea CHAR(11) NOT NULL, " +
+            "FOREIGN KEY (id_aerolinea) REFERENCES aerolinea(id_aerolinea));";
+
+    // Tigger para la tabla avion
+    private static final String CREATE_TRIGGER_VALIDAR_AEROLINEA = "CREATE TRIGGER IF NOT EXISTS validar_aerolinea " +
+            "BEFORE INSERT ON avion " +
+            "FOR EACH ROW BEGIN " +
+            "SELECT RAISE(ABORT, 'El ID de aerolínea no existe') " +
+            "WHERE (SELECT COUNT(*) FROM aerolinea WHERE id_aerolinea = NEW.id_aerolinea) = 0; " +
+            "END;";
 
     // Sentencia SQL para crear la tabla "aerolinea"
     private static final String CREATE_TABLE_AEROLINEA = "CREATE TABLE IF NOT EXISTS aerolinea (id_aerolinea CHAR(11) PRIMARY KEY, " +
             "nombre_aerolinea CHAR(30) NOT NULL, pais_aerolinea CHAR(50) NOT NULL, fecha_aerolinea CHAR(20) NOT NULL);";
-
-    // Sentencia SQL para crear la tabla "avion"
-    private static final String CREATE_TABLE_AVION = "CREATE TABLE IF NOT EXISTS avion (id_avion CHAR(11) PRIMARY KEY, " +
-            "modelo_avion CHAR(30) NOT NULL, año_fabricacion INTEGER NOT NULL);";
 
     // Sentencia SQL para crear la tabla "boleto"
     private static final String CREATE_TABLE_BOLETO = "CREATE TABLE boleto (id_boleto CHAR(11) PRIMARY KEY, " +
@@ -196,7 +221,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_PAGO);
         db.execSQL(CREATE_TABLE_RESERVACION);
         db.execSQL(CREATE_TABLE_AGENCIA_VIAJES);
-
+        db.execSQL(CREATE_TABLE_CUPO);
 
         //triggers desactivados
         /*
@@ -208,8 +233,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(evitar_duplicado_id_reclamo);
         db.execSQL(validar_email_usuario);
         */
-
-        db.execSQL(CREATE_TABLE_CUPO);
+        db.execSQL(CREATE_TRIGGER_VALIDAR_CUPO);
+        db.execSQL(CREATE_TRIGGER_VALIDAR_AEROLINEA);
     }
 
     @Override

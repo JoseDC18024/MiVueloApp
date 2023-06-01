@@ -7,6 +7,15 @@
     android:padding="16dp"
     tools:context=".bryangrande.AgenciaActualizarActivity">
 
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo_consultaragencia"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:layout_marginBottom="16dp" />
+
     <ListView
         android:id="@+id/AgenciaLV"
         android:layout_width="match_parent"

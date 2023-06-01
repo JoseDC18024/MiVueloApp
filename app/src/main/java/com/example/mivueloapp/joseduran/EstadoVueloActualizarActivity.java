@@ -1,5 +1,6 @@
 package com.example.mivueloapp.joseduran;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -14,7 +15,7 @@ import com.example.mivueloapp.DatabaseHelper;
 import com.example.mivueloapp.R;
 
 public class EstadoVueloActualizarActivity extends AppCompatActivity {
-    private EditText editIdEstado, editDescripcionEstado, editTiempoRetraso;
+    private EditText editIdEstado, editDescripcionEstado, editTiempoRetraso, editTextBuscarIdEstado;
     private SQLiteDatabase database;
 
     @Override
@@ -26,11 +27,39 @@ public class EstadoVueloActualizarActivity extends AppCompatActivity {
         editIdEstado = findViewById(R.id.editIdEstado);
         editDescripcionEstado = findViewById(R.id.editDescripcionEstado);
         editTiempoRetraso = findViewById(R.id.editTiempoRetraso);
+        editTextBuscarIdEstado = findViewById(R.id.editTextBuscarIdEstado);
 
         // Obtener instancia de la base de datos
         DatabaseHelper dbHelper = new DatabaseHelper(this);
         database = dbHelper.getWritableDatabase();
     }
+
+        @SuppressLint("Range")
+        public void buscarEstado(View view) {
+            String idEstado = editTextBuscarIdEstado.getText().toString();
+
+            // Realizar la consulta para obtener los datos del boleto
+            String[] projection = {"id_estado", "descripcion_estado", "tiempo_retraso"};
+            String selection = "id_estado = ?";
+            String[] selectionArgs = {idEstado};
+            Cursor cursor = database.query("estado_vuelo", projection, selection, selectionArgs, null, null, null);
+
+            if (cursor.moveToFirst()) {
+                // El boleto fue encontrado, habilitar la edición y mostrar los datos
+                editIdEstado.setEnabled(true);
+                editDescripcionEstado.setEnabled(true);
+                editTiempoRetraso.setEnabled(true);
+                editIdEstado.setText(cursor.getString(cursor.getColumnIndex("id_estado")));
+                editDescripcionEstado.setText(cursor.getString(cursor.getColumnIndex("descripcion_estado")));
+                editTiempoRetraso.setText(String.valueOf(cursor.getInt(cursor.getColumnIndex("tiempo_retraso"))));
+                findViewById(R.id.btnBuscarEstado).setEnabled(true);
+            } else {
+                // El Estado no fue encontrado, mostrar un mensaje de error
+                Toast.makeText(this, "El Estado no existe", Toast.LENGTH_SHORT).show();
+            }
+
+            cursor.close();
+        }
 
     public void actualizarEstado(View view) {
         String idEstado = editIdEstado.getText().toString();

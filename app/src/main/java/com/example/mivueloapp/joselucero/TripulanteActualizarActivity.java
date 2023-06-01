@@ -1,6 +1,8 @@
 package com.example.mivueloapp.joselucero;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import com.example.mivueloapp.DatabaseHelper;
 import com.example.mivueloapp.R;
@@ -16,7 +18,9 @@ public class TripulanteActualizarActivity extends AppCompatActivity {
     private EditText idTripulanteEditText;
     private EditText nombreTripulanteEditText;
     private EditText campoEditText;
+    private EditText editTextBuscarIdTripulante;
     private Button actualizarButton;
+    private Button buscarTripulante;
 
     private DatabaseHelper databaseHelper;
     private SQLiteDatabase database;
@@ -25,17 +29,45 @@ public class TripulanteActualizarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tripulante_actualizar);
-
+        editTextBuscarIdTripulante = findViewById(R.id.editTextBuscarIdTripulante);
         idTripulanteEditText = findViewById(R.id.idTripulanteEditText);
         nombreTripulanteEditText = findViewById(R.id.nombreTripulanteEDT);
         campoEditText = findViewById(R.id.campoEDT);
         actualizarButton = findViewById(R.id.actualizarButton);
+        buscarTripulante = findViewById(R.id.btnBuscarTripulante);
 
         // Crear instancia del DatabaseHelper
         databaseHelper = new DatabaseHelper(this);
 
         // Obtener una referencia a la base de datos (esto creará la base de datos si no existe)
         database = databaseHelper.getWritableDatabase();
+
+    }
+    @SuppressLint("Range")
+    public void buscarTripulante(View view) {
+        String idTripulante = editTextBuscarIdTripulante.getText().toString();
+
+        // Realizar la consulta para obtener los datos del boleto
+        String[] projection = {"id_tripulante", "nombre_tripulante", "campo"};
+        String selection = "id_tripulante = ?";
+        String[] selectionArgs = {idTripulante};
+        Cursor cursor = database.query("tripulante", projection, selection, selectionArgs, null, null, null);
+
+        if (cursor.moveToFirst()) {
+            // El tripulante fue encontrado, habilitar la edición y mostrar los datos
+            idTripulanteEditText.setEnabled(true);
+            nombreTripulanteEditText.setEnabled(true);
+            campoEditText.setEnabled(true);
+            idTripulanteEditText.setText(cursor.getString(cursor.getColumnIndex("id_tripulante")));
+            nombreTripulanteEditText.setText(cursor.getString(cursor.getColumnIndex("nombre_tripulante")));
+            campoEditText.setText(cursor.getString(cursor.getColumnIndex("campo")));
+            findViewById(R.id.actualizarButton).setEnabled(true);
+        } else {
+            // El tripulante no fue encontrado, mostrar un mensaje de error
+            Toast.makeText(this, "El Tripulante no existe", Toast.LENGTH_SHORT).show();
+        }
+
+        cursor.close();
 
         actualizarButton.setOnClickListener(new View.OnClickListener() {
             @Override

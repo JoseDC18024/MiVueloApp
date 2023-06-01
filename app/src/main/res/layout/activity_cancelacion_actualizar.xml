@@ -16,6 +16,19 @@
             android:src="@drawable/logo_actualizarcancelacion" />
 
         <EditText
+            android:id="@+id/editTextBuscarIdCancelacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID del Cancelacion a buscar" />
+
+        <Button
+            android:id="@+id/btnBuscarCancelacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buscar"
+            android:onClick="buscarCancelacion" />
+
+        <EditText
             android:id="@+id/idCancelacionEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -29,24 +42,26 @@
             android:hint="Motivo Cancelación" />
 
         <EditText
-            android:id="@+id/hastaFechaEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/motivoCancelacionEditText"
-            android:hint="Hasta Fecha" />
-
-        <EditText
             android:id="@+id/desdeFechaEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/hastaFechaEditText"
             android:hint="Desde Fecha" />
 
+        <EditText
+            android:id="@+id/hastaFechaEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/motivoCancelacionEditText"
+            android:hint="Hasta Fecha" />
+
+
         <Button
             android:id="@+id/actualizarButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/desdeFechaEditText"
-            android:text="Actualizar" />
+            android:text="Actualizar"
+            android:enabled="false" />
 
 </LinearLayout>

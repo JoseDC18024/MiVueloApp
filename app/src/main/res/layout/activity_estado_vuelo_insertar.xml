@@ -34,7 +34,7 @@
             android:hint="Tiempo de Retraso" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Insertar"
             android:onClick="insertarEstado" />

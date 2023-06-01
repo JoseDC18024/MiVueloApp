@@ -2,6 +2,8 @@ package com.example.mivueloapp.joselucero;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.os.Bundle;
 import com.example.mivueloapp.DatabaseHelper;
@@ -17,6 +19,8 @@ import android.widget.Toast;
 public class TripulacionActualizarActivity extends AppCompatActivity {
     private EditText numeroTripulanteEditText;
     private EditText puestoTripulacionEditText;
+    private EditText editTextBuscarNTripulacion;
+    private Button buscarTripulacion;
     private Button actualizarButton;
 
     private DatabaseHelper databaseHelper;
@@ -26,9 +30,10 @@ public class TripulacionActualizarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tripulacion_actualizar);
-
+        editTextBuscarNTripulacion = findViewById(R.id.editTextBuscarNTripulacion);
         numeroTripulanteEditText = findViewById(R.id.numeroTripulanteEditText);
         puestoTripulacionEditText = findViewById(R.id.puestoTripulacionEditText);
+        buscarTripulacion = findViewById(R.id.btnBuscarTripulacion);
         actualizarButton = findViewById(R.id.actualizarButton);
 
         // Crear instancia del DatabaseHelper
@@ -36,6 +41,31 @@ public class TripulacionActualizarActivity extends AppCompatActivity {
 
         // Obtener una referencia a la base de datos (esto creará la base de datos si no existe)
         database = databaseHelper.getWritableDatabase();
+
+    }
+    @SuppressLint("Range")
+    public void buscarTripulacion(View view) {
+        String idTripulante = editTextBuscarNTripulacion.getText().toString();
+
+        // Realizar la consulta para obtener los datos del boleto
+        String[] projection = {"numero_tripulante", "puesto_tripulacion"};
+        String selection = "numero_tripulante = ?";
+        String[] selectionArgs = {idTripulante};
+        Cursor cursor = database.query("tripulacion_vuelo", projection, selection, selectionArgs, null, null, null);
+
+        if (cursor.moveToFirst()) {
+            // El tripulante fue encontrado, habilitar la edición y mostrar los datos
+            numeroTripulanteEditText.setEnabled(true);
+            puestoTripulacionEditText.setEnabled(true);
+            numeroTripulanteEditText.setText(cursor.getString(cursor.getColumnIndex("numero_tripulante")));
+            puestoTripulacionEditText.setText(cursor.getString(cursor.getColumnIndex("puesto_tripulacion")));
+            findViewById(R.id.actualizarButton).setEnabled(true);
+        } else {
+            // El tripulante no fue encontrado, mostrar un mensaje de error
+            Toast.makeText(this, "El Tripulante no existe", Toast.LENGTH_SHORT).show();
+        }
+
+        cursor.close();
 
         actualizarButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -16,6 +16,19 @@
         android:layout_marginBottom="16dp" />
 
     <EditText
+        android:id="@+id/editTextBuscarIdTripulante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID del Tripulante a buscar" />
+
+    <Button
+        android:id="@+id/btnBuscarTripulante"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buscar"
+        android:onClick="buscarTripulante" />
+
+    <EditText
         android:id="@+id/idTripulanteEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,8 +48,9 @@
 
     <Button
         android:id="@+id/actualizarButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Actualizar" />
+        android:text="Actualizar"
+        android:enabled="false" />
 
 </LinearLayout>

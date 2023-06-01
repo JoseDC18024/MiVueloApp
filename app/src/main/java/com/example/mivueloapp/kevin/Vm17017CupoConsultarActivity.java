@@ -52,15 +52,19 @@ public class Vm17017CupoConsultarActivity extends AppCompatActivity {
         List<String> listaCupos = new ArrayList<>();
 
         // Realizar la consulta para obtener todos los cupos
-        String[] projection = {"id_cupo", "cantidad_cupo"};
+        String[] projection = {"id_cupo", "cantidad_cupo", "id_avion", "id_vuelo"};
         Cursor cursor = database.query("cupo", projection, null, null, null, null, null);
 
         // Iterar sobre el cursor y agregar los boletos a la lista
         while (cursor.moveToNext()) {
             String idCupo = cursor.getString(cursor.getColumnIndex("id_cupo"));
+            String idVuelo = cursor.getString(cursor.getColumnIndex("id_vuelo"));
+            String idAvion = cursor.getString(cursor.getColumnIndex("id_avion"));
             int cantidadCupo = cursor.getInt(cursor.getColumnIndex("cantidad_cupo"));
 
             String cupo = "ID: " + idCupo + "\n" +
+                    "Vuelo: " + idVuelo + "\n"+
+                    "Avion: " + idAvion + "\n"+
                     "Cupos: " + cantidadCupo + "\n";
 
             listaCupos.add(cupo);

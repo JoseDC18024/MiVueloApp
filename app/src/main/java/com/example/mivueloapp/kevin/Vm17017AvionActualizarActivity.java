@@ -17,7 +17,7 @@ public class Vm17017AvionActualizarActivity extends AppCompatActivity {
 
     private DatabaseHelper databaseHelper;
     private SQLiteDatabase database;
-    private EditText editTextBuscarIdAvion, editTextIdAvion, editTextModeloAvion, editTextAñoFabricacion;
+    private EditText editTextBuscarIdAvion, editTextIdAvion, editTextModeloAvion, editTextAñoFabricacion, editTextIdAerolinea;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,8 @@ public class Vm17017AvionActualizarActivity extends AppCompatActivity {
         editTextIdAvion = findViewById(R.id.editTextIdAvion);
         editTextModeloAvion = findViewById(R.id.editTextModeloAvion);
         editTextAñoFabricacion = findViewById(R.id.editTextAñoFabricacion);
+        editTextIdAerolinea = findViewById(R.id.editTextIdAerolinea);
+
     }
 
     @SuppressLint("Range")
@@ -43,7 +45,7 @@ public class Vm17017AvionActualizarActivity extends AppCompatActivity {
 
         // Realizar la consulta para obtener los datos del avio6
 
-        String[] projection = {"id_avion", "modelo_avion", "año_fabricacion"};
+        String[] projection = {"id_avion", "modelo_avion", "año_fabricacion", "id_aerolinea"};
         String selection = "id_avion = ?";
         String[] selectionArgs = {idAvion};
         Cursor cursor = database.query("avion", projection, selection, selectionArgs, null, null, null);
@@ -56,6 +58,7 @@ public class Vm17017AvionActualizarActivity extends AppCompatActivity {
             editTextIdAvion.setText(cursor.getString(cursor.getColumnIndex("id_avion")));
             editTextModeloAvion.setText(cursor.getString(cursor.getColumnIndex("modelo_avion")));
             editTextAñoFabricacion.setText(String.valueOf(cursor.getInt(cursor.getColumnIndex("año_fabricacion"))));
+            editTextIdAerolinea.setText(cursor.getString(cursor.getColumnIndex("id_aerolinea")));
             findViewById(R.id.btnActualizar).setEnabled(true);
         } else {
             // El avion no fue encontrado, mostrar un mensaje de error
@@ -69,11 +72,13 @@ public class Vm17017AvionActualizarActivity extends AppCompatActivity {
         String idAvion = editTextIdAvion.getText().toString();
         String modeloAvion = editTextModeloAvion.getText().toString();
         int anioFabricacion = Integer.parseInt(editTextAñoFabricacion.getText().toString());
+        String idAerolinea = editTextIdAerolinea.getText().toString();
 
         // Crear un objeto ContentValues para almacenar los valores a actualizar
         ContentValues values = new ContentValues();
         values.put("modelo_avion", modeloAvion);
         values.put("año_fabricacion", anioFabricacion);
+        values.put("id_aerolinea", idAerolinea);
 
         // Actualizar los valores en la tabla "avion"
         String whereClause = "id_avion = ?";

@@ -47,6 +47,12 @@
         android:layout_height="wrap_content"
         android:hint="Año de fabricacion" />
 
+    <EditText
+        android:id="@+id/editTextIdAerolinea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Identificador de Aerolinea" />
+
 
     <Button
         android:id="@+id/btnActualizar"

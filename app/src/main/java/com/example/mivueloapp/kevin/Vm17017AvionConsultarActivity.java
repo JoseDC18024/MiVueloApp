@@ -49,18 +49,20 @@ public class Vm17017AvionConsultarActivity extends AppCompatActivity {
         List<String> listaAviones = new ArrayList<>();
 
         // Realizar la consulta para obtener todos los boletos
-        String[] projection = {"id_avion", "modelo_avion", "año_fabricacion"};
+        String[] projection = {"id_avion", "modelo_avion", "año_fabricacion", "id_aerolinea"};
         Cursor cursor = database.query("avion", projection, null, null, null, null, null);
 
         // Iterar sobre el cursor y agregar los boletos a la lista
         while (cursor.moveToNext()) {
             String idAvion = cursor.getString(cursor.getColumnIndex("id_avion"));
             String modeloAvion = cursor.getString(cursor.getColumnIndex("modelo_avion"));
+            String idAerolinea = cursor.getString(cursor.getColumnIndex("id_aerolinea"));
             int anioFabricacion = cursor.getInt(cursor.getColumnIndex("año_fabricacion"));
 
             String avion = "ID: " + idAvion + "\n" +
                     "Modelo: " + modeloAvion + "\n" +
-                    "Año de fabricacion: " + anioFabricacion + "\n";
+                    "Año de fabricacion: " + anioFabricacion + "\n" +
+                    "Identificador de aerolinea: " + idAerolinea + "\n" ;
 
             listaAviones.add(avion);
         }

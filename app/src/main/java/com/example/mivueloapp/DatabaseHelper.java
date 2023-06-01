@@ -9,7 +9,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     // Sentencia SQL para crear la tabla "cupo"
-    private static final String CREATE_TABLE_CUPO = "CREATE TABLE IF NOT EXISTS cupo (id_cupo CHAR(11) NOT NULL, " +
+    private static final String CREATE_TABLE_CUPO = "CREATE TABLE IF NOT EXISTS cupo (id_cupo CHAR(11) PRIMARY KEY, " +
             "cantidad_cupo INTEGER NOT NULL);";
 
     // Sentencia SQL para crear la tabla "aerolinea"
@@ -51,11 +51,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String CREATE_TABLE_VUELO = "CREATE TABLE vuelo (id_vuelo CHAR(11) PRIMARY KEY, numero_vuelo CHAR(11) NOT NULL, " +
         "fecha_salida CHAR(10) NOT NULL, fecha_llegada CHAR(10) NOT NULL, hora_salida CHAR(10) NOT NULL, hora_llegada CHAR(10) NOT NULL);";
 
-    private static final String CREATE_TABLE_TRIPULACION_VUELO = "CREATE TABLE tripulacion_vuelo (numero_tripulante CHAR(11) NOT NULL, puesto_tripulacion CHAR(50) NOT NULL );";
+    private static final String CREATE_TABLE_TRIPULACION_VUELO = "CREATE TABLE tripulacion_vuelo (numero_tripulante CHAR(11) PRIMARY KEY, puesto_tripulacion CHAR(50) NOT NULL );";
 
     private static final String CREATE_TABLE_TRIPULANTE = "CREATE TABLE tripulante (id_tripulante CHAR(11) PRIMARY KEY, nombre_tripulante CHAR(50) NOT NULL, campo CHAR(10) NOT NULL );";
 
+    private static final String CREATE_TABLE_PAGO = "CREATE TABLE pago (id_pago CHAR(11) PRIMARY KEY, fecha_pago CHAR(30) NOT NULL, monto_pago CHAR(10) NOT NULL );";
 
+    private static final String CREATE_TABLE_RESERVACION = "CREATE TABLE  reservacion (id_reservacion CHAR(11) PRIMARY KEY, fecha_reservacion CHAR(30) NOT NULL, numero_asiento INTEGER(10) NOT NULL, estado_reservacion CHAR(30) NOT NULL );";
+
+    private static final String CREATE_TABLE_AGENCIA_VIAJES = "CREATE TABLE agencia_viajes (id_agencia CHAR(11) PRIMARY KEY, nombre_agencia CHAR(30) NOT NULL, direccion_agencia CHAR(60) NOT NULL );";
 
     //Triggers Vlad
     private static final String crear_pasajero = "CREATE TRIGGER crear_pasajero\n" +
@@ -188,11 +192,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL(CREATE_TABLE_VUELO);
         db.execSQL(CREATE_TABLE_TRIPULACION_VUELO);
         db.execSQL(CREATE_TABLE_TRIPULANTE);
-
         db.execSQL(CREATE_TABLE_AEROLINEA);
+        db.execSQL(CREATE_TABLE_PAGO);
+        db.execSQL(CREATE_TABLE_RESERVACION);
+        db.execSQL(CREATE_TABLE_AGENCIA_VIAJES);
 
 
-        //triggers
+        //triggers desactivados
         /*
         db.execSQL(crear_pasajero);
         db.execSQL(evitar_duplicado_reclamo);

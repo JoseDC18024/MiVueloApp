@@ -1,0 +1,59 @@
+<!-- activity_reservacion_actualizar.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".bryangrande.ReservacionActualizarActivity">
+
+    <EditText
+        android:id="@+id/editTextBuscarIdReservacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID de reservación a buscar" />
+
+    <Button
+        android:id="@+id/btnBuscarR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buscar Reservación"
+        android:onClick="buscarReservacion" />
+
+    <EditText
+        android:id="@+id/editTextIdReservacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID de reservación"
+        android:enabled="false" />
+
+    <EditText
+        android:id="@+id/editTextFechaReservacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Fecha de reservación"
+        android:enabled="false" />
+
+    <EditText
+        android:id="@+id/editTextNumeroAsiento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Número de asiento"
+        android:enabled="false" />
+
+    <EditText
+        android:id="@+id/editTextEstadoReservacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Estado de reservación"
+        android:enabled="false" />
+
+    <Button
+        android:id="@+id/btnActualizarR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Actualizar Reservación"
+        android:onClick="actualizarReservacion"
+        android:enabled="false" />
+
+</LinearLayout>

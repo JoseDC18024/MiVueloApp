@@ -1,0 +1,23 @@
+<!-- activity_boletos_eliminar.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".bryangrande.PagoEliminarActivity">
+
+    <EditText
+        android:id="@+id/editTextIdPago"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID de pago" />
+
+    <Button
+        android:id="@+id/btnEliminarPago"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Eliminar"
+        android:onClick="eliminarPago" />
+
+</LinearLayout>

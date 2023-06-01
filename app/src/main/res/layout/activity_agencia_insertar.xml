@@ -1,0 +1,34 @@
+<!-- activity_reservacion_insertar.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".bryangrande.AgenciaInsertarActivity">
+
+    <EditText
+        android:id="@+id/id_agencia_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID de agencia" />
+
+    <EditText
+        android:id="@+id/nombre_agencia_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre de agencia" />
+
+    <EditText
+        android:id="@+id/direccion_agencia_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Dirección de agencia" />
+
+    <Button
+        android:id="@+id/insertarA_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Insertar" />
+
+</LinearLayout>

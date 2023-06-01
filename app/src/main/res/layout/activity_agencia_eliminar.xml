@@ -1,0 +1,24 @@
+<!-- activity_reservacion_eliminar.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".bryangrande.AgenciaEliminarActivity">
+
+
+    <EditText
+        android:id="@+id/editTextIdAgencia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID de la agencia de viajes" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Eliminar"
+        android:onClick="eliminarAgencia"
+        android:layout_marginTop="16dp"/>
+
+</LinearLayout>

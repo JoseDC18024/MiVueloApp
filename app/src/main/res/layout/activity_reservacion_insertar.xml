@@ -1,0 +1,40 @@
+<!-- activity_reservacion_insertar.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".bryangrande.ReservacionInsertarActivity">
+
+    <EditText
+        android:id="@+id/id_reservacion_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="ID de reservación" />
+
+    <EditText
+        android:id="@+id/fecha_reservacion_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Fecha de reservación" />
+
+    <EditText
+        android:id="@+id/numero_asiento_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Número de asiento" />
+
+    <EditText
+        android:id="@+id/estado_reservacion_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Estado de reservación" />
+
+    <Button
+        android:id="@+id/insertarR_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Insertar" />
+
+</LinearLayout>

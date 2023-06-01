@@ -4,6 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_actualizar_estado_vuelo.xml" value="0.253125" />
+        <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_agencia_actualizar.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_agencia_consultar.xml" value="0.3596014492753623" />
+        <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_agencia_eliminar.xml" value="0.3596014492753623" />
+        <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_agencia_insertar.xml" value="0.3596014492753623" />
+        <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_agencia_vmenu.xml" value="0.35260416666666666" />
         <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_avion_menu.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_boletos_actualizar.xml" value="0.25" />
         <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_boletos_consultar.xml" value="0.33" />
@@ -22,10 +27,15 @@
         <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_estado_vuelo_eliminar.xml" value="0.27355072463768115" />
         <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_estado_vuelo_insertar.xml" value="0.33" />
         <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_estado_vuelo_menu.xml" value="0.253125" />
-        <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />
+        <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_menu.xml" value="0.18" />
         <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_menu_jose_duran.xml" value="0.27355072463768115" />
         <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_menu_kevin_villalta.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_pago_actualizar.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_pago_consultar.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_pago_eliminar.xml" value="0.23541666666666666" />
+        <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_pago_insertar.xml" value="0.23541666666666666" />
+        <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_pago_menu.xml" value="0.3596014492753623" />
         <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_pasajero_consultar.xml" value="0.253125" />
         <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_pasajero_eliminar.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_pasajero_insertar.xml" value="0.36666666666666664" />
@@ -36,6 +46,10 @@
         <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_reclamo_insertar.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_reclamo_menu.xml" value="0.3596014492753623" />
         <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_reclamo_update.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_reservacion_actualizar.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_reservacion_consultar.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_reservacion_eliminar.xml" value="0.24947916666666667" />
+        <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_reservacion_insertar.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_tripulacion_actualizar.xml" value="0.33" />
         <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_tripulacion_consultar.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Jose Duran/AndroidStudioProjects/MiVueloApp/app/src/main/res/layout/activity_tripulacion_eliminar.xml" value="0.36666666666666664" />

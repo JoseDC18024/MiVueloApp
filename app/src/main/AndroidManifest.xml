@@ -13,6 +13,51 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MiVueloApp">
         <activity
+            android:name=".bryangrande.ReservacionEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bryangrande.ReservacionActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bryangrande.ReservacionConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bryangrande.ReservacionInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bryangrande.PagoEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bryangrande.PagoActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bryangrande.PagoConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bryangrande.PagoInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bryangrande.AgenciaEliminarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bryangrande.AgenciaActualizarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bryangrande.AgenciaConsultarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bryangrande.AgenciaInsertarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bryangrande.AgenciaVMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bryangrande.ReservacionMenuActivity"
+            android:exported="false" />
+        <activity
+            android:name=".bryangrande.PagoMenuActivity"
+            android:exported="false" />
+        <activity
             android:name=".joselucero.TripulanteEliminarActivity"
             android:exported="false" />
         <activity
@@ -203,6 +248,9 @@
             android:exported="false" />
         <activity
             android:name=".MenuKevin"
+            android:exported="false" />
+        <activity
+            android:name=".MenuBryan"
             android:exported="false" />
         <activity
             android:name=".MenuJoseLucero"

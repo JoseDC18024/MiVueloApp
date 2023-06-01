@@ -1,11 +1,14 @@
-<!-- activity_reservacion_insertar.xml -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp"
     tools:context=".bryangrande.AgenciaInsertarActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
     <ImageView
         android:id="@+id/logoImageView"
@@ -16,11 +19,29 @@
         android:adjustViewBounds="true"
         android:layout_marginBottom="16dp" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ID DE AGENCIA:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="5dp"/>
+
     <EditText
         android:id="@+id/id_agencia_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="ID de agencia" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NOMBRE DE AGENCIA:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="5dp"/>
 
     <EditText
         android:id="@+id/nombre_agencia_edit"
@@ -28,16 +49,30 @@
         android:layout_height="wrap_content"
         android:hint="Nombre de agencia" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DIRECCIÓN DE AGENCIA:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginBottom="5dp"/>
+
     <EditText
         android:id="@+id/direccion_agencia_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Dirección de agencia" />
+        android:hint="Dirección de agencia"
+        android:layout_marginBottom="10dp"/>
 
     <Button
         android:id="@+id/insertarA_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Insertar" />
+        android:text="Insertar"
+        android:background="@drawable/rounded_button"
+        android:layout_marginBottom="15dp"/>
 
 </LinearLayout>
+
+</ScrollView>

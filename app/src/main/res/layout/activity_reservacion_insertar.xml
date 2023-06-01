@@ -1,11 +1,14 @@
-<!-- activity_reservacion_insertar.xml -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp"
     tools:context=".bryangrande.ReservacionInsertarActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
     <ImageView
         android:id="@+id/logoImageView"
@@ -16,11 +19,29 @@
         android:adjustViewBounds="true"
         android:layout_marginBottom="16dp" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ID DE RESERVACIÓN:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"/>
+
     <EditText
         android:id="@+id/id_reservacion_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="ID de reservación" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="FECHA DE RESERVACIÓN:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"/>
 
     <EditText
         android:id="@+id/fecha_reservacion_edit"
@@ -28,22 +49,43 @@
         android:layout_height="wrap_content"
         android:hint="Fecha de reservación" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NUMERO DE ASIENTO:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"/>
+
     <EditText
         android:id="@+id/numero_asiento_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Número de asiento" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ESTADO DE RESERVACIÓN:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"/>
+
     <EditText
         android:id="@+id/estado_reservacion_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Estado de reservación" />
+        android:hint="Estado de reservación"
+        android:layout_marginBottom="10dp"/>
 
     <Button
         android:id="@+id/insertarR_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Insertar" />
+        android:text="Insertar"
+        android:background="@drawable/rounded_button"/>
 
 </LinearLayout>
+</ScrollView>

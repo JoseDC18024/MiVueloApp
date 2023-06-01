@@ -1,9 +1,14 @@
-<?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:paddingTop="10dip"
-    android:stretchColumns="1" >
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".kevin.Vm17017CupoInsertarActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
     <ImageView
         android:id="@+id/logoImageView"
@@ -14,11 +19,29 @@
         android:adjustViewBounds="true"
         android:layout_marginBottom="16dp" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ID DE CUPO:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"/>
+
     <EditText
         android:id="@+id/editTextIdCupo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="ID del Cupo" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CANTIDAD DE CUPOS:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"/>
 
     <EditText
         android:id="@+id/editTextCantidadCupo"
@@ -26,25 +49,44 @@
         android:layout_height="wrap_content"
         android:hint="Cantidad de cupos" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="IDENTIFICADOR DE VUELO:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"/>
+
     <EditText
         android:id="@+id/editTextIdVuelo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Identificador de vuelo" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="IDENTIFICADOR DE AVIÓN:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"/>
+
     <EditText
         android:id="@+id/editTextIdAvion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Identificador de avion" />
-
+        android:hint="Identificador de avion"
+        android:layout_marginBottom="10dp"/>
 
     <Button
         android:id="@+id/btnInsertar"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Insertar"
-        android:onClick="insertarCupo" />
+        android:onClick="insertarCupo"
+        android:background="@drawable/rounded_button"/>
 
-
-</TableLayout>
+</LinearLayout>
+</ScrollView>

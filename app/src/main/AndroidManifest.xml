@@ -61,9 +61,6 @@
             android:name=".joselucero.TripulanteEliminarActivity"
             android:exported="false" />
         <activity
-            android:name=".joselucero.ActivityEliminarActivity"
-            android:exported="false" />
-        <activity
             android:name=".joselucero.TripulanteActualizarActivity"
             android:exported="false" />
         <activity

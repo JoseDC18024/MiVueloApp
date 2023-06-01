@@ -1,61 +1,115 @@
-<!-- activity_reservacion_actualizar.xml -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:padding="16dp"
     tools:context=".bryangrande.AgenciaActualizarActivity">
 
-    <ImageView
-        android:id="@+id/logoImageView"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/logo_actualizaragencia"
-        android:scaleType="centerInside"
-        android:adjustViewBounds="true"
-        android:layout_marginBottom="16dp" />
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/editTextBuscarIdAgencia"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Buscar ID Agencia" />
+        <ImageView
+            android:id="@+id/logoImageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo_actualizaragencia"
+            android:scaleType="centerInside"
+            android:adjustViewBounds="true"
+            android:layout_marginBottom="16dp" />
 
-    <Button
-        android:id="@+id/btnBuscarA"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Buscar Agencia"
-        android:onClick="buscarAgencia" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ID DE AGENCIA:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="5dp"/>
 
-    <EditText
-        android:id="@+id/editTextIdAgencia"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="ID Agencia"
-        android:enabled="false" />
+        <EditText
+            android:id="@+id/editTextBuscarIdAgencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Buscar ID Agencia" />
 
-    <EditText
-        android:id="@+id/editTextNombreAgencia"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nombre Agencia"
-        android:enabled="false" />
+        <Button
+            android:id="@+id/btnBuscarA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Buscar Agencia"
+            android:onClick="buscarAgencia"
+            android:background="@drawable/rounded_button"
+            android:layout_marginBottom="15dp"/>
 
-    <EditText
-        android:id="@+id/editTextDireccionAgencia"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Dirección Agencia"
-        android:enabled="false" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DETALLES:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"/>
 
-    <Button
-        android:id="@+id/btnActualizarA"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Actualizar Agencia"
-        android:enabled="false"
-        android:onClick="actualizarAgencia" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ID DE AGENCIA:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="5dp"/>
 
-</LinearLayout>
+        <EditText
+            android:id="@+id/editTextIdAgencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID Agencia"
+            android:enabled="false" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NOMBRE DE AGENCIA:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="5dp"/>
+
+        <EditText
+            android:id="@+id/editTextNombreAgencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nombre Agencia"
+            android:enabled="false" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DIRECCIÓN DE AGENCIA:"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="5dp"/>
+
+        <EditText
+            android:id="@+id/editTextDireccionAgencia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Dirección Agencia"
+            android:enabled="false"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/btnActualizarA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Actualizar Agencia"
+            android:enabled="false"
+            android:onClick="actualizarAgencia"
+            android:background="@drawable/rounded_button"/>
+
+    </LinearLayout>
+
+</ScrollView>

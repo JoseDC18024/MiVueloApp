@@ -18,7 +18,7 @@ public class Vm17017CupoActualizarActivity extends AppCompatActivity {
 
     private DatabaseHelper databaseHelper;
     private SQLiteDatabase database;
-    private EditText editTextBuscarIdCupo, editTextIdCupo, editTextCantidadCupo;
+    private EditText editTextBuscarIdCupo, editTextIdCupo, editTextCantidadCupo, editTextIdVuelo, editTextIdAvion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,8 @@ public class Vm17017CupoActualizarActivity extends AppCompatActivity {
         editTextBuscarIdCupo = findViewById(R.id.editTextBuscarIdCupo);
         editTextIdCupo = findViewById(R.id.editTextIdCupo);
         editTextCantidadCupo = findViewById(R.id.editTextCantidadCupo);
+        editTextIdVuelo = findViewById(R.id.editTextIdVuelo);
+        editTextIdAvion = findViewById(R.id.editTextIdAvion);
     }
 
     @SuppressLint("Range")
@@ -42,7 +44,7 @@ public class Vm17017CupoActualizarActivity extends AppCompatActivity {
         String idCupo = editTextBuscarIdCupo.getText().toString();
 
         // Realizar la consulta para obtener los datos del boleto
-        String[] projection = {"id_cupo", "cantidad_cupo"};
+        String[] projection = {"id_cupo", "cantidad_cupo", "id_vuelo", "id_avion"};
         String selection = "id_cupo = ?";
         String[] selectionArgs = {idCupo};
         Cursor cursor = database.query("cupo", projection, selection, selectionArgs, null, null, null);
@@ -54,6 +56,8 @@ public class Vm17017CupoActualizarActivity extends AppCompatActivity {
 
             editTextIdCupo.setText(cursor.getString(cursor.getColumnIndex("id_cupo")));
             editTextCantidadCupo.setText(cursor.getString(cursor.getColumnIndex("cantidad_cupo")));
+            editTextIdVuelo.setText(cursor.getString(cursor.getColumnIndex("id_vuelo")));
+            editTextIdAvion.setText(cursor.getString(cursor.getColumnIndex("id_avion")));
             findViewById(R.id.btnActualizar).setEnabled(true);
         } else {
             // El boleto no fue encontrado, mostrar un mensaje de error
@@ -66,15 +70,20 @@ public class Vm17017CupoActualizarActivity extends AppCompatActivity {
     public void actualizarCupo(View view) {
         String idCupo = editTextIdCupo.getText().toString();
         String cantidadCupo = editTextCantidadCupo.getText().toString();
+        String idVuelo = editTextIdVuelo.getText().toString();
+        String idAvion = editTextIdAvion.getText().toString();
 
         // Crear un objeto ContentValues para almacenar los valores a actualizar
         ContentValues values = new ContentValues();
         values.put("cantidad_cupo", cantidadCupo);
+        values.put("id_vuelo", idVuelo);
+        values.put("id_avion", idAvion);
 
         // Actualizar los valores en la tabla "boleto"
         String whereClause = "id_cupo = ?";
         String[] whereArgs = {idCupo};
         int rowsAffected = database.update("cupo", values, whereClause, whereArgs);
+        System.out.println(rowsAffected);
 
         if (rowsAffected > 0) {
             Toast.makeText(this, "Cupo actualizado correctamente", Toast.LENGTH_SHORT).show();

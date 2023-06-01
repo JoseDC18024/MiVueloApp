@@ -2,6 +2,7 @@ package com.example.mivueloapp.kevin;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
@@ -16,7 +17,7 @@ public class Vm17017AvionInsertarActivity extends AppCompatActivity {
 
     private DatabaseHelper databaseHelper;
     private SQLiteDatabase database;
-    private EditText editTextIdAvion, editTextModeloAvion, editTextAñoFabricacion;
+    private EditText editTextIdAvion, editTextModeloAvion, editTextAñoFabricacion, editTextIdAerolinea;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,27 +35,42 @@ public class Vm17017AvionInsertarActivity extends AppCompatActivity {
         editTextIdAvion = findViewById(R.id.editTextIdAvion);
         editTextModeloAvion = findViewById(R.id.editTextModeloAvion);
         editTextAñoFabricacion = findViewById(R.id.editTextAñoFabricacion);
+        editTextIdAerolinea = findViewById(R.id.editTextIdAerolinea);
     }
 
     public void insertarAvion(View view) {
         String idAvion = editTextIdAvion.getText().toString();
         String modeloAvion = editTextModeloAvion.getText().toString();
+        String idAerolinea = editTextIdAerolinea.getText().toString();
         int añoFabricacion = Integer.parseInt(editTextAñoFabricacion.getText().toString());
 
-        // Crear un objeto ContentValues para almacenar los valores a insertar
-        ContentValues values = new ContentValues();
-        values.put("id_avion", idAvion);
-        values.put("modelo_avion", modeloAvion);
-        values.put("año_fabricacion", añoFabricacion);
+        // Verificar si el ID de aerolínea existe en la tabla "aerolinea"
+        String[] aerolineaProjection = {"id_aerolinea"};
+        String aerolineaSelection = "id_aerolinea = ?";
+        String[] aerolineaSelectionArgs = {idAerolinea};
+        Cursor aerolineaCursor = database.query("aerolinea", aerolineaProjection, aerolineaSelection, aerolineaSelectionArgs, null, null, null);
 
-        // Insertar los valores en la tabla "avion"
-        long resultado = database.insert("avion", null, values);
+        if (aerolineaCursor.moveToFirst()) {
+            // El ID de aerolínea existe en la tabla, proceder con la inserción
+            ContentValues values = new ContentValues();
+            values.put("id_avion", idAvion);
+            values.put("modelo_avion", modeloAvion);
+            values.put("año_fabricacion", añoFabricacion);
+            values.put("id_aerolinea", idAerolinea);
 
+            long resultado = database.insert("avion", null, values);
 
-        if (resultado != -1) {
-            Toast.makeText(this, "Avion insertado correctamente", Toast.LENGTH_SHORT).show();
+            if (resultado != -1) {
+                Toast.makeText(this, "Avion insertado correctamente", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Error al insertar el avion", Toast.LENGTH_SHORT).show();
+            }
         } else {
-            Toast.makeText(this, "Error al insertar el avion", Toast.LENGTH_SHORT).show();
+            // El ID de aerolínea no existe en la tabla, mostrar un mensaje de error
+            Toast.makeText(this, "El ID de aerolínea no existe", Toast.LENGTH_SHORT).show();
         }
+
+        aerolineaCursor.close();
     }
+
 }

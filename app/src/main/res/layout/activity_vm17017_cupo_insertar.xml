@@ -26,6 +26,18 @@
         android:layout_height="wrap_content"
         android:hint="Cantidad de cupos" />
 
+    <EditText
+        android:id="@+id/editTextIdVuelo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Identificador de vuelo" />
+
+    <EditText
+        android:id="@+id/editTextIdAvion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Identificador de avion" />
+
 
     <Button
         android:id="@+id/btnInsertar"

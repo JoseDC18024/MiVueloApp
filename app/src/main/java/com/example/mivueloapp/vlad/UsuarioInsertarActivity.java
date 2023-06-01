@@ -54,7 +54,7 @@ public class UsuarioInsertarActivity extends AppCompatActivity {
         }
 
         // Validar el formato del pasaporte utilizando una expresión regular
-        String pasaportePattern = "^X[0-9]{6}$";
+        String pasaportePattern = "^[A-Za-z][0-9]{6}$";
         if (!pasaporte.matches(pasaportePattern)) {
             Toast.makeText(this, "El formato del pasaporte no es válido. Debe tener el formato X999999", Toast.LENGTH_SHORT).show();
             return;

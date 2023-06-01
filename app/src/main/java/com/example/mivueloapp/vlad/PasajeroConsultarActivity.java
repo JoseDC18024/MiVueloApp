@@ -68,6 +68,11 @@ public class PasajeroConsultarActivity extends AppCompatActivity {
             listaPasajeros.add(pasajero);
         }
 
+    // Mostrar mensaje si no hay datos
+        if (listaPasajeros.isEmpty()) {
+        Toast.makeText(this, "No hay datos disponibles.", Toast.LENGTH_SHORT).show();
+    }
+
         cursor.close();
 
         return listaPasajeros;

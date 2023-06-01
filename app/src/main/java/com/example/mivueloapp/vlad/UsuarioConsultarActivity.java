@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.mivueloapp.DatabaseHelper;
 import com.example.mivueloapp.R;
@@ -66,6 +67,11 @@ public class UsuarioConsultarActivity extends AppCompatActivity {
 
             listaUsuarios.add(usuario);
         }
+
+    // Mostrar mensaje si no hay datos
+        if (listaUsuarios.isEmpty()) {
+        Toast.makeText(this, "No hay datos disponibles.", Toast.LENGTH_SHORT).show();
+    }
 
         cursor.close();
 

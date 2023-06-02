@@ -41,8 +41,14 @@ public class ReservacionInsertarActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String idReservacion = idReservacionEditText.getText().toString();
                 String fechaReservacion = fechaReservacionEditText.getText().toString();
-                int numeroAsiento = Integer.parseInt(numeroAsientoEditText.getText().toString());
+                String numeroAsiento = numeroAsientoEditText.getText().toString();
                 String estadoReservacion = estadoReservacionEditText.getText().toString();
+
+                // Verificar si los campos están vacíos
+                if (idReservacion.isEmpty() || fechaReservacion.isEmpty() || numeroAsiento.isEmpty() || estadoReservacion.isEmpty()){
+                    Toast.makeText(ReservacionInsertarActivity.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 // Validar el formato de la fecha de reservacion utilizando una expresión regular (dd/mm/yyyy)
                 String fechaReservacionPattern = "^(?:3[01]|[12][0-9]|0?[1-9])([\\-/.])(0?[1-9]|1[1-2])\\1\\d{4}$";

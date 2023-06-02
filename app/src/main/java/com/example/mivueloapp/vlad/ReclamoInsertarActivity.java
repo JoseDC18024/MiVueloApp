@@ -51,6 +51,12 @@ public class ReclamoInsertarActivity extends AppCompatActivity {
         String descripcion = editDescripcionReclamo.getText().toString();
         String estado = editEstado.getText().toString();
 
+        // Verificar si los campos están vacíos
+        if (id.isEmpty() || fecha.isEmpty() || descripcion.isEmpty() || estado.isEmpty() ){
+            Toast.makeText(ReclamoInsertarActivity.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         // Verificar el formato del ID de reclamo
         if (!id.matches("[A-Za-z0-9]+")) {
             Toast.makeText(this, "El ID del reclamo debe contener solo letras y números", Toast.LENGTH_SHORT).show();

@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.mivueloapp.DatabaseHelper;
 import com.example.mivueloapp.R;
+import com.example.mivueloapp.kevin.Vm17017CupoInsertarActivity;
 
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -52,6 +53,12 @@ public class PasajeroInsertarActivity extends AppCompatActivity {
         String nombre = editNombre.getText().toString();
         String fechaf = editFechanacimiento.getText().toString();
         String sexo = editSexo.getText().toString();
+
+        // Verificar si los campos están vacíos
+        if (id.isEmpty() || nombre.isEmpty() || fechaf.isEmpty() || sexo.isEmpty() ){
+            Toast.makeText(PasajeroInsertarActivity.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         // Verificar si el ID del pasajero ya existe en la tabla
         String query = "SELECT COUNT(*) FROM Pasajero WHERE id_pasajero = ?";

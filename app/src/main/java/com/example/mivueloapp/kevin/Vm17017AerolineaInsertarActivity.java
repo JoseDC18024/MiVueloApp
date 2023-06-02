@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.example.mivueloapp.DatabaseHelper;
 import com.example.mivueloapp.R;
 import com.example.mivueloapp.bryangrande.ReservacionInsertarActivity;
+import com.example.mivueloapp.joselucero.VueloInsertarActivity;
 
 public class Vm17017AerolineaInsertarActivity extends AppCompatActivity {
     private DatabaseHelper databaseHelper;
@@ -42,6 +43,12 @@ public class Vm17017AerolineaInsertarActivity extends AppCompatActivity {
         String nombreAerolinea = editTextNombreAerolinea.getText().toString();
         String paisAerolinea = editTextPaisAerolinea.getText().toString();
         String fechaAerolinea = editTextFechaAerolinea.getText().toString();
+
+        // Verificar si los campos están vacíos
+        if (idAerolinea.isEmpty() || nombreAerolinea.isEmpty() || paisAerolinea.isEmpty() || fechaAerolinea.isEmpty() ){
+            Toast.makeText(Vm17017AerolineaInsertarActivity.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         // Validar el formato de la fecha de aerolinea utilizando una expresión regular (dd/mm/yyyy)
         String fechaAerolineaPattern = "^(?:3[01]|[12][0-9]|0?[1-9])([\\-/.])(0?[1-9]|1[1-2])\\1\\d{4}$";

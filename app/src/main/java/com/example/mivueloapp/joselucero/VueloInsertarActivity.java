@@ -53,6 +53,12 @@ public class VueloInsertarActivity extends AppCompatActivity {
                 String horaSalida = horaSalidaEditText.getText().toString();
                 String horaLlegada = horaLlegadaEditText.getText().toString();
 
+                // Verificar si los campos están vacíos
+                if (idVuelo.isEmpty() || numeroVuelo.isEmpty() || fechaSalida.isEmpty() || fechaLlegada.isEmpty() || horaSalida.isEmpty() || horaLlegada.isEmpty()){
+                    Toast.makeText(VueloInsertarActivity.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 // Validar el formato de la fecha de pago utilizando una expresión regular (dd/mm/yyyy)
                 String fechaSalidaPattern = "^(?:3[01]|[12][0-9]|0?[1-9])([\\-/.])(0?[1-9]|1[1-2])\\1\\d{4}$";
                 if (!fechaSalida.matches(fechaSalidaPattern)) {

@@ -46,6 +46,12 @@ public class UsuarioInsertarActivity extends AppCompatActivity {
         String pasaporte = editPasaporte.getText().toString();
         String contrasena = editContrasena.getText().toString();
 
+        // Verificar si los campos están vacíos
+        if (id.isEmpty() || email.isEmpty() || pasaporte.isEmpty() || contrasena.isEmpty() ){
+            Toast.makeText(UsuarioInsertarActivity.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         // Validar el formato de correo electrónico utilizando una expresión regular
         String emailPattern = "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$";
         if (!email.matches(emailPattern)) {

@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import com.example.mivueloapp.DatabaseHelper;
 import com.example.mivueloapp.R;
+import com.example.mivueloapp.bryangrande.PagoInsertarActivity;
+
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
@@ -40,6 +42,12 @@ public class TripulacionInsertarActivity extends AppCompatActivity {
                 // Obtener los datos ingresados por el usuario
                 String numeroTripulante = numeroTripulanteEditText.getText().toString();
                 String puestoTripulacion = puestoTripulacionEditText.getText().toString();
+
+                // Verificar si los campos están vacíos
+                if (numeroTripulante.isEmpty() || puestoTripulacion.isEmpty()){
+                    Toast.makeText(TripulacionInsertarActivity.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 // Insertar los datos en la tabla "tripulacion_vuelo"
                 long resultado = insertarDatosTripulacion(numeroTripulante, puestoTripulacion);

@@ -39,6 +39,12 @@ public class AgenciaInsertarActivity extends AppCompatActivity {
                 String nombreAgencia = nombreAgenciaEditText.getText().toString();
                 String direccionAgencia = direccionAgenciaEditText.getText().toString();
 
+                // Verificar si los campos están vacíos
+                if (idAgencia.isEmpty() || nombreAgencia.isEmpty() || direccionAgencia.isEmpty()) {
+                    Toast.makeText(AgenciaInsertarActivity.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 // Insertar datos en la tabla 'agencia_viajes'
                 ContentValues values = new ContentValues();
                 values.put("id_agencia", idAgencia);

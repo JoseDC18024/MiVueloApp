@@ -37,8 +37,13 @@ public class BoletosInsertarActivity extends AppCompatActivity {
     public void insertarBoleto(View view) {
         String idBoleto = editTextIdBoleto.getText().toString();
         String claseBoleto = editTextClaseBoleto.getText().toString();
-        int precioBoleto = Integer.parseInt(editTextPrecioBoleto.getText().toString());
+        String precioBoleto = editTextPrecioBoleto.getText().toString();
         String ubicacionAsiento = editTextUbicacionAsiento.getText().toString();
+
+        if (idBoleto.isEmpty() || claseBoleto.isEmpty() || precioBoleto.isEmpty() || ubicacionAsiento.isEmpty()) {
+            Toast.makeText(this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         // Crear un objeto ContentValues para almacenar los valores a insertar
         ContentValues values = new ContentValues();

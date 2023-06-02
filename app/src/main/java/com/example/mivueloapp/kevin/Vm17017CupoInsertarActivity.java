@@ -35,14 +35,19 @@ public class Vm17017CupoInsertarActivity extends AppCompatActivity {
         editTextCantidadCupo = findViewById(R.id.editTextCantidadCupo);
         editTextIdAvion = findViewById(R.id.editTextIdAvion);
         editTextIdVuelo = findViewById(R.id.editTextIdVuelo);
-
     }
 
     public void insertarCupo(View view) {
         String idCupo = editTextIdCupo.getText().toString();
         String idAvion = editTextIdAvion.getText().toString();
         String idVuelo = editTextIdVuelo.getText().toString();
-        int cantidadCupos = Integer.parseInt(editTextCantidadCupo.getText().toString());
+        String cantidadCupos = editTextCantidadCupo.getText().toString();
+
+        // Verificar si los campos están vacíos
+        if (idCupo.isEmpty() || idAvion.isEmpty() || idVuelo.isEmpty() || cantidadCupos.isEmpty() ){
+            Toast.makeText(Vm17017CupoInsertarActivity.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         // Verificar si el ID de vuelo existe en la tabla "vuelo"
         String[] vueloProjection = {"id_vuelo"};

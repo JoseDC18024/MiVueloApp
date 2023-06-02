@@ -42,7 +42,13 @@ public class Vm17017AvionInsertarActivity extends AppCompatActivity {
         String idAvion = editTextIdAvion.getText().toString();
         String modeloAvion = editTextModeloAvion.getText().toString();
         String idAerolinea = editTextIdAerolinea.getText().toString();
-        int añoFabricacion = Integer.parseInt(editTextAñoFabricacion.getText().toString());
+        String añoFabricacion = editTextAñoFabricacion.getText().toString();
+
+        // Verificar si los campos están vacíos
+        if (idAvion.isEmpty() || modeloAvion.isEmpty() || idAerolinea.isEmpty() || añoFabricacion.isEmpty() ){
+            Toast.makeText(Vm17017AvionInsertarActivity.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         // Verificar si el ID de aerolínea existe en la tabla "aerolinea"
         String[] aerolineaProjection = {"id_aerolinea"};

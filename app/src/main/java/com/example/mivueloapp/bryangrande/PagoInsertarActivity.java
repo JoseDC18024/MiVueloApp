@@ -23,7 +23,7 @@ public class PagoInsertarActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_agencia_insertar);
+        setContentView(R.layout.activity_pago_insertar);
 
         idPagoEditText = findViewById(R.id.id_pago_edit);
         fechaPagoEditText = findViewById(R.id.fecha_pago_edit);
@@ -39,7 +39,13 @@ public class PagoInsertarActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String idPago = idPagoEditText.getText().toString();
                 String fechaPago = fechaPagoEditText.getText().toString();
-                int montoPago = Integer.parseInt(montoPagoEditText.getText().toString());
+                String montoPago = montoPagoEditText.getText().toString();
+
+                // Verificar si los campos están vacíos
+                if (idPago.isEmpty() || fechaPago.isEmpty() || montoPago.isEmpty()){
+                    Toast.makeText(PagoInsertarActivity.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 // Validar el formato de la fecha de pago utilizando una expresión regular (dd/mm/yyyy)
                 String fechaPagoPattern = "^(?:3[01]|[12][0-9]|0?[1-9])([\\-/.])(0?[1-9]|1[1-2])\\1\\d{4}$";

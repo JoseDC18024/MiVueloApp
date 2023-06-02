@@ -44,6 +44,13 @@ public class TripulanteInsertarActivity extends AppCompatActivity {
                 String nombreTripulante = nombreTripulanteEditText.getText().toString();
                 String campo = campoEditText.getText().toString();
 
+                // Verificar si los campos están vacíos
+                if (idTripulante.isEmpty() || nombreTripulante.isEmpty() || campo.isEmpty()){
+                    Toast.makeText(TripulanteInsertarActivity.this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+
                 // Insertar los datos en la tabla "tripulante"
                 boolean resultado = insertarDatosTripulante(idTripulante, nombreTripulante, campo);
 

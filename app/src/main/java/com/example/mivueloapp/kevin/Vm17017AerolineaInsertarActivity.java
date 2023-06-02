@@ -44,8 +44,8 @@ public class Vm17017AerolineaInsertarActivity extends AppCompatActivity {
         String fechaAerolinea = editTextFechaAerolinea.getText().toString();
 
         // Validar el formato de la fecha de aerolinea utilizando una expresión regular (dd/mm/yyyy)
-        String fechaNacimientoPattern = "^(?:3[01]|[12][0-9]|0?[1-9])([\\-/.])(0?[1-9]|1[1-2])\\1\\d{4}$";
-        if (!fechaAerolinea.matches(fechaNacimientoPattern)) {
+        String fechaAerolineaPattern = "^(?:3[01]|[12][0-9]|0?[1-9])([\\-/.])(0?[1-9]|1[1-2])\\1\\d{4}$";
+        if (!fechaAerolinea.matches(fechaAerolineaPattern)) {
             Toast.makeText(Vm17017AerolineaInsertarActivity.this, "El formato de la fecha de aerolinea no es válido. Debe ser dd/mm/yyyy ", Toast.LENGTH_SHORT).show();
             return;
         }

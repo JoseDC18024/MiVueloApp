@@ -49,7 +49,7 @@ public class BoletosActualizarActivity extends AppCompatActivity {
 
         if (cursor.moveToFirst()) {
             // El boleto fue encontrado, habilitar la edición y mostrar los datos
-            editTextIdBoleto.setEnabled(true);
+            editTextIdBoleto.setEnabled(false);
             editTextClaseBoleto.setEnabled(true);
             editTextPrecioBoleto.setEnabled(true);
             editTextUbicacionAsiento.setEnabled(true);

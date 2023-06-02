@@ -49,7 +49,7 @@ public class AgenciaActualizarActivity extends AppCompatActivity {
 
         if (cursor.moveToFirst()) {
             // La agencia fue encontrada, habilitar la edición y mostrar los datos
-            editTextIdAgencia.setEnabled(true);
+            editTextIdAgencia.setEnabled(false);
             editTextNombreAgencia.setEnabled(true);
             editTextDireccionAgencia.setEnabled(true);
             editTextIdAgencia.setText(cursor.getString(cursor.getColumnIndex("id_agencia")));

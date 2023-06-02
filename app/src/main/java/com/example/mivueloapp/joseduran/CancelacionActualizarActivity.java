@@ -57,7 +57,7 @@ public class CancelacionActualizarActivity extends AppCompatActivity {
 
         if (cursor.moveToFirst()) {
             // La cancelacion fue encontrada, habilitar la edición y mostrar los datos
-            idCancelacionEditText.setEnabled(true);
+            idCancelacionEditText.setEnabled(false);
             motivoCancelacionEditText.setEnabled(true);
             hastaFechaEditText.setEnabled(true);
             desdeFechaEditText.setEnabled(true);

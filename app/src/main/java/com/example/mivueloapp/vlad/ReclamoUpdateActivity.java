@@ -58,7 +58,7 @@ public class ReclamoUpdateActivity extends AppCompatActivity {
 
         if (cursor.moveToFirst()) {
             // El pasajero fue encontrado, habilitar la edición y mostrar los datos
-            editIdReclamo.setEnabled(true);
+            editIdReclamo.setEnabled(false);
             editFecha.setEnabled(true);
             editDescripcionReclamo.setEnabled(true);
             editEstado.setEnabled(true);

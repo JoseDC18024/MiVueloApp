@@ -52,7 +52,7 @@ public class Vm17017AerolineaActualizarActivity extends AppCompatActivity {
 
         if (cursor.moveToFirst()) {
             // La aerolinea fue encontrado, habilitar la edición y mostrar los datos
-            editTextIdAerolinea.setEnabled(true);
+            editTextIdAerolinea.setEnabled(false);
             editTextNombreAerolinea.setEnabled(true);
             editTextPaisAerolinea.setEnabled(true);
             editTextFechaAerolinea.setEnabled(true);

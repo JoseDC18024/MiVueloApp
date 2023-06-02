@@ -60,7 +60,7 @@ public class PasajeroUpdateActivity extends AppCompatActivity {
 
         if (cursor.moveToFirst()) {
             // El pasajero fue encontrado, habilitar la edición y mostrar los datos
-            editIdPasajero.setEnabled(true);
+            editIdPasajero.setEnabled(false);
             editNombre.setEnabled(true);
             editFechanacimiento.setEnabled(true);
             editSexo.setEnabled(true);

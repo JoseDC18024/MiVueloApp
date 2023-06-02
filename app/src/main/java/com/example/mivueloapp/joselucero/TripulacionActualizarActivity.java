@@ -30,6 +30,7 @@ public class TripulacionActualizarActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tripulacion_actualizar);
+
         editTextBuscarNTripulacion = findViewById(R.id.editTextBuscarNTripulacion);
         numeroTripulanteEditText = findViewById(R.id.numeroTripulanteEditText);
         puestoTripulacionEditText = findViewById(R.id.puestoTripulacionEditText);
@@ -55,7 +56,7 @@ public class TripulacionActualizarActivity extends AppCompatActivity {
 
         if (cursor.moveToFirst()) {
             // El tripulante fue encontrado, habilitar la edición y mostrar los datos
-            numeroTripulanteEditText.setEnabled(true);
+            numeroTripulanteEditText.setEnabled(false);
             puestoTripulacionEditText.setEnabled(true);
             numeroTripulanteEditText.setText(cursor.getString(cursor.getColumnIndex("numero_tripulante")));
             puestoTripulacionEditText.setText(cursor.getString(cursor.getColumnIndex("puesto_tripulacion")));

@@ -9,8 +9,8 @@ import android.widget.ListView;
 
 public class MenuKevin extends ListActivity {
 
-    String[] menu = {"Avion", "Cupos", "Aerolineas"};
-    String[] activities = {"AvionMenuActivity","CupoMenuActivity","AerolineaMenuActivity"};
+    String[] menu = {"Aerolinea", "Cupos", "Avion"};
+    String[] activities = {"AerolineaMenuActivity","CupoMenuActivity","AvionMenuActivity"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

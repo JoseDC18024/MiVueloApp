@@ -51,7 +51,7 @@ public class PagoActualizarActivity extends AppCompatActivity {
 
         if (cursor.moveToFirst()) {
             // El pago fue encontrado, habilitar la edición y mostrar los datos
-            editTextIdPago.setEnabled(true);
+            editTextIdPago.setEnabled(false);
             editTextFechaPago.setEnabled(true);
             editTextMontoPago.setEnabled(true);
             editTextIdPago.setText(cursor.getString(cursor.getColumnIndex("id_pago")));

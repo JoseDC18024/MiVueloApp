@@ -51,7 +51,7 @@ public class Vm17017CupoActualizarActivity extends AppCompatActivity {
 
         if (cursor.moveToFirst()) {
             // El boleto fue encontrado, habilitar la edición y mostrar los datos
-            editTextIdCupo.setEnabled(true);
+            editTextIdCupo.setEnabled(false);
             editTextCantidadCupo.setEnabled(true);
 
             editTextIdCupo.setText(cursor.getString(cursor.getColumnIndex("id_cupo")));

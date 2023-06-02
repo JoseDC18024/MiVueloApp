@@ -64,7 +64,7 @@ public class VueloActualizarActivity extends AppCompatActivity {
 
             if (cursor.moveToFirst()) {
                 // El vuelo fue encontrado, habilitar la edición y mostrar los datos
-                idVueloEditText.setEnabled(true);
+                idVueloEditText.setEnabled(false);
                 numeroVueloEditText.setEnabled(true);
                 fechaSalidaEditText.setEnabled(true);
                 fechaLlegadaEditText.setEnabled(true);

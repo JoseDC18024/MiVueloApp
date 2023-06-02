@@ -46,7 +46,7 @@ public class EstadoVueloActualizarActivity extends AppCompatActivity {
 
             if (cursor.moveToFirst()) {
                 // El Estado fue encontrado, habilitar la edición y mostrar los datos
-                editIdEstado.setEnabled(true);
+                editIdEstado.setEnabled(false);
                 editDescripcionEstado.setEnabled(true);
                 editTiempoRetraso.setEnabled(true);
                 editIdEstado.setText(cursor.getString(cursor.getColumnIndex("id_estado")));

@@ -55,7 +55,7 @@ public class TripulanteActualizarActivity extends AppCompatActivity {
 
         if (cursor.moveToFirst()) {
             // El tripulante fue encontrado, habilitar la edición y mostrar los datos
-            idTripulanteEditText.setEnabled(true);
+            idTripulanteEditText.setEnabled(false);
             nombreTripulanteEditText.setEnabled(true);
             campoEditText.setEnabled(true);
             idTripulanteEditText.setText(cursor.getString(cursor.getColumnIndex("id_tripulante")));

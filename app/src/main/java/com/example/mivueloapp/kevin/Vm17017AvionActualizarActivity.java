@@ -52,7 +52,7 @@ public class Vm17017AvionActualizarActivity extends AppCompatActivity {
 
         if (cursor.moveToFirst()) {
             // El avion fue encontrado, habilitar la edición y mostrar los datos
-            editTextIdAvion.setEnabled(true);
+            editTextIdAvion.setEnabled(false);
             editTextModeloAvion.setEnabled(true);
             editTextAñoFabricacion.setEnabled(true);
             editTextIdAvion.setText(cursor.getString(cursor.getColumnIndex("id_avion")));

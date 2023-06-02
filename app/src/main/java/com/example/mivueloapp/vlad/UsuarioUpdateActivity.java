@@ -56,7 +56,7 @@ public class UsuarioUpdateActivity extends AppCompatActivity {
 
         if (cursor.moveToFirst()) {
             // El usuario fue encontrado, habilitar la edición y mostrar los datos
-            editIdUsuario.setEnabled(true);
+            editIdUsuario.setEnabled(false);
             editEmail.setEnabled(true);
             editPasaporte.setEnabled(true);
             editContrasena.setEnabled(true);

@@ -50,7 +50,7 @@ public class ReservacionActualizarActivity extends AppCompatActivity {
 
         if (cursor.moveToFirst()) {
             // La reservación fue encontrada, habilitar la edición y mostrar los datos
-            editTextIdReservacion.setEnabled(true);
+            editTextIdReservacion.setEnabled(false);
             editTextFechaReservacion.setEnabled(true);
             editTextNumeroAsiento.setEnabled(true);
             editTextEstadoReservacion.setEnabled(true);

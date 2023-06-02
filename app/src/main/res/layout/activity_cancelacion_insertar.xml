@@ -62,6 +62,7 @@
         android:id="@+id/etDesdeFecha"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="date"
         android:hint="Desde Fecha" />
 
         <TextView
@@ -78,6 +79,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Hasta Fecha"
+        android:inputType="date"
         android:layout_marginBottom="10dp"/>
 
     <Button

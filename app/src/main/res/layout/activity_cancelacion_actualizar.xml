@@ -95,6 +95,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/hastaFechaEditText"
+            android:inputType="date"
             android:hint="Desde Fecha" />
 
                 <TextView
@@ -112,6 +113,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/motivoCancelacionEditText"
             android:hint="Hasta Fecha"
+            android:inputType="date"
             android:layout_marginBottom="10dp"/>
 
         <Button

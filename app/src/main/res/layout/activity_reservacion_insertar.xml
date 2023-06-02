@@ -47,6 +47,7 @@
         android:id="@+id/fecha_reservacion_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="date"
         android:hint="Fecha de reservación" />
 
         <TextView

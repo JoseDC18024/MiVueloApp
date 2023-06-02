@@ -96,6 +96,7 @@
       android:id="@+id/editTextPrecioBoleto"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
+      android:inputType="date"
       android:hint="Precio del Boleto" />
 
   <TextView

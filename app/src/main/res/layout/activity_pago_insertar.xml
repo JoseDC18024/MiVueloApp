@@ -49,6 +49,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Fecha de pago"
+        android:inputType="date"
         android:layout_marginBottom="10dp"/>
 
         <TextView
@@ -65,6 +66,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Monto de pago"
+        android:inputType="date"
         android:layout_marginBottom="10dp"/>
 
     <Button

@@ -45,14 +45,14 @@ public class EstadoVueloActualizarActivity extends AppCompatActivity {
             Cursor cursor = database.query("estado_vuelo", projection, selection, selectionArgs, null, null, null);
 
             if (cursor.moveToFirst()) {
-                // El boleto fue encontrado, habilitar la edición y mostrar los datos
+                // El Estado fue encontrado, habilitar la edición y mostrar los datos
                 editIdEstado.setEnabled(true);
                 editDescripcionEstado.setEnabled(true);
                 editTiempoRetraso.setEnabled(true);
                 editIdEstado.setText(cursor.getString(cursor.getColumnIndex("id_estado")));
                 editDescripcionEstado.setText(cursor.getString(cursor.getColumnIndex("descripcion_estado")));
-                editTiempoRetraso.setText(String.valueOf(cursor.getColumnIndex("tiempo_retraso")));
-                findViewById(R.id.btnBuscarEstado).setEnabled(true);
+                editTiempoRetraso.setText(cursor.getString(cursor.getColumnIndex("tiempo_retraso")));
+                findViewById(R.id.actualizarEButton).setEnabled(true);
             } else {
                 // El Estado no fue encontrado, mostrar un mensaje de error
                 Toast.makeText(this, "El Estado no existe", Toast.LENGTH_SHORT).show();

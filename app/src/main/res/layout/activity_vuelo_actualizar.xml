@@ -97,6 +97,7 @@
         android:id="@+id/fechaSalidaEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="date"
         android:hint="Fecha de salida" />
 
         <TextView
@@ -112,6 +113,7 @@
         android:id="@+id/fechaLlegadaEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="date"
         android:hint="Fecha de llegada" />
 
         <TextView

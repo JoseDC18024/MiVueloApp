@@ -110,5 +110,4 @@ public class PasajeroInsertarActivity extends AppCompatActivity {
             Toast.makeText(this, "Error en la inserción: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
-
 }

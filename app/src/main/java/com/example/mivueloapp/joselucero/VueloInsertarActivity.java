@@ -1,9 +1,13 @@
 package com.example.mivueloapp.joselucero;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import com.example.mivueloapp.DatabaseHelper;
 import com.example.mivueloapp.R;
+import com.example.mivueloapp.bryangrande.ReservacionInsertarActivity;
+
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
@@ -49,25 +53,46 @@ public class VueloInsertarActivity extends AppCompatActivity {
                 String horaSalida = horaSalidaEditText.getText().toString();
                 String horaLlegada = horaLlegadaEditText.getText().toString();
 
-                // Insertar los datos en la tabla "vuelo"
-                ContentValues values = new ContentValues();
-                values.put("id_vuelo", idVuelo);
-                values.put("numero_vuelo", numeroVuelo);
-                values.put("fecha_salida", fechaSalida);
-                values.put("fecha_llegada", fechaLlegada);
-                values.put("hora_salida", horaSalida);
-                values.put("hora_llegada", horaLlegada);
+                // Validar el formato de la fecha de pago utilizando una expresión regular (dd/mm/yyyy)
+                String fechaSalidaPattern = "^(?:3[01]|[12][0-9]|0?[1-9])([\\-/.])(0?[1-9]|1[1-2])\\1\\d{4}$";
+                if (!fechaSalida.matches(fechaSalidaPattern)) {
+                    Toast.makeText(VueloInsertarActivity.this, "El formato de la fecha de salida no es válido. Debe ser dd/mm/yyyy ", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
-                long resultado = database.insert("vuelo", null, values);
+                // Validar el formato de la fecha de pago utilizando una expresión regular (dd/mm/yyyy)
+                String fechaLlegadaPattern = "^(?:3[01]|[12][0-9]|0?[1-9])([\\-/.])(0?[1-9]|1[1-2])\\1\\d{4}$";
+                if (!fechaLlegada.matches(fechaLlegadaPattern)) {
+                    Toast.makeText(VueloInsertarActivity.this, "El formato de la fecha de llegada no es válido. Debe ser dd/mm/yyyy ", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
-                if (resultado != -1) {
-                    // Se insertó correctamente
-                    Toast.makeText(VueloInsertarActivity.this, "Datos insertados correctamente", Toast.LENGTH_SHORT).show();
-                } else {
-                    // Hubo un error al insertar
-                    Toast.makeText(VueloInsertarActivity.this, "Error al insertar los datos", Toast.LENGTH_SHORT).show();
+                try {
+
+                    // Insertar los datos en la tabla "vuelo"
+                    ContentValues values = new ContentValues();
+                    values.put("id_vuelo", idVuelo);
+                    values.put("numero_vuelo", numeroVuelo);
+                    values.put("fecha_salida", fechaSalida);
+                    values.put("fecha_llegada", fechaLlegada);
+                    values.put("hora_salida", horaSalida);
+                    values.put("hora_llegada", horaLlegada);
+
+                    long resultado = database.insert("vuelo", null, values);
+
+                    if (resultado != -1) {
+                        // Se insertó correctamente
+                        Toast.makeText(VueloInsertarActivity.this, "Datos insertados correctamente", Toast.LENGTH_SHORT).show();
+                    } else {
+                        // Hubo un error al insertar
+                        Toast.makeText(VueloInsertarActivity.this, "Error al insertar los datos", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (SQLiteException e) {
+                    Toast.makeText(VueloInsertarActivity.this, "Error en la inserción: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         });
     }
 }
+
+

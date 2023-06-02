@@ -2,6 +2,7 @@ package com.example.mivueloapp.joseduran;
 
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -10,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.mivueloapp.DatabaseHelper;
 import com.example.mivueloapp.R;
+import com.example.mivueloapp.joselucero.VueloInsertarActivity;
 
 public class CancelacionInsertarActivity extends AppCompatActivity {
     private EditText etIdCancelacion;
@@ -47,6 +49,22 @@ public class CancelacionInsertarActivity extends AppCompatActivity {
             return;
         }
 
+        // Validar el formato de la fecha hasta utilizando una expresión regular (dd/mm/yyyy)
+        String fechaSalidaPattern = "^(?:3[01]|[12][0-9]|0?[1-9])([\\-/.])(0?[1-9]|1[1-2])\\1\\d{4}$";
+        if (!hastaFecha.matches(fechaSalidaPattern)) {
+            Toast.makeText(CancelacionInsertarActivity.this, "El formato de la fecha hasta no es válido. Debe ser dd/mm/yyyy ", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        // Validar el formato de la fecha desde utilizando una expresión regular (dd/mm/yyyy)
+        String fechaLlegadaPattern = "^(?:3[01]|[12][0-9]|0?[1-9])([\\-/.])(0?[1-9]|1[1-2])\\1\\d{4}$";
+        if (!desdeFecha.matches(fechaLlegadaPattern)) {
+            Toast.makeText(CancelacionInsertarActivity.this, "El formato de la fecha desde no es válido. Debe ser dd/mm/yyyy ", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        try {
+
         // Insertar datos en la tabla "cancelacion"
         ContentValues values = new ContentValues();
         values.put("id_cancelacion", idCancelacion);
@@ -65,6 +83,11 @@ public class CancelacionInsertarActivity extends AppCompatActivity {
             etDesdeFecha.setText("");
         } else {
             Toast.makeText(this, "Error al insertar la cancelación", Toast.LENGTH_SHORT).show();
+
+        }
+
+        } catch (SQLiteException e) {
+                Toast.makeText(CancelacionInsertarActivity.this, "Error en la inserción: " + e.getMessage(), Toast.LENGTH_SHORT).show();
         }
     }
 }

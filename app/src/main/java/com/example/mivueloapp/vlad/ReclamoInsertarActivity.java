@@ -72,7 +72,7 @@ public class ReclamoInsertarActivity extends AppCompatActivity {
         // Verificar el formato de fecha del reclamo utilizando una expresión regular (dd/MM/yyyy)
         String fechaReclamoPattern = "^(?:3[01]|[12][0-9]|0?[1-9])([\\-/.])(0?[1-9]|1[1-2])\\1\\d{4}$";
         if (!fecha.matches(fechaReclamoPattern)) {
-            Toast.makeText(this, "Formato de fecha inválido. Debe ser dd/MM/yyyy ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Formato de fecha inválido. Debe ser dd/mm/yyyy ", Toast.LENGTH_SHORT).show();
             return;
         }
 

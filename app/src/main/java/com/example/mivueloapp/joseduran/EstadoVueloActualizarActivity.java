@@ -51,7 +51,7 @@ public class EstadoVueloActualizarActivity extends AppCompatActivity {
                 editTiempoRetraso.setEnabled(true);
                 editIdEstado.setText(cursor.getString(cursor.getColumnIndex("id_estado")));
                 editDescripcionEstado.setText(cursor.getString(cursor.getColumnIndex("descripcion_estado")));
-                editTiempoRetraso.setText(String.valueOf(cursor.getInt(cursor.getColumnIndex("tiempo_retraso"))));
+                editTiempoRetraso.setText(String.valueOf(cursor.getColumnIndex("tiempo_retraso")));
                 findViewById(R.id.btnBuscarEstado).setEnabled(true);
             } else {
                 // El Estado no fue encontrado, mostrar un mensaje de error

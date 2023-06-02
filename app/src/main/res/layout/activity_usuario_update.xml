@@ -86,7 +86,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="PASAPORTE DE USUARIO:"
+            android:text="PASAPORTE DE USUARIO (X999999):"
             android:textSize="18sp"
             android:textStyle="bold"
             android:gravity="center"

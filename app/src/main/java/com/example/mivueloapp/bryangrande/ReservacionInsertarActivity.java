@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ContentValues;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -43,6 +44,15 @@ public class ReservacionInsertarActivity extends AppCompatActivity {
                 int numeroAsiento = Integer.parseInt(numeroAsientoEditText.getText().toString());
                 String estadoReservacion = estadoReservacionEditText.getText().toString();
 
+                // Validar el formato de la fecha de reservacion utilizando una expresión regular (dd/mm/yyyy)
+                String fechaReservacionPattern = "^(?:3[01]|[12][0-9]|0?[1-9])([\\-/.])(0?[1-9]|1[1-2])\\1\\d{4}$";
+                if (!fechaReservacion.matches(fechaReservacionPattern)) {
+                    Toast.makeText(ReservacionInsertarActivity.this, "El formato de la fecha de reservacion no es válido. Debe ser dd/mm/yyyy ", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                try {
+
                 // Insertar datos en la tabla 'reservacion'
                 ContentValues values = new ContentValues();
                 values.put("id_reservacion", idReservacion);
@@ -56,6 +66,9 @@ public class ReservacionInsertarActivity extends AppCompatActivity {
                     Toast.makeText(ReservacionInsertarActivity.this, "Error al insertar los datos", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(ReservacionInsertarActivity.this, "Datos insertados correctamente", Toast.LENGTH_SHORT).show();
+                }
+            } catch (SQLiteException e) {
+                    Toast.makeText(ReservacionInsertarActivity.this, "Error en la inserción: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }
         });

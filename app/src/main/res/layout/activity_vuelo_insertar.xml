@@ -52,7 +52,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="FECHA DE SALIDA:"
+            android:text="FECHA DE SALIDA (DD/MM/YYYY):"
             android:textSize="18sp"
             android:textStyle="bold"
             android:gravity="center"
@@ -67,7 +67,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="FECHA DE LLEGADA:"
+            android:text="FECHA DE LLEGADA (DD/MM/YYYY):"
             android:textSize="18sp"
             android:textStyle="bold"
             android:gravity="center"

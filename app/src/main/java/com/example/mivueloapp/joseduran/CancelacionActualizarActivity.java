@@ -63,8 +63,8 @@ public class CancelacionActualizarActivity extends AppCompatActivity {
             desdeFechaEditText.setEnabled(true);
             idCancelacionEditText.setText(cursor.getString(cursor.getColumnIndex("id_cancelacion")));
             motivoCancelacionEditText.setText(cursor.getString(cursor.getColumnIndex("motivo_cancelacion")));
-            hastaFechaEditText.setText(String.valueOf(cursor.getInt(cursor.getColumnIndex("hasta_fecha"))));
-            desdeFechaEditText.setText(String.valueOf(cursor.getInt(cursor.getColumnIndex("desde_fecha"))));
+            hastaFechaEditText.setText(String.valueOf(cursor.getColumnIndex("hasta_fecha")));
+            desdeFechaEditText.setText(String.valueOf(cursor.getColumnIndex("desde_fecha")));
             findViewById(R.id.actualizarButton).setEnabled(true);
         } else {
             // La Cancelacion no fue encontrada, mostrar un mensaje de error

@@ -71,7 +71,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="FECHA DE CREACIÓN:"
+            android:text="FECHA DE CREACIÓN (DD/MM/YYYY):"
             android:textSize="18sp"
             android:textStyle="bold"
             android:gravity="center"

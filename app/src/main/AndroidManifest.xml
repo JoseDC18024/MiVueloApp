@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +13,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MiVueloApp">
+        <activity
+            android:name=".Funcionalidades.LectorQRActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Funcionalidades.ExportarBDActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDebp3oTYwstxIedy29WkrQQSBd1QHbd_o" />
+
+        <activity
+            android:name=".Funcionalidades.MapasActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Funcionalidades.CalendarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FuncionalidadesMenuActivity"
+            android:exported="false" />
         <activity
             android:name=".bryangrande.ReservacionEliminarActivity"
             android:exported="false" />

@@ -1,7 +1,6 @@
 package com.example.mivueloapp.bryangrande;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -10,7 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import com.example.mivueloapp.DatabaseHelper;
 import com.example.mivueloapp.R;
 

@@ -1,23 +1,24 @@
 package com.example.mivueloapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.ListActivity;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-    String[] menu = {"Menu Jose Duran", "Menu Kevin Villalta","Menu Vladimir Soriano", "Menu Jose Lucero", "Menu Bryan Grande"};
-    String[] activities = {"MenuJoseDuran", "MenuKevin","VladimirMenuActivity","MenuJoseLucero", "MenuBryan"};
+
+    String[] menu = {"Menu Jose Duran", "Menu Kevin Villalta","Menu Vladimir Soriano", "Menu Jose Lucero", "Menu Bryan Grande", "Nuevas Funcionalidades"};
+    String[] activities = {"MenuJoseDuran", "MenuKevin","VladimirMenuActivity","MenuJoseLucero", "MenuBryan", "FuncionalidadesMenuActivity"};
 
     private ListView listView;
     private DatabaseHelper databaseHelper;
     private SQLiteDatabase database;
+    private MediaPlayer mediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +34,19 @@ public class MainActivity extends AppCompatActivity {
         // Obtener una referencia a la base de datos (esto creará la base de datos si no existe)
         database = databaseHelper.getWritableDatabase();
 
+        // Iniciar reproducción de audio
+        mediaPlayer = MediaPlayer.create(this, R.raw.audio);
+        mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mediaPlayer) {
+                mediaPlayer.start(); // Iniciar reproducción al estar preparado
+            }
+        });
+
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                if (position != 5) {
+                if (position != 6) {
                     String nombreValue = activities[position];
                     try {
                         Class<?> clase = Class.forName("com.example.mivueloapp." + nombreValue);
@@ -50,5 +60,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mediaPlayer != null) {
+            mediaPlayer.release(); // Liberar recursos del MediaPlayer
+            mediaPlayer = null;
+        }
     }
 }

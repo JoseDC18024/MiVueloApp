@@ -1,14 +1,18 @@
 package com.example.mivueloapp.joselucero;
 
-import androidx.appcompat.app.AppCompatActivity;
-import android.os.Bundle;
-import com.example.mivueloapp.DatabaseHelper;
-import com.example.mivueloapp.R;
+import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.mivueloapp.DatabaseHelper;
+import com.example.mivueloapp.R;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,7 +42,7 @@ public class VueloConsultarActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, vueloList);
         listView.setAdapter(adapter);
     }
-
+    @SuppressLint("Range")
     private List<String> consultarDatosVuelo() {
         List<String> vueloList = new ArrayList<>();
 
@@ -47,7 +51,7 @@ public class VueloConsultarActivity extends AppCompatActivity {
 
         // Recorrer el cursor y obtener los datos de cada vuelo
         while (cursor.moveToNext()) {
-            String idVuelo = cursor.getString(cursor.getColumnIndex("id_vuelo"));
+           String idVuelo = cursor.getString(cursor.getColumnIndex("id_vuelo"));
             String numeroVuelo = cursor.getString(cursor.getColumnIndex("numero_vuelo"));
             String fechaSalida = cursor.getString(cursor.getColumnIndex("fecha_salida"));
             String fechaLlegada = cursor.getString(cursor.getColumnIndex("fecha_llegada"));

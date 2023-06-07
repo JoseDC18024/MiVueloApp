@@ -205,7 +205,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 
-    @Override
+
+
+        @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(CREATE_TABLE_BOLETO);
         db.execSQL(CREATE_TABLE_ESTADO_VUELO);
@@ -235,6 +237,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         */
         db.execSQL(CREATE_TRIGGER_VALIDAR_CUPO);
         db.execSQL(CREATE_TRIGGER_VALIDAR_AEROLINEA);
+
     }
 
     @Override

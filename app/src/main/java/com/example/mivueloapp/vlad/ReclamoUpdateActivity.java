@@ -1,7 +1,5 @@
 package com.example.mivueloapp.vlad;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -12,10 +10,12 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.mivueloapp.DatabaseHelper;
 import com.example.mivueloapp.R;
 
-import java.text.ParseException;
+
 
 public class ReclamoUpdateActivity extends AppCompatActivity {
 

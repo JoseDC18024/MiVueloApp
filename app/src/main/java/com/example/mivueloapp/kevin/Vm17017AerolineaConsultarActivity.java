@@ -1,5 +1,6 @@
 package com.example.mivueloapp.kevin;
 
+import android.annotation.SuppressLint;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -43,7 +44,7 @@ public class Vm17017AerolineaConsultarActivity extends AppCompatActivity {
         // Asignar el ArrayAdapter al ListView
         listViewAerolinea.setAdapter(adapter);
     }
-
+    @SuppressLint("Range")
     private List<String> consultarAerolinea() {
         List<String> listaAerolinea = new ArrayList<>();
         // Realizar la consulta para obtener todos las aerolineas

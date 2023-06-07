@@ -1,7 +1,5 @@
 package com.example.mivueloapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class FuncionalidadesMenuActivity extends ListActivity {
-    String[] menu = {"Calendario", "Mapa","Lector QR"};
-    String[] activities = {"CalendarActivity", "MapasActivity","LectorQRActivity"};
+    String[] menu = {"Calendario", "Mapa","Lector QR","SqliteToExcel"};
+    String[] activities = {"CalendarActivity", "MapasActivity","LectorQRActivity","ExportarBDActivity"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -24,7 +22,7 @@ public class FuncionalidadesMenuActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id){
         super.onListItemClick(l, v, position, id);
 
-        if(position!=3) {
+        if(position!=4) {
 
             String nombreValue = activities[position];
 

@@ -3,14 +3,23 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo_exportarbd"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:layout_marginBottom="26dp" />
+
+
     <Button
         android:id="@+id/btnExportExcel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Exportar a Excel "
-        android:onClick="onExportToExcelClicked" />
-
-
+        android:onClick="onExportToExcelClicked"
+        android:background="@drawable/rounded_button"/>
 
 </LinearLayout>
 

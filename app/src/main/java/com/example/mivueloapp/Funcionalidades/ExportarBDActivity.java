@@ -5,9 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.example.mivueloapp.DatabaseHelper;
 import com.example.mivueloapp.R;
 
@@ -91,7 +89,4 @@ public class ExportarBDActivity extends AppCompatActivity {
             } while (cursor.moveToNext());
         }
     }
-
-
-
 }

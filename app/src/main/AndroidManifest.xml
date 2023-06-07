@@ -3,8 +3,6 @@
     package="com.example.mivueloapp">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
@@ -17,7 +15,8 @@
         android:theme="@style/Theme.MiVueloApp">
         <activity
             android:name=".Funcionalidades.ExportarBDActivity"
-            android:exported="false" />
+            android:exported="false"
+            />
         <activity
             android:name=".Funcionalidades.LectorQRActivity"
             android:exported="false" />

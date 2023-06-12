@@ -6,17 +6,13 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
-    //LECTOR QR
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
-    //GPS
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
-    //ALARMAS
-    <uses-permission android:name="android.permission.SET_ALARM"/>
-    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <uses-permission android:name="android.permission.SET_ALARM" />
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.VIBRATE" />
 
@@ -27,6 +23,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MiVueloApp">
+        <activity
+            android:name=".Funcionalidades.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Funcionalidades.GoogleloginActivity"
+            android:exported="false" />
+
         <receiver android:name=".Funcionalidades.AlarmReceiver" />
 
         <activity

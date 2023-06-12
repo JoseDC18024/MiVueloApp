@@ -8,8 +8,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class FuncionalidadesMenuActivity extends ListActivity {
-    String[] menu = {"Calendario", "Mapa","Lector QR","Sqlite To Excel", "Alarmas"};
-    String[] activities = {"CalendarActivity", "MapasActivity","LectorQRActivity","ExportarBDActivity","AlarmasActivity"};
+    String[] menu = {"Calendario", "Mapa","Lector QR","Sqlite To Excel", "Alarmas", "Google singin"};
+    String[] activities = {"CalendarActivity", "MapasActivity","LectorQRActivity","ExportarBDActivity","AlarmasActivity", "GoogleloginActivity"};
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -22,7 +22,7 @@ public class FuncionalidadesMenuActivity extends ListActivity {
     protected void onListItemClick(ListView l, View v, int position, long id){
         super.onListItemClick(l, v, position, id);
 
-        if(position!=5) {
+        if(position!=6) {
 
             String nombreValue = activities[position];
 

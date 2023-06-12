@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "604197872311",
+    "project_id": "pdm-app-1484d",
+    "storage_bucket": "pdm-app-1484d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604197872311:android:8649c4c6d1af48a9c9a332",
+        "android_client_info": {
+          "package_name": "com.example.mivueloapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "604197872311-d3pgg5fpmhoou11honcjr4282qp0khel.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mivueloapp",
+            "certificate_hash": "401f384be80748b01f6444a94c1030607d192df9"
+          }
+        },
+        {
+          "client_id": "604197872311-lsk8o8jftclcgnpmh3esdv2l1ohuk4he.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLeqv0_H5Oc4sxhFViVRbsyA4W4ySfNj8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "604197872311-3nntf6o5g21cphktenep71skik59n495.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

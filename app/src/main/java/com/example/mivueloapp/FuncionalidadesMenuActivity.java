@@ -8,7 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class FuncionalidadesMenuActivity extends ListActivity {
-    String[] menu = {"Calendario", "Mapa","Lector QR","Sqlite To Excel", "Alarmas", "Google singin"};
+    String[] menu = {"Calendario", "Mapa","Lector QR","Sqlite To Excel", "Alarmas", "Google Singin"};
     String[] activities = {"CalendarActivity", "MapasActivity","LectorQRActivity","ExportarBDActivity","AlarmasActivity", "GoogleloginActivity"};
 
     @Override

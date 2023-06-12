@@ -33,8 +33,6 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        System.out.println("///////////////////Si llego");
-
         // Assign variable
         ivImage = findViewById(R.id.iv_image);
         tvName = findViewById(R.id.tv_name);
